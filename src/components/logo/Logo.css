@@ -1,0 +1,8 @@
+.logo {
+  width: fit-content;
+  height: fit-content;
+}
+
+.logo img {
+  object-fit: cover;  
+}
