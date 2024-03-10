@@ -1,0 +1,21 @@
+/* Variables */
+:root {
+  --dark-orange: #ff8e00;
+  --oxford-blue: #002347;
+  --amazon: #34685c;
+  --saffron: #efbf38;
+}
+
+/* Basic setup */
+* {
+  box-sizing: border-box;
+}
+
+:root,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
