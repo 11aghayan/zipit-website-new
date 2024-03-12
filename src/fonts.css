@@ -1,0 +1,61 @@
+/* Montserrat Rus */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+.font-rus {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Montserrat Arm */
+@font-face {
+  font-family: 'montserrat-arm';
+  src: url('./fonts/montserrat-arm/medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'montserrat-arm';
+  src: url('./fonts/montserrat-arm/semi-bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'montserrat-arm';
+  src: url('./fonts/montserrat-arm/bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'montserrat-arm';
+  src: url('./fonts/montserrat-arm/black.otf') format('opentype');
+  font-style: normal;
+  font-weight: 900;
+}
+
+.font-arm {
+  font-family: 'montserrat-arm', sans-serif;
+}
+
+
+/* Milne */
+@font-face {
+  font-family: 'milne';
+  src: url('./fonts/milne/bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'milne';
+  src: url('./fonts/milne/extra-bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'milne';
+  src: url('./fonts/milne/black.otf') format('opentype');
+  font-style: normal;
+  font-weight: 900;
+}
+
+.font-milne {
+  font-family: 'milne', sans-serif;
+}

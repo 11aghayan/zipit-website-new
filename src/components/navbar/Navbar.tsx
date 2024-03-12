@@ -1,4 +1,6 @@
 import './Navbar.css';
+import LanguageSwitcher from './languageSwitcher/LanguageSwitcher';
+import NavItems from './navItems/NavItems';
 
 type Props = {
   isOpen: boolean;
@@ -9,7 +11,8 @@ export default function Navbar({ isOpen }: Props) {
 
   return (
     <nav className={className}>
-      Navbar
+      <LanguageSwitcher />
+      <NavItems />
     </nav>
   );
 }

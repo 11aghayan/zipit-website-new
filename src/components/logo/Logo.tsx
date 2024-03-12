@@ -5,7 +5,7 @@ import './Logo.css';
 export default function Logo() {
 
   return (
-    <Link to='/' className="logo" >
+    <Link to='/' reloadDocument className="logo" >
       <img src="/src/assets/logomark.svg" alt="logo" width={50} height={50} />
     </Link>
   );
