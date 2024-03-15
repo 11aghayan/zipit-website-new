@@ -1,0 +1,13 @@
+a.language {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+}
+
+a.language p.text {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+

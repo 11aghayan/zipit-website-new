@@ -1,0 +1,27 @@
+ul.language-switcher {
+  width: fit-content;
+}
+
+ul.language-switcher li.language-switcher--item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid black;
+}
+
+ul.language-switcher div.language-list {
+  overflow: hidden; 
+}
+
+ul.language-switcher div.language-list-wrapper {
+  transition: all 150ms ease-in-out;
+  display: grid;
+  grid-template-rows: 0fr;
+}
+
+ul.language-switcher.open div.language-list-wrapper {
+  grid-template-rows: 1fr;
+}
