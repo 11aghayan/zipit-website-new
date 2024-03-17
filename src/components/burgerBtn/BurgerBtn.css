@@ -4,6 +4,7 @@ button.burger-btn {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  z-index: 1111;
 }
 
 button.burger-btn .line {

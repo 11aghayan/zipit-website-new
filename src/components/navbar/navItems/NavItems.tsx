@@ -1,10 +1,11 @@
 import './NavItems.css';
 import NavItem from './navItem/NavItem';
 import navRoutes from '../../../utils/navRoutes';
-import { NavRouteType } from '../../../types';
+import { LangType, NavRouteType } from '../../../types';
+import useLang from '../../../hooks/useLang';
 
 export default function NavItems() {
-  const lang = 'am';
+  const lang = useLang() as LangType;
 
   return (
     <ul className='nav-items'>

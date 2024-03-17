@@ -1,12 +1,11 @@
+import useNavbarContext from '../../hooks/useNavbarContext';
 import './Navbar.css';
 import LanguageSwitcher from './languageSwitcher/LanguageSwitcher';
 import NavItems from './navItems/NavItems';
 
-type Props = {
-  isOpen: boolean;
-}
-
-export default function Navbar({ isOpen }: Props) {
+export default function Navbar() {  
+  const { isOpen } = useNavbarContext();
+  
   const className = isOpen ? 'open' : '';
 
   return (

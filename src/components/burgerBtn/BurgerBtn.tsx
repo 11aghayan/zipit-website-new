@@ -1,11 +1,9 @@
+import useNavbarContext from '../../hooks/useNavbarContext';
 import './BurgerBtn.css';
 
-type Props = {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
+export default function BurgerBtn() {
+  const {isOpen, setIsOpen} = useNavbarContext();
 
-export default function BurgerBtn({ isOpen, setIsOpen }: Props) {
   const className = isOpen ? 'burger-btn open' : 'burger-btn';
 
   const toggleOpen = () => {

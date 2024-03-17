@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import './NavItem.css';
 
 type Props = {
@@ -6,8 +7,8 @@ type Props = {
 }
 
 export default function NavItem({ label, href }: Props) {
-
-  const to = `/${href}`;
+  const { pathname } = useLocation();
+  const to = `${pathname}/${href}`;
 
   return (
     <li className='nav-item'>
