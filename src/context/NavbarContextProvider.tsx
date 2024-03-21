@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -17,7 +17,14 @@ export const NavbarContext = createContext<NavbarContextType>({
 export default function NavbarContextProvider({ children }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   
-
+  useEffect(() => {
+    const body = document.getElementsByTagName('body')[0];
+    if (isOpen) {
+      body.classList.add('no-scroll');
+    } else {
+      body.classList.remove('no-scroll');
+    }
+  }, [isOpen])
 
   return (
     <NavbarContext.Provider value={{ isOpen, setIsOpen }}>

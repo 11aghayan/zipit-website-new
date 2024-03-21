@@ -1,10 +1,9 @@
+import './LandingPage.css';
+
 export default function LandingPage() {
 
   return (
-    <div style={{
-      height: '1000px',
-      backgroundColor: '#213124'
-    }}>
+    <div className='landing'>
       LandingPage
     </div>
   );

@@ -17,6 +17,10 @@ body {
   min-height: 100dvh;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 ul {
   list-style: none;
 }

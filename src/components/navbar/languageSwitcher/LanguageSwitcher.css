@@ -1,5 +1,6 @@
 ul.language-switcher {
   width: fit-content;
+  position: absolute;
 }
 
 ul.language-switcher li.language-switcher--item {
