@@ -1,3 +1,5 @@
+import './Chevron.css';
+
 import chevronDown from '../../assets/chevron-down.svg';
 
 type Props = {
@@ -16,9 +18,9 @@ export default function Chevron({ size = 1, direction = 'down', color = '#000' }
         width: `${size}rem`,
         height: `${size}rem`,
         transform: `rotateX(${degree}deg)`,
-        color,
-        transition: 'all 200ms ease-in-out'
+        color
       }}
+      className='chevron'
     >
       <img src={chevronDown} alt="chevron icon" />
     </span>

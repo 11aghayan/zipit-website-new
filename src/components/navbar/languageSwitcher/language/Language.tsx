@@ -24,7 +24,7 @@ export default function Language({ lang }: Props) {
   return (
     <a href={url} className={`language ${current && 'disabled'}`}>
       <Flag lang={lang} />
-      <p className='text'>{langMap[lang]}</p>
+      <p className={`text ${lang === 'am' && 'arm'}`}>{langMap[lang]}</p>
     </a>
   );
 }

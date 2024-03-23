@@ -6,3 +6,12 @@
 .logo img {
   object-fit: cover;  
 }
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+}

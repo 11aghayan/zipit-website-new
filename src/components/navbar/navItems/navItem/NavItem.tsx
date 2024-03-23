@@ -8,11 +8,12 @@ type Props = {
 
 export default function NavItem({ label, href }: Props) {
   const { pathname } = useLocation();
-  const to = `${pathname}/${href}`;
+  const active = pathname.endsWith(href);
+  const to = active ? pathname : `${pathname}/${href}`;
 
   return (
     <li className='nav-item'>
-      <a href={to}>{label}</a>
+      <a href={to} className={active ? 'disabled active' : ''}>{label}</a>
     </li>
   );
 }

@@ -5,3 +5,13 @@ ul.nav-items {
   align-items: center;
   gap: 2rem;
 }
+
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  ul.nav-items {
+    padding: 0;
+    flex-direction: row;
+  }
+}

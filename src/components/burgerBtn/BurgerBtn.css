@@ -27,3 +27,11 @@ button.burger-btn.open .mid-line {
 button.burger-btn.open .bottom-line {
   transform: translateY(-15px) rotateZ(-45deg);  
 }
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  button.burger-btn {
+    display: none;
+  }
+}

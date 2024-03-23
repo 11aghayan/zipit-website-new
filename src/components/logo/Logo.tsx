@@ -9,7 +9,7 @@ export default function Logo() {
 
   return (
     <Link to={to} reloadDocument className="logo" >
-      <img src="/src/assets/logomark.svg" alt="logo" width={50} height={50} />
+      <img src="/src/assets/logomark.svg" alt="logo" width={70} height={70} />
     </Link>
   );
 }

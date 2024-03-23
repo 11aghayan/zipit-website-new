@@ -3,7 +3,7 @@ nav {
   inset: 0;
   padding: 1rem;
   transform: translateX(100%);
-  background-color: #74a8c5;
+  background-color: #fff;
   transition: all 300ms;
   overflow-x: hidden;
 }
@@ -12,4 +12,15 @@ nav.open {
   transform: translateX(0);
 }
 
+/* Media Queries */
 
+@media(min-width: 1024px) {
+  nav {
+    position: static;
+    transform: translateX(0);
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 3rem;
+  }
+}

@@ -10,3 +10,18 @@ ul.nav-items li.nav-item {
 ul.nav-items li.nav-item a {
   color: #000;
 }
+
+ul.nav-items li.nav-item a.active {
+  color: var(--saffron);
+}
+
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  ul.nav-items li.nav-item {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: normal;
+  }
+}

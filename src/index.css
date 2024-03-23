@@ -28,3 +28,7 @@ ul {
 a {
   text-decoration: none;
 }
+
+a.disabled {
+  pointer-events: none;
+}
