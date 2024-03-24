@@ -1,5 +1,11 @@
+main.landing-page {
+  position: relative;
+}
 
-div.landing {
-  height: 1000px;
-  background-color: #213124;
+
+.content {
+  background: #00ff0040;
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
 }

@@ -1,0 +1,12 @@
+aside.filters {
+  position: fixed;
+  background-color: #0000ff60;
+  inset: 0;
+  z-index: 11111;
+  transition: transform 200ms ease-in-out;
+  transform: translateX(-100%);
+}
+
+aside.filters.open {
+  transform: translateX(0);
+}
