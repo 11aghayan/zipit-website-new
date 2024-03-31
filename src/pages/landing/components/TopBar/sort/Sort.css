@@ -1,0 +1,15 @@
+section.sort {
+  display: none;
+  width: 100px; /*TODO remove*/
+  height: 100px;  /*TODO remove*/
+  position: absolute;
+  right: 0.5rem;
+  top: 100%;
+  padding: 0.5rem;
+  background-color: burlywood;
+  z-index: var(--z-1);
+}
+
+section.sort.open {
+  display: block;
+}

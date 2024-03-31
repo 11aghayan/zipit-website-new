@@ -11,7 +11,7 @@ export default function LandingPage() {
 
   return (
     <main className='landing-page'>
-      <TopBar setIsOpen={setIsFiltersOpen} />
+      <TopBar setIsFiltersOpen={setIsFiltersOpen} />
       <div className='wrapper'>
         <Filters isOpen={isFiltersOpen} setIsOpen={setIsFiltersOpen} />
         <div className='content-wrapper'>

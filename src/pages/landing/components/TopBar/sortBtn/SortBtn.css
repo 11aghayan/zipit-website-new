@@ -1,0 +1,14 @@
+button.sort-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+button.sort-btn div.active {
+  border: 1px solid var(--light-black);
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-weight: 600;
+}

@@ -1,16 +1,26 @@
+import { useState } from 'react';
+
 import './TopBar.css';
 
 import FiltersBtn from './filtersBtn/FiltersBtn';
+import Sort from './sort/Sort';
+import SortBtn from './sortBtn/SortBtn';
 
 type Props = {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsFiltersOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function TopBar({ setIsOpen }: Props) {
+export default function TopBar({ setIsFiltersOpen }: Props) {
+
+  const [isSortOpen, setIsSortOpen] = useState(false);
 
   return (
     <section className='top-bar'>
-      <FiltersBtn setIsOpen={setIsOpen} />
+      <FiltersBtn setIsOpen={setIsFiltersOpen} />
+      <div className='right-side-wrapper'>
+        <SortBtn isSortOpen={isSortOpen} setIsSortOpen={setIsSortOpen}  />
+      </div>
+      <Sort isOpen={isSortOpen} />
     </section>
   );
 }
