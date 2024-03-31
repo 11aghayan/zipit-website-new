@@ -1,23 +1,15 @@
 import './TopBar.css';
 
-import FiltersBtn from './FiltersBtn/FiltersBtn';
-import { useEffect, useRef } from 'react';
+import FiltersBtn from './filtersBtn/FiltersBtn';
 
 type Props = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setBarOffset: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function TopBar({ setIsOpen, setBarOffset }: Props) {
-
-  const ref = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const offset = ref?.current?.getBoundingClientRect().bottom as number
-    setBarOffset(offset);
-  })
+export default function TopBar({ setIsOpen }: Props) {
 
   return (
-    <section ref={ref} className='top-bar'>
+    <section className='top-bar'>
       <FiltersBtn setIsOpen={setIsOpen} />
     </section>
   );

@@ -1,4 +1,6 @@
 aside.filters {
+  width: 100%;
+  max-width: 400px;
   position: fixed;
   background-color: #0000ff60;
   inset: 0;
@@ -9,4 +11,14 @@ aside.filters {
 
 aside.filters.open {
   transform: translateX(0);
+}
+
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  aside.filters {
+    position: static;
+    transform: translateX(0);
+  }
 }

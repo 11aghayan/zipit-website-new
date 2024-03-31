@@ -1,0 +1,16 @@
+div.layout {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+div.layout div.outlet {
+  flex: 1;
+  position: relative;
+}
+
+
+div.layout div.outlet main {
+  position: absolute;
+  inset: 0;
+}

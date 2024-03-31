@@ -1,11 +1,15 @@
 main.landing-page {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
+main.landing-page div.wrapper {
+  flex: 1;
+  display: flex;
+} 
 
-.content {
-  background: #00ff0040;
-  position: fixed;
-  bottom: 0;
-  inset-inline: 0;
+main.landing-page div.wrapper div.content-wrapper {
+  position: relative;
+  width: 100%;
 }
