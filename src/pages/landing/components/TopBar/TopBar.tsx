@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import './TopBar.css';
 
-import FiltersBtn from './filtersBtn/FiltersBtn';
-import Sort from './sort/Sort';
-import SortBtn from './sortBtn/SortBtn';
+import FiltersBtn from './components/filtersBtn/FiltersBtn';
+import Sort from './components/sort/Sort';
+import SortBtn from './components/sortBtn/SortBtn';
 
 type Props = {
   setIsFiltersOpen: React.Dispatch<React.SetStateAction<boolean>>;

@@ -1,6 +1,6 @@
 import './FiltersBtn.css';
 
-import filterSvg from '../../../../../assets/filter.svg';
+import filterSvg from '../../../../../../assets/filter.svg';
 
 type Props = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

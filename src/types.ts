@@ -9,3 +9,9 @@ export type NavRouteType = {
   label:  LangMapType;
   href: string;
 }
+
+export type CategoryType = {
+  id: string;
+  label: string;
+  itemsQty: number;
+}

@@ -3,9 +3,10 @@ aside.filters {
   width: 100%;
   max-width: 400px;
   position: fixed;
-  background-color: #0000ff60;
+  background-color: #0000ff;
   inset: 0;
   z-index: 11111;
+  overflow: auto;
   transition: transform 200ms ease-in-out;
   transform: translateX(-100%);
 }
@@ -19,7 +20,7 @@ aside.filters.open {
 
 @media(min-width: 1024px) {
   aside.filters {
-    position: static;
+    position: absolute;
     transform: translateX(0);
   }
 }

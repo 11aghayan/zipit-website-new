@@ -1,6 +1,6 @@
 import './SortBtn.css';
 
-import sortIcon from '../../../../../assets/sort.svg';
+import sortIcon from '../../../../../../assets/sort.svg';
 
 type Props = {
   isSortOpen: boolean;

@@ -13,3 +13,13 @@ main.landing-page div.wrapper div.content-wrapper {
   position: relative;
   width: 100%;
 }
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  main.landing-page div.wrapper div.filters-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+}
