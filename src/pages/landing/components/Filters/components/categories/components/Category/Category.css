@@ -7,3 +7,7 @@ li.category {
   line-height: 1.5;
   background-color: burlywood;
 }
+
+li.category.selected {
+  background-color: chocolate;
+}

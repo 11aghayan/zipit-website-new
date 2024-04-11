@@ -6,12 +6,13 @@ import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 import getItems from '../../../../actions/getItems';
 import Items from './components/items/Items';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Content() {
-
+  const [sp] = useSearchParams();
   const lang = useLang() as LangType;
   
-  const { isLoading, isError, data } = useQuery('items', getItems(lang));
+  const { isLoading, isError, data } = useQuery('items', getItems(lang, sp.toString()));
   
   if (isLoading) {
     return ( 

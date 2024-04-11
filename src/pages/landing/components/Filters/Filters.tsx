@@ -6,6 +6,7 @@ import getCategories from '../../../../actions/getCategories';
 import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 import Categories from './components/categories/Categories';
+import CloseBtn from './components/closeBtn/CloseBtn';
 
 type Props = {
   isOpen: boolean;
@@ -48,7 +49,8 @@ type AsideProps = {
 
 function Aside({ children, setIsOpen, isOpen }: AsideProps) {
   return(
-    <aside onClick={() => setIsOpen(false)} className={`filters ${isOpen && 'open'}`}>
+    <aside className={`filters ${isOpen && 'open'}`}>
+      <CloseBtn isOpen={isOpen} setIsOpen={setIsOpen} />
       { children }
     </aside>
   )
