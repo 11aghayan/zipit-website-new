@@ -1,0 +1,15 @@
+ul.items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-content: start;
+  gap: 0.5rem;
+}
+
+
+  /* Media Queries */
+
+@media(min-width: 1024px) {
+  ul.items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

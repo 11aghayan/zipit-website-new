@@ -15,3 +15,34 @@ export type CategoryType = {
   label: string;
   itemsQty: number;
 }
+
+export type ItemType = {
+  id: string;
+  category: Omit<CategoryType, 'itemsQty'>;
+  description: string;
+  name: string;
+  price: number;
+  promo: number | null;
+  size: SizeType;
+  photos: PhotoType[];
+}
+
+export type MinOrderType = {
+  qty: number;
+  unit: MinOrderUnitType;
+}
+
+export type MinOrderUnitType = 'pcs' | 'cm' | 'box' | 'roll';
+
+export type SizeUnitType = 'mm' | 'cm' | 'm';
+
+export type SizeType = {
+  val: number;
+  unit: SizeUnitType;
+}
+
+export type PhotoType = {
+  src: string;
+  qty: number;
+  color: string;
+};
