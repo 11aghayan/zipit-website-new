@@ -1,0 +1,10 @@
+div.pageNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+div.pageNav button {
+  font-size: 1.3rem;
+}

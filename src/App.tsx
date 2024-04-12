@@ -7,9 +7,17 @@ import NavbarContextProvider from "./context/NavbarContextProvider";
 
 export default function App() {
   
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false
+      }
+    }
+  });
+  
   return (
     <div className="font-arm">
-      <QueryClientProvider client={new QueryClient()}>
+      <QueryClientProvider client={queryClient}>
         <LangContextProvider>
           <NavbarContextProvider>
             <RouterProvider router={router} />

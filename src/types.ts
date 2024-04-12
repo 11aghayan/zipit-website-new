@@ -16,6 +16,13 @@ export type CategoryType = {
   itemsQty: number;
 }
 
+export type ItemsResponseType = {
+  page: number;
+  pages: number;
+  length: number;
+  items: ItemType[];
+} 
+
 export type ItemType = {
   id: string;
   category: Omit<CategoryType, 'itemsQty'>;

@@ -27,6 +27,7 @@ export default function LandingPage() {
         <div className='content-wrapper'>
           <Content 
             sp={sp}
+            setSp={setSp}
           />
         </div>
       </div>
