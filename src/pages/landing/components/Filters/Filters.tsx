@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { SetURLSearchParams } from 'react-router-dom';
 
 import './Filters.css';
 
@@ -9,11 +10,13 @@ import Categories from './components/categories/Categories';
 import CloseBtn from './components/closeBtn/CloseBtn';
 
 type Props = {
+  sp: URLSearchParams;
+  setSp: SetURLSearchParams;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Filters({ isOpen, setIsOpen }: Props) {
+export default function Filters({ isOpen, setIsOpen, sp, setSp }: Props) {
 
   const lang = useLang() as LangType;
   
@@ -37,7 +40,11 @@ export default function Filters({ isOpen, setIsOpen }: Props) {
   
   return (
     <Aside isOpen={isOpen} setIsOpen={setIsOpen}>
-      <Categories categories={data} />
+      <Categories 
+        categories={data} 
+        sp={sp} 
+        setSp={setSp} 
+      />
     </Aside>
   );
 }
@@ -45,7 +52,9 @@ export default function Filters({ isOpen, setIsOpen }: Props) {
 
 type AsideProps = {
   children: React.ReactNode;
-} & Props
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 function Aside({ children, setIsOpen, isOpen }: AsideProps) {
   return(

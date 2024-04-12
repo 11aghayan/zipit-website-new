@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 
 import './Content.css';
@@ -6,15 +7,22 @@ import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 import getItems from '../../../../actions/getItems';
 import Items from './components/items/Items';
-import { useSearchParams } from 'react-router-dom';
 
-export default function Content() {
-  const [sp] = useSearchParams();
+type Props = {
+  sp: URLSearchParams;
+}
+
+export default function Content({ sp }: Props) {
   const lang = useLang() as LangType;
+  const spString = sp.toString();
   
-  const { isLoading, isError, data } = useQuery('items', getItems(lang, sp.toString()));
+  const { isLoading, isError, data, refetch, isFetching } = useQuery('items', getItems(lang, spString));
   
-  if (isLoading) {
+  useEffect(() => {
+    refetch();
+  }, [spString, refetch])
+  
+  if (isLoading || isFetching) {
     return ( 
       <Section>
           <p>Loading...</p>

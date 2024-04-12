@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { SetURLSearchParams } from 'react-router-dom';
+
 import { CategoryType } from '../../../../../../types';
 import './Categories.css';
 import Category from './components/Category/Category';
-import { useSearchParams } from 'react-router-dom';
 
 type Props = {
-  categories: CategoryType[]
+  categories: CategoryType[];
+  sp: URLSearchParams;
+  setSp: SetURLSearchParams;
 }
 
 export type SelectedFiltersType = {
@@ -13,9 +16,7 @@ export type SelectedFiltersType = {
   promo: boolean;
 }
 
-export default function Categories({ categories }: Props) {
-  
-  const [sp, setSp] = useSearchParams();
+export default function Categories({ categories, sp, setSp }: Props) {
 
   const spCategories = sp.get('categories')?.split(',') || [];
   const promo = sp.get('promo') === 'true' ? true : false;

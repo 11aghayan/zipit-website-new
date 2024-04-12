@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import './LandingPage.css';
 
@@ -7,6 +8,8 @@ import TopBar from './components/topBar/TopBar';
 import Content from './components/content/Content';
 
 export default function LandingPage() {
+  const [sp, setSp] = useSearchParams();
+  
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   return (
@@ -14,10 +17,17 @@ export default function LandingPage() {
       <TopBar setIsFiltersOpen={setIsFiltersOpen} />
       <div className='wrapper'>
         <div className='filters-wrapper'>
-          <Filters isOpen={isFiltersOpen} setIsOpen={setIsFiltersOpen} />
+          <Filters 
+            isOpen={isFiltersOpen} 
+            setIsOpen={setIsFiltersOpen} 
+            sp={sp}
+            setSp={setSp}
+          />
         </div>
         <div className='content-wrapper'>
-          <Content />
+          <Content 
+            sp={sp}
+          />
         </div>
       </div>
     </main>
