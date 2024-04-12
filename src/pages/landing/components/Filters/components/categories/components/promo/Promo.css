@@ -1,0 +1,7 @@
+ul.categories li.promo {
+  background-color: crimson;
+}
+
+ul.categories li.promo.selected {
+  background-color: chartreuse;
+}

@@ -3,7 +3,8 @@ import { SetURLSearchParams } from 'react-router-dom';
 
 import { CategoryType } from '../../../../../../types';
 import './Categories.css';
-import Category from './components/Category/Category';
+import Category from './components/category/Category';
+import Promo from './components/promo/Promo';
 
 type Props = {
   categories: CategoryType[];
@@ -49,6 +50,7 @@ export default function Categories({ categories, sp, setSp }: Props) {
       >
         Filter
       </button>
+      <Promo selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
       {
         categories.map((category: CategoryType) => (
           <Category 

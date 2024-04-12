@@ -1,4 +1,4 @@
-li.category {
+ul.categories li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +8,6 @@ li.category {
   background-color: burlywood;
 }
 
-li.category.selected {
+ul.categories li.category.selected {
   background-color: chocolate;
 }
