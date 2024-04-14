@@ -1,0 +1,21 @@
+div.sort-list-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  padding-top: 0;
+  z-index: var(--z-1);
+  border-radius: 0 0 5px 5px;
+  background-color: #ffffff90;
+  transition: all 300ms ease-in-out;  
+}
+
+div.sort-list-wrapper.open {
+  grid-template-rows: 1fr;
+}
+
+ul.sort-list {
+  overflow: hidden;
+}

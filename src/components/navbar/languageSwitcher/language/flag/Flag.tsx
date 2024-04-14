@@ -13,6 +13,12 @@ export default function Flag({ lang, size = 1.5 }: Props) {
   const alt = lang === 'am' ? 'armenian flag' : 'russian flag';
 
   return (
-    <img src={src} alt={alt} style={{ width: `${size}rem` }} />
+    <img 
+      src={src} 
+      alt={alt} 
+      width={size * 16} 
+      height={size * 16} 
+      style={{ width: `${size}rem` }} 
+    />
   );
 }

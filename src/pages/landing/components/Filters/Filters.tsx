@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { SetURLSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import './Filters.css';
 
@@ -10,13 +10,12 @@ import Categories from './components/categories/Categories';
 import CloseBtn from './components/closeBtn/CloseBtn';
 
 type Props = {
-  sp: URLSearchParams;
-  setSp: SetURLSearchParams;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Filters({ isOpen, setIsOpen, sp, setSp }: Props) {
+export default function Filters({ isOpen, setIsOpen }: Props) {
+  const [sp, setSp] = useSearchParams();
 
   const lang = useLang() as LangType;
   

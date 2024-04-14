@@ -7,8 +7,14 @@ button.sort-btn {
 }
 
 button.sort-btn div.active {
-  border: 1px solid var(--light-black);
-  border-radius: 5px;
+  position: relative;
+  width: fit-content;
+  min-width: 120px;
   padding: 0.5rem;
+  padding-left: 0;
+}
+
+button.sort-btn div.active p.active {
+  color: #000;
   font-weight: 600;
 }

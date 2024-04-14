@@ -1,15 +1,16 @@
-import { SetURLSearchParams } from 'react-router-dom';
-import { ItemsResponseType } from '../../../../../../types';
+import { useSearchParams } from 'react-router-dom';
+
 import './PageNav.css';
+
+import { ItemsResponseType } from '../../../../../../types';
 
 type Props = {
   data: ItemsResponseType | undefined;
-  sp: URLSearchParams;
-  setSp: SetURLSearchParams;
   isFetching: boolean;
 }
 
-export default function PageNav({ data, sp, setSp, isFetching }: Props) {
+export default function PageNav({ data, isFetching }: Props) {
+  const [sp, setSp] = useSearchParams();
 
   const handlePrev = () => {
     if (data && data.page > 1) {
