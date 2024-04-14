@@ -56,5 +56,12 @@ export type PhotoType = {
 
 export type SortOptionType = {
   label: LangMapType;
-  query: 'name,asc' | 'name,desc' | 'price,asc' | 'price,desc';
+  param: 'name,asc' | 'name,desc' | 'price,asc' | 'price,desc';
 };
+
+export type SpType = {
+  categories?: string;
+  promo?: string;
+  page?: string;
+  sorting?: string;
+}

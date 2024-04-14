@@ -6,15 +6,20 @@ button.sort-btn {
   cursor: pointer;
 }
 
-button.sort-btn div.active {
+button.sort-btn div.label {
   position: relative;
   width: fit-content;
   min-width: 120px;
   padding: 0.5rem;
-  padding-left: 0;
+  background-color: var(--sorting-bg-color);
+  border-radius: 5px;
 }
 
-button.sort-btn div.active p.active {
-  color: #000;
+button.sort-btn div.label.open {
+  border-radius: 5px 5px 0 0;
+}
+
+button.sort-btn div.label p.label {
+  color: var(--font-color);
   font-weight: 600;
 }

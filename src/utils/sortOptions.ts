@@ -3,31 +3,31 @@ import { SortOptionType } from "../types";
 const sortOptions: SortOptionType[] = [
   {
     label: {
-      am: 'hay name_asc',
-      ru: 'rus name_asc'
+      am: 'անվան՝ ա-ֆ',
+      ru: 'имени: а-я'
     },
-    query: 'name,asc'
+    param: 'name,asc'
   },
   {
     label: {
-      am: 'hay name_desc',
-      ru: 'rus name_desc'
+      am: 'անվան՝ ֆ-ա',
+      ru: 'имени: я-а'
     },
-    query: 'name,desc'
+    param: 'name,desc'
   },
   {
     label: {
-      am: 'hay price_asc',
-      ru: 'rus price_asc'
+      am: 'գնի աճման',
+      ru: 'возрастанию цен'
     },
-    query: 'price,asc'
+    param: 'price,asc'
   },
   {
     label: {
-      am: 'hay price_desc',
-      ru: 'rus price_desc'
+      am: 'գնի նվազման',
+      ru: 'снижению цен'
     },
-    query: 'price,desc'
+    param: 'price,desc'
   }
 ];
 

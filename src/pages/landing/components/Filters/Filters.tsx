@@ -1,5 +1,4 @@
 import { useQuery } from 'react-query';
-import { useSearchParams } from 'react-router-dom';
 
 import './Filters.css';
 
@@ -15,8 +14,6 @@ type Props = {
 }
 
 export default function Filters({ isOpen, setIsOpen }: Props) {
-  const [sp, setSp] = useSearchParams();
-
   const lang = useLang() as LangType;
   
   const { isLoading, isError, data } = useQuery('filters', getCategories(lang));
@@ -40,9 +37,8 @@ export default function Filters({ isOpen, setIsOpen }: Props) {
   return (
     <Aside isOpen={isOpen} setIsOpen={setIsOpen}>
       <Categories 
-        categories={data} 
-        sp={sp} 
-        setSp={setSp} 
+        categories={data}
+        setIsOpen={setIsOpen}
       />
     </Aside>
   );

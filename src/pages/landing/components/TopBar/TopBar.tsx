@@ -15,7 +15,6 @@ export default function TopBar({ setIsFiltersOpen }: Props) {
       <div className='right-side-wrapper'>
         <Sort />
       </div>
-      {/* <Sort isOpen={isSortOpen} /> */}
     </section>
   );
 }

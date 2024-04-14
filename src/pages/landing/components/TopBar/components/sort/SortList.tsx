@@ -2,7 +2,6 @@ import './SortList.css';
 
 import sortOptions from '../../../../../../utils/sortOptions';
 import SortOption from './components/SortOption';
-import { useSearchParams } from 'react-router-dom';
 
 type Props = {
   isOpen: boolean;
@@ -10,21 +9,16 @@ type Props = {
 }
 
 export default function Sort({ isOpen, setIsOpen }: Props) {
-
-  const [sp] = useSearchParams();
-  const sortQuery = sp.get('sorting') || 'name,asc';
-  
-  const filteredOptions = sortOptions.filter(option => option.query !== sortQuery);
   
   return (
     <div className={`sort-list-wrapper ${isOpen ? 'open' : ''}`}>
       <ul className={`sort-list ${isOpen ? 'open' : ''}`}>
         {
-          filteredOptions.map(option => (
+          sortOptions.map(option => (
             <SortOption 
-              key={`${option.label}-${option.query}`}
+              key={`${option.label}-${option.param}`}
               label={option.label}
-              query={option.query}
+              param={option.param}
               setIsOpen={setIsOpen}
             />
           ))

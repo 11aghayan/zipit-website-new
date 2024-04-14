@@ -14,7 +14,7 @@ export default function FiltersBtn({ setIsOpen }: Props) {
       className='filters-btn'
       onClick={handleClick}
     >
-      <img src={filterSvg} alt="filter-icon" width={30} height={30} />
+      <img src={filterSvg} alt="filter-icon" width={20} height={20} />
     </button>
   );
 }

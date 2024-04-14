@@ -1,8 +1,7 @@
-import { useSearchParams } from 'react-router-dom';
-
 import './PageNav.css';
 
-import { ItemsResponseType } from '../../../../../../types';
+import { ItemsResponseType, SpType } from '../../../../../../types';
+import useSp from '../../../../../../hooks/useSp';
 
 type Props = {
   data: ItemsResponseType | undefined;
@@ -10,23 +9,31 @@ type Props = {
 }
 
 export default function PageNav({ data, isFetching }: Props) {
-  const [sp, setSp] = useSearchParams();
+  const [sp, setSp] = useSp();
 
   const handlePrev = () => {
     if (data && data.page > 1) {
-      setSp({
+      const newSp: SpType = {
         ...sp,
         page: (data.page - 1).toString()
-      });
+      };
+
+      if (newSp.page === '1') delete newSp.page;
+      
+      setSp(newSp);
     }
   };
 
   const handleNext = () => {
     if (data && data.page < data.pages) {
-      setSp({
+      const newSp: SpType = {
         ...sp,
         page: (data.page + 1).toString()
-      });
+      };
+
+      if (newSp.page === '1') delete newSp.page;
+      
+      setSp(newSp);
     }
   };
   

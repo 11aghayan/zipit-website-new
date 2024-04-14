@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import { SetURLSearchParams } from 'react-router-dom';
 
-import { CategoryType } from '../../../../../../types';
+import { CategoryType, SpType } from '../../../../../../types';
 import './Categories.css';
 import Category from './components/category/Category';
 import Promo from './components/promo/Promo';
+import useSp from '../../../../../../hooks/useSp';
 
 type Props = {
   categories: CategoryType[];
-  sp: URLSearchParams;
-  setSp: SetURLSearchParams;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export type SelectedFiltersType = {
@@ -17,10 +16,11 @@ export type SelectedFiltersType = {
   promo: boolean;
 }
 
-export default function Categories({ categories, sp, setSp }: Props) {
+export default function Categories({ categories, setIsOpen }: Props) {
+  const [sp, setSp] = useSp();
 
-  const spCategories = sp.get('categories')?.split(',') || [];
-  const promo = sp.get('promo') === 'true' ? true : false;
+  const spCategories = sp.categories?.split(',') || [];
+  const promo = sp?.promo === 'true' ? true : false;
 
   const [selectedFilters, setSelectedFilters] = useState<SelectedFiltersType>({
     categories: spCategories,
@@ -30,14 +30,17 @@ export default function Categories({ categories, sp, setSp }: Props) {
   const buttonDisabled = selectedFilters.categories.toString() === spCategories.toString() && selectedFilters.promo === promo;
 
   const handleClick = () => {
+    setIsOpen(false);
     const categories = selectedFilters.categories;
     const promo = selectedFilters.promo;
-    const newSp = new URLSearchParams({
+    const newSp: SpType = {
+      ...sp,
       categories: categories.join(','),
       promo: promo.toString()
-    });
-    if (!categories.length) newSp.delete('categories');
-    if (!promo) newSp.delete('promo');
+    };
+
+    if (!categories.length) delete newSp.categories;
+    if (!promo) delete newSp.promo;
     setSp(newSp);
   }
   
