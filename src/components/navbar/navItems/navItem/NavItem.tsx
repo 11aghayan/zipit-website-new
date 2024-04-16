@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import './NavItem.css';
+import useLang from '../../../../hooks/useLang';
 
 type Props = {
   label: string;
@@ -7,9 +8,10 @@ type Props = {
 }
 
 export default function NavItem({ label, href }: Props) {
+  const lang = useLang();
   const { pathname } = useLocation();
   const active = pathname.endsWith(href);
-  const to = active ? pathname : `${pathname}/${href}`;
+  const to = `/${lang}/${href}`;
 
   return (
     <li className='nav-item'>

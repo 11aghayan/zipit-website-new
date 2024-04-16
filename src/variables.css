@@ -1,17 +1,39 @@
+/* General */
+
 :root {
   --dark-orange: #ff8e00;
   --oxford-blue: #002347;
   --amazon: #34685c;
   --saffron: #efbf38;
-  --light-black: #00000040;
+  --line-color: #00000040;
   --z-1: 1;
   --z-2: 11;
   --z-3: 111;
   --z-4: 1111;
   --z-5: 11111;
-  --sorting-bg-color: #ffffffca;
-  --sorting-hover-color: #fff;
+  --bg-color: #fff;
+  --bg-color-trans: #ffffffca;
+  --bg-color-deep: #f0f0f0;
   --font-color: #000;
+}
 
 
+/* Custom */
+
+header {
+  --header-border-color: var(--line-color);
+}
+
+nav {
+  --active-link-color: var(--saffron);
+}
+
+a.language {
+  --lang-border-color: var(--line-color);
+  --lang-bg-color: var(--bg-color-deep);
+}
+
+div.sort-list-wrapper {
+  --sort-bg-color: var(--bg-color-trans);
+  --sort-hover-color: var(--bg-color);
 }

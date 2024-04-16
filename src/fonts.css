@@ -1,7 +1,7 @@
 /* Montserrat Rus */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
-.font-rus {
+.font-ru {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,7 +31,7 @@
   font-weight: 900;
 }
 
-.font-arm {
+.font-am {
   font-family: 'montserrat-arm', sans-serif;
 }
 
@@ -56,6 +56,6 @@
   font-weight: 900;
 }
 
-.font-milne {
+.font-en {
   font-family: 'milne', sans-serif;
 }

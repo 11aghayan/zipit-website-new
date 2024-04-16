@@ -1,6 +1,6 @@
 import useNavbarContext from '../../hooks/useNavbarContext';
 import './Navbar.css';
-import LanguageSwitcher from './languageSwitcher/LanguageSwitcher';
+import Language from './language/Language';
 import NavItems from './navItems/NavItems';
 
 export default function Navbar() {  
@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav className={className}>
-      <LanguageSwitcher />
+      <Language />
       <NavItems />
     </nav>
   );

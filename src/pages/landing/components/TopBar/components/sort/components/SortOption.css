@@ -2,6 +2,7 @@ option.sort-option {
   color: var(--font-color);
   padding: 0.4rem;
   text-align: left;
+  font-weight: 500 !important;
 }
 
 option.sort-option:last-child {
@@ -9,5 +10,5 @@ option.sort-option:last-child {
 }
 
 option.sort-option:hover {
-  background-color: var(--sorting-hover-color);
+  background-color: var(--sort-hover-color);
 }

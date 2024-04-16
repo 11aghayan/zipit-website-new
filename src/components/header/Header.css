@@ -1,8 +1,7 @@
 header {
-  background-color: #fff;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--light-black);
+  border-bottom: 1px solid var(--header-border-color);
 }

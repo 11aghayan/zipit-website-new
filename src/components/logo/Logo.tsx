@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import './Logo.css';
+import logo from '../../assets/logo-light-theme.svg';
 import useLang from "../../hooks/useLang";
 
 export default function Logo() {
@@ -9,7 +9,7 @@ export default function Logo() {
 
   return (
     <Link to={to} reloadDocument className="logo" >
-      <img src="/src/assets/logomark.svg" alt="logo" width={70} height={70} />
+      <img src={logo} alt="zipit logo" width={153} height={30} />
     </Link>
   );
 }
