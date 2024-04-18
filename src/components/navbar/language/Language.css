@@ -23,7 +23,7 @@ a.language p.text.ru {
 
 /* Media Queries */
 
-@media(min-width: 1024px) {
+@media(min-width: 600px) {
   a.language {
     cursor: pointer;
     margin-top: 0;

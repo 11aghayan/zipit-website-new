@@ -9,7 +9,7 @@ ul.nav-items {
 
 /* Media Queries */
 
-@media(min-width: 1024px) {
+@media(min-width: 600px) {
   ul.nav-items {
     padding: 0;
     flex-direction: row;

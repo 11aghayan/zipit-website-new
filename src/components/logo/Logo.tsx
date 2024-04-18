@@ -9,7 +9,7 @@ export default function Logo() {
 
   return (
     <Link to={to} reloadDocument className="logo" >
-      <img src={logo} alt="zipit logo" width={153} height={30} />
+      <img src={logo} alt="zipit logo" width={210} height={50} />
     </Link>
   );
 }

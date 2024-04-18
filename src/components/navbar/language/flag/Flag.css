@@ -6,7 +6,7 @@ img.flag {
 
 /* Media Queries */
 
-@media(min-width: 1024px) {
+@media(min-width: 600px) {
   img.flag {
     width: 1.1rem;
     height: 1.1rem;

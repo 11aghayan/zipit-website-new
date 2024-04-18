@@ -1,6 +1,6 @@
 ul.nav-items li.nav-item a {
   padding: 0.5rem;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   letter-spacing: 2px;
   line-height: 30px;
   text-transform: capitalize;
@@ -14,7 +14,7 @@ ul.nav-items li.nav-item a.active {
 
 /* Media Queries */
 
-@media(min-width: 1024px) {
+@media(min-width: 600px) {
   ul.nav-items li.nav-item a {
     font-size: 1rem;
     letter-spacing: 1px;
