@@ -1,8 +1,8 @@
 aside.filters button.close-btn {
   position: relative;
-  width: 22px;
-  height: 1px;
-  background: var(--filters-close-btn-color);
+  width: 28px;
+  height: 2px;
+  background: transparent;
   border: none;
   border-radius: 99999px;
   margin: 1.5rem 0.5rem;
@@ -15,8 +15,8 @@ aside.filters button.close-btn div.line {
   inset-block: 0;
   border-radius: 99999px;
 
-  --translate-x-val: -6px;
-  --translate-y-val: 8.5px;
+  --translate-x-val: -4px;
+  --translate-y-val: 9px;
 }
 
 aside.filters button.close-btn div.line-1 {
@@ -27,7 +27,7 @@ aside.filters button.close-btn div.line-2 {
   transform: rotateZ(45deg) translate(var(--translate-x-val), var(--translate-y-val));
 }
 
-/* Queries */
+/* Media Queries */
 
 @media(min-width: 1024px) {
   aside.filters button.close-btn {
