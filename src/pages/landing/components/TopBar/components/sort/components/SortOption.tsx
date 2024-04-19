@@ -12,10 +12,11 @@ export default function SortOption({ label, param, setIsOpen }: Props) {
   const lang = useLang() as LangType;
   const [sp, setSp] = useSp();
   const current = sp?.sorting || 'name,asc';
+  const active = current === param;
   
   const handleClick = () => {
     setIsOpen(false);
-    if (param !== current) {
+    if (!active) {
       const newSp: SpType = {
         ...sp,
         sorting: param
@@ -30,7 +31,7 @@ export default function SortOption({ label, param, setIsOpen }: Props) {
   return (
     <option 
       onClick={handleClick}
-      className='sort-option'
+      className={`sort-option ${active ? 'active' : ''}`}
     >
       {label[lang]}
     </option>

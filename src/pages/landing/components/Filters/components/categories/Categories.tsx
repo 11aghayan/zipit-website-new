@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import { CategoryType, SpType } from '../../../../../../types';
-import './Categories.css';
 import Category from './components/category/Category';
 import Promo from './components/promo/Promo';
 import useSp from '../../../../../../hooks/useSp';
+import FilterBtn from './components/filterBtn/FilterBtn';
 
 type Props = {
   categories: CategoryType[];
@@ -46,13 +46,7 @@ export default function Categories({ categories, setIsOpen }: Props) {
   
   return (
     <ul className='categories'>
-      <button 
-        className='filter-btn' 
-        onClick={handleClick}
-        disabled={buttonDisabled}
-      >
-        Filter
-      </button>
+      <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
       <Promo selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
       {
         categories.map((category: CategoryType) => (
@@ -64,13 +58,7 @@ export default function Categories({ categories, setIsOpen }: Props) {
           />
         ))
       }
-      <button 
-        className='filter-btn' 
-        onClick={handleClick}
-        disabled={buttonDisabled}
-      >
-        Filter
-      </button>
+      <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
     </ul>
   );
 }

@@ -26,6 +26,11 @@ header {
 
 nav {
   --active-link-color: var(--saffron);
+  --nav-bg-color: var(--bg-color);
+}
+
+main.landing-page {
+  --black-bg-color: #00000077;
 }
 
 a.language {
@@ -35,5 +40,18 @@ a.language {
 
 div.sort-list-wrapper {
   --sort-bg-color: var(--bg-color-trans);
-  --sort-hover-color: var(--bg-color);
+  --sort-hover-color: var(--line-color);
+  --sort-text-color: var(--font-color);
+}
+
+aside.filters {
+  --filters-bg-color: var(--bg-color);
+  --category-bg-selected-color: var(--oxford-blue);
+  --category-text-color: var(--font-color);
+  --category-text-selected-color: var(--bg-color);
+  --promo-bg-color: var(--dark-orange);
+  --promo-text-color: var(--bg-color);
+  --filter-btn-bg-color: var(--amazon);
+  --filter-btn-text-color: var(--bg-color);
+  --filters-close-btn-color: var(--font-color);
 }

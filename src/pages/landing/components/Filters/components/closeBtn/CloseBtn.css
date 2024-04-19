@@ -1,27 +1,30 @@
 aside.filters button.close-btn {
   position: relative;
-  width: 2rem;
-  height: 0.3rem;
-  background: #000;
+  width: 22px;
+  height: 1px;
+  background: var(--filters-close-btn-color);
   border: none;
   border-radius: 99999px;
-  margin-block: 1.3rem 2rem;
+  margin: 1.5rem 0.5rem;
 }
 
 aside.filters button.close-btn div.line {
   position: absolute;
-  background: #000;
-  inset-inline: 0.5rem;
+  background: var(--filters-close-btn-color);
+  inset-inline: 8px;
   inset-block: 0;
   border-radius: 99999px;
+
+  --translate-x-val: -6px;
+  --translate-y-val: 8.5px;
 }
 
 aside.filters button.close-btn div.line-1 {
-  transform: rotateZ(-45deg) translate(-0.25rem, -10px);
+  transform: rotateZ(-45deg) translate(var(--translate-x-val), calc(var(--translate-y-val) * -1));
 }
 
 aside.filters button.close-btn div.line-2 {
-  transform: rotateZ(45deg) translate(-0.25rem, 10px);
+  transform: rotateZ(45deg) translate(var(--translate-x-val), var(--translate-y-val));
 }
 
 /* Queries */

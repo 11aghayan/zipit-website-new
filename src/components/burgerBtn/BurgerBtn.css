@@ -3,13 +3,15 @@ button.burger-btn {
   border: none;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 4px;
   z-index: var(--z-3);
+
+  --translate-y: 8.2px;
 }
 
 button.burger-btn .line {
-  width: 50px;
-  height: 8px;
+  width: 30px;
+  height: 4px;
   background-color: #000;
   transition: all 300ms;
   border-radius: 9999px;
@@ -17,7 +19,7 @@ button.burger-btn .line {
 
 
 button.burger-btn.open .top-line {
-  transform: translateY(15px) rotateZ(45deg);  
+  transform: translateY(var(--translate-y)) rotateZ(45deg);  
 }
 
 button.burger-btn.open .mid-line {
@@ -25,7 +27,7 @@ button.burger-btn.open .mid-line {
 }
 
 button.burger-btn.open .bottom-line {
-  transform: translateY(-15px) rotateZ(-45deg);  
+  transform: translateY(calc(var(--translate-y) * -1)) rotateZ(-45deg);  
 }
 
 /* Media Queries */

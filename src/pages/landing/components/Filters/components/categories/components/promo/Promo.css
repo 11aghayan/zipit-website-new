@@ -1,7 +1,27 @@
 ul.categories li.promo {
-  background-color: crimson;
+  position: relative;
+  padding: 0.8rem 0.5rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  cursor: pointer;
+  /* margin-bottom: 0.5rem; */
+  color: var(--promo-text-color);
 }
 
-ul.categories li.promo.selected {
-  background-color: chartreuse;
+ul.categories li.promo::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  right: 60%;
+  border-radius: 0 30px 30px 0;
+  background: var(--promo-bg-color);
+  z-index: -1;
+  transition: all 300ms;
+}
+
+ul.categories li.promo.selected::before {
+  right: 0;
+  border-radius: 0;
 }

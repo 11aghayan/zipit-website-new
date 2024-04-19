@@ -20,6 +20,7 @@ export default function LandingPage() {
           <Content />
         </div>
       </div>
+      <div className={`black-bg ${isFiltersOpen ? 'open' : ''}`} onClick={() => setIsFiltersOpen(false)} />
     </main>
   );
 }

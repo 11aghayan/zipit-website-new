@@ -20,6 +20,6 @@ button.sort-btn div.label.open {
 }
 
 button.sort-btn div.label p.label {
-  color: var(--font-color);
+  color: var(--sort-text-color);
   font-weight: 600;
 }

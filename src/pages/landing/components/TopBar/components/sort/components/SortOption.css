@@ -1,14 +1,15 @@
 option.sort-option {
-  color: var(--font-color);
+  color: var(--sort-text-color);
   padding: 0.4rem;
   text-align: left;
   font-weight: 500 !important;
+  border: 1px solid transparent;
 }
 
 option.sort-option:last-child {
   border-radius: 0 0 5px 5px;
 }
 
-option.sort-option:hover {
+option.sort-option:hover, option.sort-option.active {
   background-color: var(--sort-hover-color);
 }

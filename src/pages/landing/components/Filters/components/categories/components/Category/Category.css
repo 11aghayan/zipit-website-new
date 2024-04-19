@@ -1,13 +1,29 @@
-ul.categories li {
+ul.categories li.category {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
-  background-color: burlywood;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--category-text-color);
 }
 
 ul.categories li.category.selected {
-  background-color: chocolate;
+  background-color: var(--category-bg-selected-color);
+  color: var(--category-text-selected-color);
 }
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  ul.categories li.category:hover {
+    background-color: var(--category-bg-selected-color);
+    color: var(--category-text-selected-color);
+  }
+  
+  ul.categories li.category:not(.selected):hover {
+    opacity: 80%;
+  }
+} 
