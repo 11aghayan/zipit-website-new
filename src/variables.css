@@ -15,6 +15,8 @@
   --bg-color-trans: #ffffffca;
   --bg-color-deep: #f0f0f0;
   --font-color: #000;
+  --loader-color: #eee;
+  --loader-gradient-color: #fff;
 }
 
 
@@ -54,4 +56,6 @@ aside.filters {
   --filter-btn-bg-color: var(--amazon);
   --filter-btn-text-color: var(--bg-color);
   --filters-close-btn-color: var(--font-color);
+  --filters-loader-color: var(--loader-color);
+  --filters-loader-gradient-color: var(--loader-gradient-color);
 }

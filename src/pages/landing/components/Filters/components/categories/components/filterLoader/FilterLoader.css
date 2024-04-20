@@ -1,0 +1,46 @@
+div.filter-loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.6rem;
+
+  position: relative;
+}
+
+div.filter-loader-container div.filter-loader-wrapper {
+  width: 100%;
+}
+
+div.filter-loader-container div.filter-loader-wrapper div.filter-loader { 
+  position: relative;
+  width: 100%;
+  padding: 1.4rem;
+  background-color: var(--filters-loader-color);
+  overflow: hidden;
+}
+
+div.filter-loader-container div.filter-loader-wrapper div.filter-loader:before { 
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: linear-gradient(var(--filters-loader-color),var(--filters-loader-gradient-color), var(--filters-loader-color)); /* Gradient*/
+  animation: blink 2000ms ease infinite;
+}
+
+div.filter-loader-container div.filter-loader-wrapper.rounded {
+  padding: 1rem 0.5rem;
+}
+
+div.filter-loader-container div.filter-loader-wrapper.rounded div.filter-loader {
+  border-radius: 50px;
+  padding: 1.1rem;
+}
+
+@keyframes blink {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

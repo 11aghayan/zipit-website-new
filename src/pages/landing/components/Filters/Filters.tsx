@@ -7,6 +7,7 @@ import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 import Categories from './components/categories/Categories';
 import CloseBtn from './components/closeBtn/CloseBtn';
+import FilterLoader from './components/categories/components/filterLoader/FilterLoader';
 
 type Props = {
   isOpen: boolean;
@@ -20,8 +21,8 @@ export default function Filters({ isOpen, setIsOpen }: Props) {
   
   if (isLoading) {
     return ( 
-      <Aside isOpen={isOpen} setIsOpen={setIsOpen}>
-          <p>Loading...</p>
+      <Aside isOpen={isOpen} setIsOpen={setIsOpen} noScroll={false}>
+        <FilterLoader />
       </Aside>
     )
   }
@@ -49,11 +50,12 @@ type AsideProps = {
   children: React.ReactNode;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  noScroll?: boolean;
 }
 
-function Aside({ children, setIsOpen, isOpen }: AsideProps) {
+function Aside({ children, setIsOpen, isOpen, noScroll = false }: AsideProps) {
   return(
-    <aside className={`filters ${isOpen && 'open'}`}>
+    <aside className={`filters ${isOpen ? 'open' : ''} ${noScroll ? 'no-scroll' : ''}`}>
       <CloseBtn isOpen={isOpen} setIsOpen={setIsOpen} />
       { children }
     </aside>

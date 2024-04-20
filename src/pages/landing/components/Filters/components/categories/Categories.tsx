@@ -49,6 +49,8 @@ export default function Categories({ categories, setIsOpen }: Props) {
       <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
       <Promo selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
       {
+        categories.length 
+        ?
         categories.map((category: CategoryType) => (
           <Category 
             key={category.id}
@@ -57,6 +59,8 @@ export default function Categories({ categories, setIsOpen }: Props) {
             setSelectedFilters={setSelectedFilters}
           />
         ))
+        :
+        <p>No Categories</p>
       }
       <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
     </ul>
