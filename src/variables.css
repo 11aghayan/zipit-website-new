@@ -17,6 +17,7 @@
   --font-color: #000;
   --loader-color: #eee;
   --loader-gradient-color: #fff;
+  --no-content-color: #aaa;
 }
 
 
@@ -58,4 +59,5 @@ aside.filters {
   --filters-close-btn-color: var(--font-color);
   --filters-loader-color: var(--loader-color);
   --filters-loader-gradient-color: var(--loader-gradient-color);
+  --no-categories-color: var(--no-content-color);
 }

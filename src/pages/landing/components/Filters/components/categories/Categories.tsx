@@ -5,6 +5,7 @@ import Category from './components/category/Category';
 import Promo from './components/promo/Promo';
 import useSp from '../../../../../../hooks/useSp';
 import FilterBtn from './components/filterBtn/FilterBtn';
+import NoCategories from './components/noCategories/NoCategories';
 
 type Props = {
   categories: CategoryType[];
@@ -60,7 +61,7 @@ export default function Categories({ categories, setIsOpen }: Props) {
           />
         ))
         :
-        <p>No Categories</p>
+        <NoCategories />
       }
       <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
     </ul>

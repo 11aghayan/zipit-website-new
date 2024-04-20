@@ -1,0 +1,10 @@
+div.filter-error-msg {
+  width: 100%;
+}
+
+div.filter-error-msg p {
+  text-align: center;
+  margin-top: 1rem;
+  color: #ff0000;
+  font-size: 1.3rem;
+}
