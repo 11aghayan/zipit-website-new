@@ -6,7 +6,7 @@ type Props = {
 }
 
 export default function ItemLeftSide({ item }: Props) {
-
+  
   return (
     <section className='item-left-side'>
       <ItemPhoto photos={item.photos} />
