@@ -65,3 +65,7 @@ export type SpType = {
   page?: string;
   sorting?: string;
 }
+
+export type SizeLangMapType = {
+  [unit in SizeUnitType]: LangMapType;
+};

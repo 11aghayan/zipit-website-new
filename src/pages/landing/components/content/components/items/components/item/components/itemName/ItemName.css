@@ -1,0 +1,20 @@
+h3.item-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+body.font-am h3.item-name {
+  letter-spacing: 0.5px;
+}
+
+h3.item-name.long {
+  font-size: 0.8rem;
+}
+
+/* Media Queries */
+
+@media(min-width: 400px) {
+  h3.item-name.long {
+    font-size: 1rem;
+  }
+}

@@ -5,9 +5,10 @@ import './FilterBtn.css';
 type Props = {
   handleClick: () => void;
   disabled: boolean;
+  marginTop?: string;
 }
 
-export default function FilterBtn({ handleClick, disabled }: Props) {
+export default function FilterBtn({ handleClick, disabled, marginTop = '0' }: Props) {
   const lang = useLang() as LangType;
 
   const langMap = {
@@ -21,6 +22,7 @@ export default function FilterBtn({ handleClick, disabled }: Props) {
         className='filter-btn' 
         onClick={handleClick}
         disabled={disabled}
+        style={{ marginTop }}
       >
         {langMap[lang]}
       </button>

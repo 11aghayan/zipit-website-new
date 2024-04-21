@@ -5,14 +5,13 @@
   --oxford-blue: #002347;
   --amazon: #34685c;
   --saffron: #efbf38;
-  --line-color: #00000040;
+  --line-color: #ddd;
   --z-1: 1;
   --z-2: 11;
   --z-3: 111;
   --z-4: 1111;
   --z-5: 11111;
   --bg-color: #fff;
-  --bg-color-trans: #ffffffca;
   --bg-color-deep: #f0f0f0;
   --font-color: #000;
   --loader-color: #eee;
@@ -42,8 +41,9 @@ a.language {
 }
 
 div.sort-list-wrapper {
-  --sort-bg-color: var(--bg-color-trans);
+  --sort-bg-color: var(--bg-color);
   --sort-hover-color: var(--line-color);
+  /* --sort-hover-color: #ccc; */
   --sort-text-color: var(--font-color);
 }
 
@@ -60,4 +60,10 @@ aside.filters {
   --filters-loader-color: var(--loader-color);
   --filters-loader-gradient-color: var(--loader-gradient-color);
   --no-categories-color: var(--no-content-color);
+}
+
+section.content {
+  --content-text-color: var(--font-color);
+  --item-bg-color: var(--bg-color-deep);
+  --promo-color: var(--dark-orange);
 }

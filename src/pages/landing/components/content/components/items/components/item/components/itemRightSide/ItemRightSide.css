@@ -1,0 +1,6 @@
+section.item-right-side { 
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 0.5rem 0.2rem;
+}

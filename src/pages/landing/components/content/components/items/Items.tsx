@@ -1,6 +1,7 @@
+import './Items.css';
+
 import { ItemType } from '../../../../../../types';
 import Item from './components/item/Item';
-import './Items.css';
 
 type Props = {
   items: ItemType[];

@@ -1,0 +1,11 @@
+section.item-price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+section.item-price p.old {
+  text-decoration: line-through;
+  color: var(--old-price-color);
+}

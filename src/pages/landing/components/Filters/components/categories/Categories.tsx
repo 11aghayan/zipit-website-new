@@ -63,7 +63,7 @@ export default function Categories({ categories, setIsOpen }: Props) {
         :
         <NoCategories />
       }
-      <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
+      <FilterBtn disabled={buttonDisabled} handleClick={handleClick} marginTop='0.5rem' />
     </ul>
   );
 }
