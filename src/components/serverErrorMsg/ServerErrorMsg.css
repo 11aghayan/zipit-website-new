@@ -1,8 +1,8 @@
-div.filter-error-msg {
+div.server-error-msg {
   width: 100%;
 }
 
-div.filter-error-msg p {
+div.server-error-msg p {
   text-align: center;
   margin-top: 1rem;
   color: #ff0000;

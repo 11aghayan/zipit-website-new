@@ -8,7 +8,7 @@ import { LangType } from '../../../../types';
 import Categories from './components/categories/Categories';
 import CloseBtn from './components/closeBtn/CloseBtn';
 import FilterLoader from './components/categories/components/filterLoader/FilterLoader';
-import FilterErrorMsg from './components/categories/components/filterErrorMsg/FilterErrorMsg';
+import ServerErrorMsg from '../../../../components/serverErrorMsg/ServerErrorMsg';
 
 type Props = {
   isOpen: boolean;
@@ -31,7 +31,7 @@ export default function Filters({ isOpen, setIsOpen }: Props) {
   if (isError) {
     return ( 
       <Aside isOpen={isOpen} setIsOpen={setIsOpen}>
-        <FilterErrorMsg />
+        <ServerErrorMsg />
       </Aside>
     )
   }

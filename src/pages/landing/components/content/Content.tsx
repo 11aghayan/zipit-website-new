@@ -9,6 +9,7 @@ import { ItemsResponseType, LangType } from '../../../../types';
 import getItems from '../../../../actions/getItems';
 import Items from './components/items/Items';
 import PageNav from './components/pageNav/PageNav';
+import ServerErrorMsg from '../../../../components/serverErrorMsg/ServerErrorMsg';
 
 export default function Content() {
   const lang = useLang() as LangType;
@@ -32,7 +33,7 @@ export default function Content() {
   if (isError) {
     return ( 
       <Section data={data} isFetching={isFetching}>
-        <p>Error 500</p>
+        <ServerErrorMsg />
       </Section>
     )
   }
