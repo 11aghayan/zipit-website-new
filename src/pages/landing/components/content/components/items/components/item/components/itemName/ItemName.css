@@ -8,6 +8,9 @@ body.font-am h3.item-name {
 }
 
 
+h3.item-name.long-desktop {
+  font-size: 0.8rem;
+}
 
 /* Media Queries */
 
@@ -17,14 +20,8 @@ body.font-am h3.item-name {
   }
 }
 
-@media(min-width: 600px) and (max-width: 1023px) {
+@media(max-width: 1023px) {
   h3.item-name.long-tablet {
-    font-size: 0.8rem;
-  }
-}
-
-@media(min-width: 1024px) {
-  h3.item-name.long-desktop {
     font-size: 0.8rem;
   }
 }
