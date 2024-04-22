@@ -1,15 +1,14 @@
 import ItemPhoto from '../itemPhoto/ItemPhoto';
-import { ItemType } from '../../../../../../../../../../types';
 
 type Props = {
-  item: ItemType;
+  selectedPhoto: string;
 }
 
-export default function ItemLeftSide({ item }: Props) {
+export default function ItemLeftSide({ selectedPhoto }: Props) {
   
   return (
     <section className='item-left-side'>
-      <ItemPhoto photos={item.photos} />
+      <ItemPhoto photo={selectedPhoto} />
     </section>
   );
 }

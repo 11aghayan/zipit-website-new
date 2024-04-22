@@ -1,18 +1,14 @@
 li.item {
   transition: all 100ms;
-  background-color: var(--item-bg-color);
 }
 
 li.item a {
   color: var(--content-text-color);
-  display: flex;
 }
 
+/* Media Queries */
+
 @media(min-width: 1024px) {
-  li.item {
-    background: none;
-  }
-  
   li.item:hover {
     background-color: var(--item-bg-color);
     scale: 1.01;

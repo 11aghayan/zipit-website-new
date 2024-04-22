@@ -1,17 +1,15 @@
-import { PhotoType } from '../../../../../../../../../../types';
-
 type Props = {
-  photos: PhotoType[];
+  photo: string;
 }
 
-export default function ItemPhoto({ photos }: Props) {
+export default function ItemPhoto({ photo }: Props) {
 
   const size = 110;
 
   return (
     <div className='item-photo' style={{ width: size, height: size }}>
       <img 
-        src={photos[0].src} 
+        src={photo} 
         alt="item photo" 
         height={size} 
         width={size}

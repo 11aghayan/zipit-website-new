@@ -1,6 +1,8 @@
 import './Promo.css';
 
 import { SelectedFiltersType } from '../../Categories';
+import useLang from '../../../../../../../../hooks/useLang';
+import { LangType } from '../../../../../../../../types';
 
 
 type Props = {
@@ -9,8 +11,15 @@ type Props = {
 }
 
 export default function Promo({ selectedFilters, setSelectedFilters }: Props) {
+  const lang = useLang() as LangType;
+  
   const promo = selectedFilters.promo;
 
+  const promoLangMap = {
+    am: 'ակցիա',
+    ru: 'акция'
+  };
+  
   const handleClick = () => {
     setSelectedFilters({
       ...selectedFilters,
@@ -23,7 +32,7 @@ export default function Promo({ selectedFilters, setSelectedFilters }: Props) {
       onClick={handleClick}
       className={`promo ${promo ? 'selected' : ''}`}
     >
-      Promo
+      {promoLangMap[lang]}
     </li>
   );
 }

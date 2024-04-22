@@ -1,0 +1,11 @@
+div.carousel-photo {
+  position: relative;
+  cursor: default;
+}
+
+div.carousel-photo.selected::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--selected-photo-color);
+}
