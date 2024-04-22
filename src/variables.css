@@ -45,7 +45,6 @@ a.language {
 div.sort-list-wrapper {
   --sort-bg-color: var(--bg-color);
   --sort-hover-color: var(--line-color);
-  /* --sort-hover-color: #ccc; */
   --sort-text-color: var(--font-color);
 }
 
@@ -68,4 +67,5 @@ section.content {
   --content-text-color: var(--font-color);
   --item-bg-color: var(--bg-color-deep);
   --promo-color: var(--dark-orange);
+  --no-items-color: var(--no-content-color);
 }

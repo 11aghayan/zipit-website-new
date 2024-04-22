@@ -1,0 +1,7 @@
+p.no-items {
+  text-transform: capitalize;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--no-items-color);
+  margin-top: 5rem;
+}

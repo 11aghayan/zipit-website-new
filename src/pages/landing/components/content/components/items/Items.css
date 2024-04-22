@@ -9,13 +9,13 @@ ul.items {
   /* Media Queries */
 
 @media(min-width: 600px) {
-  ul.items {
+  ul.items:not(.no-items) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media(min-width: 1300px) {
-  ul.items {
+  ul.items:not(.no-items) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
