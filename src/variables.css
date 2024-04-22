@@ -24,6 +24,7 @@
 /* Custom */
 
 header {
+  --logo-color: var(--font-color);
   --header-border-color: var(--line-color);
 }
 
