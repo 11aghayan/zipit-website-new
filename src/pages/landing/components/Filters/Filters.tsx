@@ -22,7 +22,7 @@ export default function Filters({ isOpen, setIsOpen }: Props) {
   
   if (isLoading) {
     return ( 
-      <Aside isOpen={isOpen} setIsOpen={setIsOpen} noScroll={false}>
+      <Aside isOpen={isOpen} setIsOpen={setIsOpen} noScroll={true}>
         <FilterLoader />
       </Aside>
     )
