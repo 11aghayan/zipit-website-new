@@ -1,11 +1,43 @@
-div.pageNav {
+div.page-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 1rem 0 0.5rem;
 }
 
-div.pageNav button {
-  font-size: 1.3rem;
+div.page-nav button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--content-text-color);
+  margin-top: 3px;
 }
+
+div.page-nav p.current-page {
+  color: var(--content-text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+div.page-nav p.current-page span:nth-child(2) {
+  letter-spacing: 1px;
+}
+
+body.font-ru div.page-nav p.current-page {
+  font-weight: 600;
+}
+
+
+
+div.page-nav p.current-page.disabled {
+  color: var(--disabled-btn-color);
+}
+
+div.page-nav button:disabled {
+  cursor: default;
+  color: var(--disabled-btn-color);
+} 

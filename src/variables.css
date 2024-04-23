@@ -69,6 +69,7 @@ aside.filters {
 
 section.content {
   --content-text-color: var(--font-color);
+  --disabled-btn-color: var(--line-color);
   --item-bg-color: var(--bg-color-deep);
   --promo-color: var(--dark-orange);
   --no-items-color: var(--no-content-color);

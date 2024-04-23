@@ -1,7 +1,6 @@
 aside.filters {
   width: 100%;
   max-width: 430px;
-  padding-right: 2px;
   position: fixed;
   background-color: var(--filters-bg-color);
   inset: 0;

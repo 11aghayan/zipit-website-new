@@ -1,7 +1,10 @@
+import { Icon } from '@iconify/react/dist/iconify.js';
+
 import './PageNav.css';
 
-import { ItemsResponseType, SpType } from '../../../../../../types';
+import { ItemsResponseType, LangType, SpType } from '../../../../../../types';
 import useSp from '../../../../../../hooks/useSp';
+import useLang from '../../../../../../hooks/useLang';
 
 type Props = {
   data: ItemsResponseType | undefined;
@@ -9,7 +12,14 @@ type Props = {
 }
 
 export default function PageNav({ data, isFetching }: Props) {
+  const lang = useLang() as LangType;
+  
   const [sp, setSp] = useSp();
+
+  const langMap = {
+    am: 'Էջ',
+    ru: 'Стр'
+  };
 
   const handlePrev = () => {
     if (data && data.page > 1) {
@@ -38,20 +48,24 @@ export default function PageNav({ data, isFetching }: Props) {
   };
   
   return (
-    <div className='pageNav'>
+    <div className='page-nav'>
       <button 
         className='prev'
         disabled={isFetching || !data || data.page <=1}
         onClick={handlePrev}
       >
-        Prev
+        <Icon icon='ic:round-arrow-back-ios' />
       </button>
+      <p className={`current-page ${isFetching || !data || data.page === data.pages ? 'disabled' : ''}`}>
+        <span>{langMap[lang]}:</span>
+        <span>{data?.page || 1}/{data?.pages || 1}</span>
+      </p>
       <button 
         className='next'
         disabled={isFetching || !data || data.page >= data.pages}
         onClick={handleNext}
       >
-        Next
+        <Icon icon='ic:round-arrow-forward-ios' />
       </button>
     </div>
   );

@@ -29,16 +29,3 @@ a {
 a.disabled {
   pointer-events: none;
 }
-
-*::-webkit-scrollbar {
-  width: 6px;
-}
- 
-*::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px #00000022;
-  background-color: var(--scrollbar-track-color);
-}
- 
-*::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
-}
