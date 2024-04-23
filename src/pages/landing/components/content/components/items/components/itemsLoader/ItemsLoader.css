@@ -1,0 +1,33 @@
+div.items-loader-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-content: start;
+  gap: 0.5rem;
+}
+
+div.items-loader-container div.item-loader {
+  position: relative;
+  height: 200px;
+  background-color: var(--loader-color);
+  overflow: hidden;
+}
+
+div.items-loader-container div.item-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--loader-bg);
+  animation: var(--loading-animation);
+}
+
+@media(min-width: 600px) {
+  div.items-loader-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 1300px) {
+  div.items-loader-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

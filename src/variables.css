@@ -14,10 +14,15 @@
   --bg-color: #fff;
   --bg-color-deep: #f0f0f0;
   --font-color: #000;
-  --loader-color: #eee;
-  --loader-gradient-color: #fff;
+  --loader-color: #ddd;
+  --loader-gradient-color: #eee;
   --no-content-color: #aaa;
   --selected-photo-color: #ffffffaa;
+  --scrollbar-track-color: #fefefe;
+  --scrollbar-track-shadow-color: #00000088;
+  --scrollbar-thumb-color: #333;
+  --loading-animation: loading 2000ms ease infinite;
+  --loader-bg: linear-gradient(var(--loader-color),var(--loader-gradient-color), var(--loader-color));
 }
 
 
@@ -59,8 +64,6 @@ aside.filters {
   --filter-btn-bg-color: var(--amazon);
   --filter-btn-text-color: var(--bg-color);
   --filters-close-btn-color: var(--font-color);
-  --filters-loader-color: var(--loader-color);
-  --filters-loader-gradient-color: var(--loader-gradient-color);
   --no-categories-color: var(--no-content-color);
 }
 
@@ -69,4 +72,16 @@ section.content {
   --item-bg-color: var(--bg-color-deep);
   --promo-color: var(--dark-orange);
   --no-items-color: var(--no-content-color);
+}
+
+
+/* Animations */
+
+@keyframes loading {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }

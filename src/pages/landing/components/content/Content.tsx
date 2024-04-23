@@ -10,6 +10,7 @@ import getItems from '../../../../actions/getItems';
 import Items from './components/items/Items';
 import PageNav from './components/pageNav/PageNav';
 import ServerErrorMsg from '../../../../components/serverErrorMsg/ServerErrorMsg';
+import ItemsLoader from './components/items/components/itemsLoader/ItemsLoader';
 
 export default function Content() {
   const lang = useLang() as LangType;
@@ -25,7 +26,7 @@ export default function Content() {
   if (isLoading || isFetching) {
     return ( 
       <Section data={data} isFetching={isFetching}>
-          <p>Loading...</p>
+          <ItemsLoader />
       </Section>
     )
   }

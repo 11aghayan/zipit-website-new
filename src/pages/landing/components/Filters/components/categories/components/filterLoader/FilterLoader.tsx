@@ -8,12 +8,10 @@ export default function FilterLoader() {
     <div className='filter-loader-container'>
       {
        arr.map((val, i) => (
-          <div 
-            key={val + i}
-            className='filter-loader-wrapper'            
-          >
-            <div className='filter-loader' />
-          </div>
+         <div 
+          key={val + i}
+          className='filter-loader' 
+        />
         ))
       }
     </div>

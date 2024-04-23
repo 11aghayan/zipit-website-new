@@ -14,7 +14,7 @@ button.filters-close-btn .filters-close-btn--icon {
 /* Media Queries */
 
 @media(min-width: 1024px) {
-  button.close-btn {
+  button.filters-close-btn {
     display: none;
   }
 }
