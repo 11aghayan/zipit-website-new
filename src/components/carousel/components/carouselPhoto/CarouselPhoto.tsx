@@ -8,7 +8,7 @@ type Props = {
   size?: number;
 }
 
-export default function CarouselPhoto({ photo, size = 30, selectedPhoto, setSelectedPhoto }: Props) {
+export default function CarouselPhoto({ photo, size = 40, selectedPhoto, setSelectedPhoto }: Props) {
 
   const selected = selectedPhoto === photo.src;
   

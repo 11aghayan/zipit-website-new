@@ -1,23 +1,16 @@
 import './Flag.css';
 
-import am from '../../../../assets/flags/am.svg';
-import ru from '../../../../assets/flags/ru.svg';
 import { LangType } from '../../../../types';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 type Props = {
   lang: LangType;
 }
 
 export default function Flag({ lang }: Props) {
-
-  const src = lang === 'am' ? am : ru;
-  const alt = lang === 'am' ? 'armenian flag' : 'russian flag';
+  const icon = lang === 'am' ? 'flagpack:am' : 'flagpack:ru';
 
   return (
-    <img 
-      src={src} 
-      alt={alt}
-      className='flag'
-    />
+    <Icon icon={icon} />
   );
 }

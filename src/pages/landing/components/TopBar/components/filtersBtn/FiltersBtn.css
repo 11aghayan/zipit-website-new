@@ -1,6 +1,13 @@
 button.filters-btn {
   background: none;
   border: none;
+  cursor: pointer;
+}
+
+button.filters-btn .filters-icon {
+  height: 30px;
+  width: 30px;
+  color: var(--top-bar-icon-color);
 }
 
 /* Media Queries */

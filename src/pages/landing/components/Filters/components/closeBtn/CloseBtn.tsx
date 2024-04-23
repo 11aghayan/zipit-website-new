@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react/dist/iconify.js';
 import './CloseBtn.css';
 
 type Props = {
@@ -9,11 +10,10 @@ export default function CloseBtn({ isOpen, setIsOpen }: Props) {
 
   return (
     <button 
-      className='close-btn' 
+      className='filters-close-btn' 
       onClick={() => setIsOpen(!isOpen)}
     >
-      <div className='line line-1'/>
-      <div className='line line-2'/>
+      <Icon icon='ic:round-arrow-back-ios-new' className='filters-close-btn--icon' />
     </button>
   );
 }

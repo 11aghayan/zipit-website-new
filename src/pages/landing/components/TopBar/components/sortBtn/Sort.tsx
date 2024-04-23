@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 import './Sort.css';
 
 import { LangType } from '../../../../../../types';
-import sortIcon from '../../../../../../assets/sort.svg';
 import useLang from '../../../../../../hooks/useLang';
 import SortList from '../sort/SortList';
 
@@ -26,12 +26,7 @@ export default function Sort() {
       className='sort-btn'
       onClick={handleClick}
     >
-      <img 
-        src={sortIcon} 
-        alt="sort-icon" 
-        height={20} 
-        width={20}
-      />
+      <Icon icon='ic:outline-sort' className='sort-icon' />
       <div className={`label ${isOpen ? 'open' : ''}`}>
         <p className='label'>{label[lang]}</p>
         <SortList isOpen={isOpen} setIsOpen={setIsOpen} />

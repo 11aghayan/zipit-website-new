@@ -6,6 +6,12 @@ button.sort-btn {
   cursor: pointer;
 }
 
+button.sort-btn .sort-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--top-bar-icon-color);
+}
+
 button.sort-btn div.label {
   position: relative;
   width: fit-content;

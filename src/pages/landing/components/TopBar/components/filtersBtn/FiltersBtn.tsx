@@ -1,6 +1,6 @@
 import './FiltersBtn.css';
 
-import filterSvg from '../../../../../../assets/filter.svg';
+import { Icon } from '@iconify/react';
 
 type Props = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,7 +14,7 @@ export default function FiltersBtn({ setIsOpen }: Props) {
       className='filters-btn'
       onClick={handleClick}
     >
-      <img src={filterSvg} alt="filter-icon" width={20} height={20} />
+      <Icon icon='ic:baseline-filter-alt' className='filters-icon' />
     </button>
   );
 }

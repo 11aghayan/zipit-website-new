@@ -1,36 +1,20 @@
-aside.filters button.close-btn {
-  position: relative;
-  width: 28px;
-  height: 2px;
+button.filters-close-btn {
   background: transparent;
   border: none;
-  border-radius: 99999px;
   margin: 1.5rem 0.5rem;
+  cursor: pointer;
 }
 
-aside.filters button.close-btn div.line {
-  position: absolute;
-  background: var(--filters-close-btn-color);
-  inset-inline: 8px;
-  inset-block: 0;
-  border-radius: 99999px;
-
-  --translate-x-val: -4px;
-  --translate-y-val: 9px;
-}
-
-aside.filters button.close-btn div.line-1 {
-  transform: rotateZ(-45deg) translate(var(--translate-x-val), calc(var(--translate-y-val) * -1));
-}
-
-aside.filters button.close-btn div.line-2 {
-  transform: rotateZ(45deg) translate(var(--translate-x-val), var(--translate-y-val));
+button.filters-close-btn .filters-close-btn--icon {
+  width: 30px;
+  height: 30px;
+  color: var(--filters-close-btn-color);
 }
 
 /* Media Queries */
 
 @media(min-width: 1024px) {
-  aside.filters button.close-btn {
+  button.close-btn {
     display: none;
   }
 }

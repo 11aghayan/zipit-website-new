@@ -42,7 +42,8 @@ a.language {
   --lang-bg-color: var(--bg-color-deep);
 }
 
-div.sort-list-wrapper {
+section.top-bar {
+  --top-bar-icon-color: var(--font-color);
   --sort-bg-color: var(--bg-color);
   --sort-hover-color: var(--line-color);
   --sort-text-color: var(--font-color);
