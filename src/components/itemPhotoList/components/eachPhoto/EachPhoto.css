@@ -1,9 +1,9 @@
-div.carousel-photo {
+div.item-photo-list--each-photo {
   position: relative;
   cursor: default;
 }
 
-div.carousel-photo.selected::before {
+div.item-photo-list--each-photo.selected::before {
   position: absolute;
   content: "";
   inset: 0;

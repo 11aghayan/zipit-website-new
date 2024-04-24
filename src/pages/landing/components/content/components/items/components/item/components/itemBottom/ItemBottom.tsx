@@ -1,6 +1,6 @@
 import './ItemBottom.css';
 
-import Carousel from '../../../../../../../../../../components/carousel/Carousel';
+import ItemPhotoList from '../../../../../../../../../../components/itemPhotoList/ItemPhotoList';
 import { ItemType } from '../../../../../../../../../../types';
 
 type Props = {
@@ -13,7 +13,7 @@ export default function ItemBottom({ item, selectedPhoto, setSelectedPhoto }: Pr
 
   return (
     <section className='item-bottom'>
-      <Carousel photos={item.photos} selectedPhoto={selectedPhoto} setSelectedPhoto={setSelectedPhoto} />
+      <ItemPhotoList photos={item.photos} selectedPhoto={selectedPhoto} setSelectedPhoto={setSelectedPhoto} />
     </section>
   );
 }

@@ -1,6 +1,7 @@
+import './ItemPhotoList.css';
+
 import { PhotoType } from '../../types';
-import './Carousel.css';
-import CarouselPhoto from './components/carouselPhoto/CarouselPhoto';
+import EachPhoto from './components/eachPhoto/EachPhoto';
 
 type Props = {
   photos: PhotoType[];
@@ -8,13 +9,13 @@ type Props = {
   setSelectedPhoto: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Carousel({ photos, selectedPhoto, setSelectedPhoto }: Props) {
+export default function ItemPhotoList({ photos, selectedPhoto, setSelectedPhoto }: Props) {
   
   return (
-    <div className='carousel'>
+    <div className='item-photo-list'>
       {
         photos.map((photo) => (
-          <CarouselPhoto 
+          <EachPhoto 
             key={photo.src}
             photo={photo}
             selectedPhoto={selectedPhoto}

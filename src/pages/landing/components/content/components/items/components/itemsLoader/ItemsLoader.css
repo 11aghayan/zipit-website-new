@@ -7,7 +7,7 @@ div.items-loader-container {
 
 div.items-loader-container div.item-loader {
   position: relative;
-  height: 200px;
+  height: 158px;
   background-color: var(--loader-color);
   overflow: hidden;
 }

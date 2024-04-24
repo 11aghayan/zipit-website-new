@@ -1,5 +1,5 @@
 import { PhotoType } from '../../../../types';
-import './CarouselPhoto.css';
+import './EachPhoto.css';
 
 type Props = {
   photo: PhotoType;
@@ -8,7 +8,7 @@ type Props = {
   size?: number;
 }
 
-export default function CarouselPhoto({ photo, size = 40, selectedPhoto, setSelectedPhoto }: Props) {
+export default function EachPhoto({ photo, size = 40, selectedPhoto, setSelectedPhoto }: Props) {
 
   const selected = selectedPhoto === photo.src;
   
@@ -22,7 +22,7 @@ export default function CarouselPhoto({ photo, size = 40, selectedPhoto, setSele
   
   return (
     <div 
-      className={`carousel-photo ${selected ? 'selected' : ''}`} 
+      className={`item-photo-list--each-photo ${selected ? 'selected' : ''}`} 
       style={{ width: size, height: size }}
       onClick={handleClick}
     >
