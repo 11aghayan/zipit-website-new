@@ -10,11 +10,16 @@ type Props = {
 }
 
 export default function ItemPhotoList({ photos, selectedPhoto, setSelectedPhoto }: Props) {
+
+  const slicedPhotos = photos.length > 4 ? photos.slice(0, 3) : photos;
+  const tooMany = slicedPhotos !== photos ? photos.length - 3 : 0;
+  
+
   
   return (
     <div className='item-photo-list'>
       {
-        photos.map((photo) => (
+        slicedPhotos.map((photo) => (
           <EachPhoto 
             key={photo.src}
             photo={photo}
@@ -22,6 +27,15 @@ export default function ItemPhotoList({ photos, selectedPhoto, setSelectedPhoto 
             setSelectedPhoto={setSelectedPhoto}
           />
         ))
+      }
+      {
+        tooMany 
+        ?
+        <div className='more-photos'>
+          +{tooMany}
+        </div>
+        :
+        null
       }
     </div>
   );

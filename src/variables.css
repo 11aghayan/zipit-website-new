@@ -73,6 +73,8 @@ section.content {
   --item-bg-color: var(--bg-color-deep);
   --promo-color: var(--dark-orange);
   --no-items-color: var(--no-content-color);
+  --more-photos-bg-color: #dfdfdf;
+  --more-photos-text-color: #555;
 }
 
 

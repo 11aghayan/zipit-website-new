@@ -3,3 +3,15 @@ div.item-photo-list {
   gap: 5px;
   align-items: center;
 }
+
+div.item-photo-list div.more-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  background-color: var(--more-photos-bg-color);
+  color: var(--more-photos-text-color);
+  height: 40px;
+  width: 40px;
+}
+
