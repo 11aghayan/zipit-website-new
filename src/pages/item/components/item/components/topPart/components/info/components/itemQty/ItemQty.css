@@ -1,0 +1,10 @@
+p.qty {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+p.qty span {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}

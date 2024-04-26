@@ -1,7 +1,8 @@
 div.item-photo-list {
   display: flex; 
-  gap: 5px;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 div.item-photo-list div.more-photos {

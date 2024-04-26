@@ -1,12 +1,12 @@
 import './ItemBottom.css';
 
 import ItemPhotoList from '../../../../../../../../../../components/itemPhotoList/ItemPhotoList';
-import { ItemType } from '../../../../../../../../../../types';
+import { ItemType, PhotoType } from '../../../../../../../../../../types';
 
 type Props = {
   item: ItemType;
-  selectedPhoto: string;
-  setSelectedPhoto: React.Dispatch<React.SetStateAction<string>>;
+  selectedPhoto: PhotoType;
+  setSelectedPhoto: React.Dispatch<React.SetStateAction<PhotoType>>;
 }
 
 export default function ItemBottom({ item, selectedPhoto, setSelectedPhoto }: Props) {

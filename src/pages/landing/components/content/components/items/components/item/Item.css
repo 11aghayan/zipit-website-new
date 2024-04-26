@@ -1,15 +1,15 @@
-li.item {
+article.item {
   transition: all 100ms;
 }
 
-li.item a {
+article.item a {
   color: var(--content-text-color);
 }
 
 /* Media Queries */
 
 @media(min-width: 1024px) {
-  li.item:hover {
+  article.item:hover {
     background-color: var(--item-bg-color);
     scale: 1.01;
   }

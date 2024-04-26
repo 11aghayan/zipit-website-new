@@ -1,11 +1,10 @@
-
-import { LangType } from "../types";
 import baseUrl from "./baseUrl";
+import { LangType, ItemType } from "../types";
 import CustomError from "./customError";
 
-export default function getCategories(lang: LangType) {
-  return async function () {
-    const url = `${baseUrl}/api/v1/categories/${lang}`
+export default function getItem(lang: LangType, itemId: string) {
+  return async () => {
+    const url = `${baseUrl}/api/v1/items/${lang}/${itemId}`;
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -13,10 +12,10 @@ export default function getCategories(lang: LangType) {
       if (res.status !== 200) {
         throw new CustomError(res.status, data.message);
       }
-      
-      return data;
+
+      return data as ItemType;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       throw error;
     }
   }

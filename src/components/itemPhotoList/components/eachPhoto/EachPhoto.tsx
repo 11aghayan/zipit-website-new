@@ -1,22 +1,32 @@
+import useSp from '../../../../hooks/useSp';
 import { PhotoType } from '../../../../types';
 import './EachPhoto.css';
 
 type Props = {
   photo: PhotoType;
-  selectedPhoto: string;
-  setSelectedPhoto: React.Dispatch<React.SetStateAction<string>>;
-  size?: number;
+  selectedPhoto: PhotoType;
+  setSelectedPhoto: React.Dispatch<React.SetStateAction<PhotoType>>;
+  size: number;
+  saveToSp?: boolean;
 }
 
-export default function EachPhoto({ photo, size = 40, selectedPhoto, setSelectedPhoto }: Props) {
-
-  const selected = selectedPhoto === photo.src;
+export default function EachPhoto({ photo, size, selectedPhoto, setSelectedPhoto, saveToSp }: Props) {
+  const [sp, setSp] = useSp();
+  
+  const selected = selectedPhoto.src === photo.src;
   
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     
     if (!selected) {
-      setSelectedPhoto(photo.src);
+      setSelectedPhoto(photo);
+
+      if (saveToSp) {
+        setSp({
+          ...sp,
+          currentPhoto: photo.color
+        });
+      } 
     }
   };
   

@@ -2,11 +2,11 @@ import './ItemTop.css';
 
 import ItemLeftSide from '../itemLeftSide/ItemLeftSide';
 import ItemRightSide from '../itemRightSide/ItemRightSide';
-import { ItemType } from '../../../../../../../../../../types';
+import { ItemType, PhotoType } from '../../../../../../../../../../types';
 
 type Props = {
   item: ItemType;
-  selectedPhoto: string;
+  selectedPhoto: PhotoType;
 }
 
 export default function ItemTop({ item, selectedPhoto }: Props) {

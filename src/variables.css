@@ -1,4 +1,4 @@
-/* General */
+/** General */
 
 :root {
   --dark-orange: #ff8e00;
@@ -26,7 +26,9 @@
 }
 
 
-/* Custom */
+/** Custom */
+
+/* Layout */
 
 header {
   --logo-color: var(--font-color);
@@ -37,6 +39,10 @@ nav {
   --active-link-color: var(--saffron);
   --nav-bg-color: var(--bg-color);
 }
+
+/* ------------------ */
+
+/* Landing Page */
 
 main.landing-page {
   --black-bg-color: #00000077;
@@ -76,6 +82,16 @@ section.content {
   --more-photos-bg-color: #dfdfdf;
   --more-photos-text-color: #555;
 }
+
+/* ------------------ */
+
+/* Item Page */
+
+p.item-name {
+  --item-name-text-color: var(--font-color);
+}
+
+/* ------------------ */
 
 
 /* Animations */

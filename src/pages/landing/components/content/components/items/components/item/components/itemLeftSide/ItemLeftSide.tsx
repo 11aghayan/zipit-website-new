@@ -1,7 +1,8 @@
+import { PhotoType } from '../../../../../../../../../../types';
 import ItemPhoto from '../itemPhoto/ItemPhoto';
 
 type Props = {
-  selectedPhoto: string;
+  selectedPhoto: PhotoType;
 }
 
 export default function ItemLeftSide({ selectedPhoto }: Props) {

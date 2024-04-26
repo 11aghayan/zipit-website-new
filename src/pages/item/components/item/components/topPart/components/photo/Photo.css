@@ -1,0 +1,19 @@
+div.item-photo {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: burlywood;
+}
+
+div.item-photo img {
+  background-color: var(--bg-color);
+  border: 1px solid var(--line-color);
+}
+
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  div.item-photo {
+    margin: 0;
+  }
+}

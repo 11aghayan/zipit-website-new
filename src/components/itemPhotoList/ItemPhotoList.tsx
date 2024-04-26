@@ -5,16 +5,17 @@ import EachPhoto from './components/eachPhoto/EachPhoto';
 
 type Props = {
   photos: PhotoType[];
-  selectedPhoto: string;
-  setSelectedPhoto: React.Dispatch<React.SetStateAction<string>>;
+  selectedPhoto: PhotoType;
+  setSelectedPhoto: React.Dispatch<React.SetStateAction<PhotoType>>;
+  size?: number;
+  full?: boolean;
+  saveToSp?: boolean;
 }
 
-export default function ItemPhotoList({ photos, selectedPhoto, setSelectedPhoto }: Props) {
-
-  const slicedPhotos = photos.length > 4 ? photos.slice(0, 3) : photos;
-  const tooMany = slicedPhotos !== photos ? photos.length - 3 : 0;
+export default function ItemPhotoList({ photos, selectedPhoto, setSelectedPhoto, size = 40, full = false, saveToSp = false }: Props) {
   
-
+  const slicedPhotos = !full && photos.length > 4 ? photos.slice(0, 3) : photos;
+  const tooMany = slicedPhotos !== photos ? photos.length - 3 : 0;
   
   return (
     <div className='item-photo-list'>
@@ -25,6 +26,8 @@ export default function ItemPhotoList({ photos, selectedPhoto, setSelectedPhoto 
             photo={photo}
             selectedPhoto={selectedPhoto}
             setSelectedPhoto={setSelectedPhoto}
+            size={size}
+            saveToSp={saveToSp}
           />
         ))
       }

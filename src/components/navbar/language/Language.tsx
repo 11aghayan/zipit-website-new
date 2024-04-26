@@ -1,23 +1,24 @@
-import useLang from '../../../hooks/useLang';
+import { useLocation } from 'react-router-dom';
+
 import './Language.css';
+
+import useLang from '../../../hooks/useLang';
 import Flag from './flag/Flag';
-import useSp from '../../../hooks/useSp';
 
 export default function Language() {
   const pageLang = useLang();
-  const [sp] = useSp();
+  const { pathname, search: sp } = useLocation();
 
-  const searchParams = new URLSearchParams(sp);
-  const spString = Object.entries(sp).length ? `?${searchParams}` : '';
+  const lang = pageLang === 'am' ? 'ru' : 'am';
+
+  const newPathname = pathname.split('/');
+  newPathname[1] = lang;
+  const url = newPathname.join('/') + sp;
   
   const langMap = {
     am: 'հայ',
     ru: 'рус'
   };
-
-  const lang = pageLang === 'am' ? 'ru' : 'am';
-
-  const url = `/${lang}${spString}`;
   
   return (
     <a href={url} className='language'>

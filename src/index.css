@@ -12,6 +12,7 @@ body.font-ru * {
 
 body {
   height: 100dvh;
+  background-color: var(--bg-color);
 }
 
 .no-scroll {

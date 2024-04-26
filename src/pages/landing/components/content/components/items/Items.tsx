@@ -13,7 +13,7 @@ export default function Items({ items }: Props) {
   const noItems = !items.length;
   
   return (
-    <ul className={`items ${noItems ? 'no-items' : ''}`}>
+    <section className={`items ${noItems ? 'no-items' : ''}`}>
       {
         !noItems
         ?
@@ -26,6 +26,6 @@ export default function Items({ items }: Props) {
         :
         <NoItems />
       }
-    </ul>
+    </section>
   );
 }

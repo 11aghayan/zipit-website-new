@@ -32,6 +32,7 @@ export type ItemType = {
   promo: number | null;
   size: SizeType;
   photos: PhotoType[];
+  minOrder: MinOrderType;
 };
 
 export type MinOrderType = {
@@ -64,6 +65,7 @@ export type SpType = {
   promo?: string;
   page?: string;
   sorting?: string;
+  currentPhoto?: string;
 }
 
 export type SizeLangMapType = {
