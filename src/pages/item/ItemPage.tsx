@@ -7,6 +7,8 @@ import getItem from '../../actions/getItem';
 import useLang from '../../hooks/useLang';
 import { LangType } from '../../types';
 import Item from './components/item/Item';
+import ItemPageLoader from './components/itemPageLoader/ItemPageLoader';
+import ServerErrorMsg from '../../components/serverErrorMsg/ServerErrorMsg';
 
 export default function ItemPage() {
   const lang = useLang() as LangType;
@@ -17,7 +19,7 @@ export default function ItemPage() {
   if (isLoading) {
     return (
       <Main>
-        Loading...
+        <ItemPageLoader />
       </Main>
     )
   }
@@ -25,7 +27,7 @@ export default function ItemPage() {
   if (isError) {
     return (
       <Main>
-        Error
+        <ServerErrorMsg />
       </Main>
     );
   }

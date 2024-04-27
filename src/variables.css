@@ -14,13 +14,11 @@
   --bg-color: #fff;
   --bg-color-deep: #f0f0f0;
   --font-color: #000;
+  --error-msg-color: #dd1111;
   --loader-color: #ddd;
   --loader-gradient-color: #eee;
   --no-content-color: #aaa;
   --selected-photo-color: #ffffffaa;
-  --scrollbar-track-color: #fefefe;
-  --scrollbar-track-shadow-color: #00000088;
-  --scrollbar-thumb-color: #333;
   --loading-animation: loading 2000ms ease infinite;
   --loader-bg: linear-gradient(var(--loader-color),var(--loader-gradient-color), var(--loader-color));
 }

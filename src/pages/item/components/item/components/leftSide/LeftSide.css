@@ -7,7 +7,7 @@ section.item-page--left-side {
 
 /* Media Queries */
 
-@media(min-width: 1024px) {
+@media(min-width: 1300px) {
   section.item-page--left-side {
     flex-direction: row;
     padding-right: 3rem;

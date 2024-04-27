@@ -1,7 +1,8 @@
+import './Photo.css';
+
 import ItemPhotoList from '../../../../../../../../components/itemPhotoList/ItemPhotoList';
 import useLang from '../../../../../../../../hooks/useLang';
 import { LangType, PhotoType } from '../../../../../../../../types';
-import './Photo.css';
 
 type Props = {
   photos: PhotoType[];
@@ -29,7 +30,7 @@ export default function Photo({ selectedPhoto, setSelectedPhoto, photos }: Props
         setSelectedPhoto={setSelectedPhoto} 
         full={true}
         saveToSp={true}
-        size={60}
+        size={50}
       />
     </div>
   );
