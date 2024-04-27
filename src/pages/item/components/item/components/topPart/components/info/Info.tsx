@@ -19,9 +19,9 @@ export default function Info({ item, selectedPhoto }: Props) {
     <section className="info">
       <ItemName name={item.name} />
       <ItemColor color={selectedPhoto.color} />
-      <ItemQty qty={selectedPhoto.qty} />
       <ItemSize size={item.size} />
       <MinOrder minOrder={item.minOrder} />
+      <ItemQty qty={selectedPhoto.qty} />
       <ItemPrice price={item.price} promo={item.promo} />
     </section>
   );

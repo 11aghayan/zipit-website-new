@@ -2,6 +2,7 @@ import './MinOrder.css';
 
 import useLang from '../../../../../../../../../../hooks/useLang';
 import { LangType, MinOrderType } from '../../../../../../../../../../types';
+import minOrderUnit from '../../../../../../../../../../utils/minOrderUnit';
 
 
 type Props = {
@@ -11,15 +12,17 @@ type Props = {
 export default function MinOrder({ minOrder }: Props) {
   const lang = useLang() as LangType;
 
-  const langMap = {
+  const labelLangMap = {
     am: 'Նվազագույն պատվեր',
     ru: 'Минимальный заказ'
   };
 
+  const unit = minOrderUnit(lang, minOrder);
+
   return (
     <p className='min-order'>
-      <span>{langMap[lang]}:</span>
-      <span>{minOrder.qty}{minOrder.unit}</span>
+      <span>{labelLangMap[lang]}:</span>
+      <span>{minOrder.qty} {unit}</span>
     </p>
   );
 }

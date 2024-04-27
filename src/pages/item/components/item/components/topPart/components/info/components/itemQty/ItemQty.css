@@ -8,3 +8,8 @@ p.qty span {
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
+
+p.qty.unavailable span.value {
+  font-size: 1.2rem;
+  color: var(--unavailable-color);
+}

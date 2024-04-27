@@ -1,3 +1,36 @@
 div.item-price {
-  margin-top: 9rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  margin-top: 4rem;
+}
+
+div.item-price p.label {
+  font-size: 1.2rem;
+}
+
+div.item-price div.wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+div.item-price div.wrapper p {
+  letter-spacing: 0.3px;
+}
+
+div.item-price div.wrapper p.initial-price {
+  font-size: 1.4rem;
+}
+
+div.item-price.promo div.wrapper p.initial-price {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+}
+
+div.item-price div.wrapper p.promo-price {
+  font-size: 1.5rem;
+  color: var(--promo-price);
+  font-weight: 700;
 }

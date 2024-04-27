@@ -3,7 +3,6 @@ section.info {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background-color: blueviolet;
 }
 
 /* Media Queries */

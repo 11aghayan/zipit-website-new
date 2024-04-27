@@ -1,5 +1,6 @@
 import ItemPhotoList from '../../../../../../../../components/itemPhotoList/ItemPhotoList';
-import { PhotoType } from '../../../../../../../../types';
+import useLang from '../../../../../../../../hooks/useLang';
+import { LangType, PhotoType } from '../../../../../../../../types';
 import './Photo.css';
 
 type Props = {
@@ -9,18 +10,26 @@ type Props = {
 }
 
 export default function Photo({ selectedPhoto, setSelectedPhoto, photos }: Props) {
+  const lang = useLang() as LangType;
 
-  const size = 310;
+  const langMap = {
+    am: 'Գույներ',
+    ru: 'Цвета'
+  };
+
+  const size = 300;
   
   return (
     <div className='item-photo' style={{ width: size }}>
       <img src={selectedPhoto.src} alt="item photo" width={size} height={size} />
+      <p className='photo-label'>{langMap[lang]}</p>
       <ItemPhotoList 
         photos={photos} 
         selectedPhoto={selectedPhoto} 
         setSelectedPhoto={setSelectedPhoto} 
         full={true}
         saveToSp={true}
+        size={60}
       />
     </div>
   );

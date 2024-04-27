@@ -13,4 +13,5 @@ div.layout div.outlet {
 div.layout div.outlet main {
   position: absolute;
   inset: 0;
+  overflow: auto;
 }

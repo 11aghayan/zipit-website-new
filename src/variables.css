@@ -91,6 +91,14 @@ p.item-name {
   --item-name-text-color: var(--font-color);
 }
 
+div.item-price {
+  --promo-price: var(--dark-orange);
+}
+
+p.qty {
+  --unavailable-color: #aa3333;
+}
+
 /* ------------------ */
 
 

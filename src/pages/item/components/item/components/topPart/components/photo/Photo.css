@@ -1,7 +1,6 @@
 div.item-photo {
   width: fit-content;
   margin: 0 auto;
-  background-color: burlywood;
 }
 
 div.item-photo img {
@@ -9,6 +8,10 @@ div.item-photo img {
   border: 1px solid var(--line-color);
 }
 
+div.item-photo p.photo-label {
+  font-size: 1.2rem;
+  padding-block: 0.5rem;
+}
 
 /* Media Queries */
 
