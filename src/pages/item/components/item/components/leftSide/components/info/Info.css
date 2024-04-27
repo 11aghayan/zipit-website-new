@@ -1,0 +1,34 @@
+section.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+section.info p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+section.info p span {
+  letter-spacing: 0.5px;
+}
+
+section.info p span.label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+section.info p span.value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  section.info {
+    align-items: start;
+  }
+}

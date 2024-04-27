@@ -24,7 +24,7 @@ export default function Qty({ qty }: Props) {
 
   return (
     <p className={`qty ${qty === 0 ? 'unavailable' : ''}`}>
-      <span className='title'>{langMap[lang]}:</span>
+      <span className='label'>{langMap[lang]}:</span>
       <span className='value'>{displayingQty}</span>
     </p>
   );

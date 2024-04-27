@@ -1,5 +1,3 @@
-import './ItemSize.css';
-
 import useLang from '../../../../../../../../../../hooks/useLang';
 import { LangType, SizeType } from '../../../../../../../../../../types';
 
@@ -33,7 +31,7 @@ export default function ItemSize({ size }: Props) {
 
   return (
     <p className='item-size'>
-      <span className='title'>{langMap[lang]}:</span>
+      <span className='label'>{langMap[lang]}:</span>
       <span className='value'>{size.val}{unitLangMap[size.unit][lang]}</span>
     </p>
   );

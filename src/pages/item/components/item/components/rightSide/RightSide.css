@@ -1,0 +1,28 @@
+section.item-page--right-side {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  flex-grow: 1;
+}
+
+section.item-page--right-side p.label {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  padding-inline: 1rem;
+  background-color: var(--bg-color);
+  transform: translateY(-50%);
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--label-color);
+}
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  section.item-page--right-side {
+    padding: 2rem;
+    border-left: 1px solid var(--border-color);
+    position: relative;
+  }
+}

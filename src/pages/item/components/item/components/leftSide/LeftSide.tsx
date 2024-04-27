@@ -1,4 +1,4 @@
-import './TopPart.css';
+import './LeftSide.css';
 
 import Photo from './components/photo/Photo';
 import { ItemType } from '../../../../../../types';
@@ -11,14 +11,14 @@ type Props = {
   item: ItemType;
 }
 
-export default function TopPart({ item }: Props) {
+export default function LeftSide({ item }: Props) {
   const [sp] = useSp();
   const currentPhoto = item.photos.find(p => p.color === sp.currentPhoto) || item.photos[0];
   
   const [selectedPhoto, setSelectedPhoto] = useState(currentPhoto);
   
   return (
-    <section className='item-page--top-part'>
+    <section className='item-page--left-side'>
       <Photo selectedPhoto={selectedPhoto}  photos={item.photos} setSelectedPhoto={setSelectedPhoto} />
       <Info item={item} selectedPhoto={selectedPhoto} />
     </section>

@@ -1,5 +1,3 @@
-import './MinOrder.css';
-
 import useLang from '../../../../../../../../../../hooks/useLang';
 import { LangType, MinOrderType } from '../../../../../../../../../../types';
 import minOrderUnit from '../../../../../../../../../../utils/minOrderUnit';
@@ -21,8 +19,8 @@ export default function MinOrder({ minOrder }: Props) {
 
   return (
     <p className='min-order'>
-      <span>{labelLangMap[lang]}:</span>
-      <span>{minOrder.qty} {unit}</span>
+      <span className='label'>{labelLangMap[lang]}:</span>
+      <span className='value'>{minOrder.qty} {unit}</span>
     </p>
   );
 }

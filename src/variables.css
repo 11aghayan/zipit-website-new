@@ -99,6 +99,15 @@ p.qty {
   --unavailable-color: #aa3333;
 }
 
+section.item-page--right-side {
+  --border-color: var(--line-color);
+  --label-color: #333;
+}
+
+p.item-description {
+  --text-color: #111;
+}
+
 /* ------------------ */
 
 

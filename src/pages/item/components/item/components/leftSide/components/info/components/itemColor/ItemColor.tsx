@@ -1,5 +1,3 @@
-import './ItemColor.css';
-
 import useLang from '../../../../../../../../../../hooks/useLang';
 import { LangType } from '../../../../../../../../../../types';
 
@@ -17,7 +15,7 @@ export default function ItemColor({ color }: Props) {
 
   return (
     <p className='item-color'>
-      <span className='title'>{langMap[lang]}:</span>
+      <span className='label'>{langMap[lang]}:</span>
       <span className='value'>{color}</span>
     </p>
   );

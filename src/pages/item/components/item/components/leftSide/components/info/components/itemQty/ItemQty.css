@@ -1,0 +1,4 @@
+p.qty.unavailable span.value {
+  font-size: 1.2rem;
+  color: var(--unavailable-color);
+}

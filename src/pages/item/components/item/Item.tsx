@@ -1,7 +1,8 @@
 import './Item.css';
 
 import { ItemType } from '../../../../types';
-import TopPart from './components/topPart/TopPart';
+import LeftSide from './components/leftSide/LeftSide';
+import RightSide from './components/rightSide/RightSide';
 
 type Props = {
   item: ItemType;
@@ -10,8 +11,9 @@ type Props = {
 export default function Item({ item }: Props) {
   
   return (
-    <article className='item-page'>
-      <TopPart item={item} />
+    <article className='item-page--item'>
+      <LeftSide item={item} />
+      <RightSide item={item} />
     </article>
   );
 }

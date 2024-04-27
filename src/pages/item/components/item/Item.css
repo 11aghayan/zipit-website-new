@@ -1,0 +1,15 @@
+article.item-page--item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Media Queries */
+
+@media(min-width: 1024px) {
+  article.item-page--item {
+    flex-direction: row;
+    gap: 0;
+  }
+}
