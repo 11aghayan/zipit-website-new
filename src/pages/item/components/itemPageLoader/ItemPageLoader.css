@@ -70,7 +70,8 @@ section.left-side-loader div.info-loader div.price {
 /* Right Side */
 
 section.right-side-loader {
-  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-color);
   flex-grow: 1;
 }
 
@@ -106,6 +107,7 @@ section.right-side-loader div.description-loader div {
   }
 
   section.right-side-loader {
-    border-left: 1px solid var(--border-color);
+    border-left: 1px solid var(--line-color);
+    padding-left: 1rem;
   }
 }
