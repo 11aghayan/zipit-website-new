@@ -1,0 +1,17 @@
+div.contact {
+  width: 100%;
+  border-bottom: 1px solid var(--line-color);
+  padding-bottom: 0.5rem;
+}
+
+div.contact p.label {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+div.contact p.value {
+  font-size: 1.1rem;
+  /* font-weight: 600; */
+  margin-top: 0.1em;
+}
+

@@ -7,8 +7,8 @@ type Props = {
 export default function ItemName({ name }: Props) {
 
   return (
-    <h3 className='item-name'>
+    <h2 className='item-name'>
       {name}
-    </h3>
+    </h2>
   );
 }

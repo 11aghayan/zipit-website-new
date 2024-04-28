@@ -1,4 +1,4 @@
-option.sort-option {
+li.sort-option {
   color: var(--sort-text-color);
   padding: 0.4rem;
   text-align: left;
@@ -6,10 +6,10 @@ option.sort-option {
   border: 1px solid transparent;
 }
 
-option.sort-option:last-child {
+li.sort-option:last-child {
   border-radius: 0 0 5px 5px;
 }
 
-option.sort-option:hover, option.sort-option.active {
+li.sort-option:hover, option.sort-option.active {
   background-color: var(--sort-hover-color);
 }

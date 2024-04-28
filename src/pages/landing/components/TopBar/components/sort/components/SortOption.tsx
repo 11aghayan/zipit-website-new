@@ -29,11 +29,11 @@ export default function SortOption({ label, param, setIsOpen }: Props) {
   };
   
   return (
-    <option 
+    <li 
       onClick={handleClick}
       className={`sort-option ${active ? 'active' : ''}`}
     >
       {label[lang]}
-    </option>
+    </li>
   );
 }

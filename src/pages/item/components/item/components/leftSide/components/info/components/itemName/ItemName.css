@@ -1,9 +1,9 @@
-h3.item-name {
+h2.item-name {
   font-size: 1.6rem;
   color: var(--item-name-text-color);
   text-transform: capitalize;
 }
 
-body.font-ru h3.item-name {
+body.font-ru h2.item-name {
   font-weight: 700;
 }

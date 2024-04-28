@@ -1,27 +1,27 @@
-h3.item-name {
+h2.item-name {
   font-size: 1rem;
   font-weight: 600;
 }
 
-body.font-am h3.item-name {
+body.font-am h2.item-name {
   letter-spacing: 0.5px;
 }
 
 
-h3.item-name.long-desktop {
+h2.item-name.long-desktop {
   font-size: 0.8rem;
 }
 
 /* Media Queries */
 
 @media(max-width: 599px) {
-  h3.item-name.long-mobile {
+  h2.item-name.long-mobile {
     font-size: 0.8rem;
   }
 }
 
 @media(max-width: 1023px) {
-  h3.item-name.long-tablet {
+  h2.item-name.long-tablet {
     font-size: 0.8rem;
   }
 }

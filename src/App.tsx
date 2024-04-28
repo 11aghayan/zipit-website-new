@@ -6,7 +6,7 @@ import LangContextProvider from "./context/LangContextProvider";
 import NavbarContextProvider from "./context/NavbarContextProvider";
 
 export default function App() {
-  
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {

@@ -13,8 +13,8 @@ export default function ItemName({ name }: Props) {
   const long = isLongDesktop ? 'long-desktop' : isLongTablet ? 'long-tablet' : isLongMobile ? 'long-mobile' : '';
   
   return (
-    <h3 className={`item-name ${long}`}>
+    <h2 className={`item-name ${long}`}>
       {name}
-    </h3>
+    </h2>
   );
 }
