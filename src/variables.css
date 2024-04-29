@@ -108,6 +108,17 @@ p.item-description {
 
 /* ------------------ */
 
+/* Contacts Page */
+
+section.contacts {
+  --email-color: #a1a1a1;
+  --whatsapp-color: #25D366;
+  --telegram-color: #24A1DE;
+  --viber-color: #7360f2;
+  --phone-color: #3c3c3c;
+}
+
+/* ------------------ */
 
 /* Animations */
 

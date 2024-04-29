@@ -1,0 +1,39 @@
+a.contact {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line-color);
+  padding-bottom: 0.5rem;
+}
+
+a.contact:not(:first-child) {
+  padding-top: 0.5rem;
+}
+
+a.contact div.icon.phone {
+  color: var(--phone-color);
+}
+
+a.contact div.icon.whatsapp {
+  color: var(--whatsapp-color);
+}
+
+a.contact div.icon.telegram {
+  color: var(--telegram-color);
+}
+
+a.contact div.icon.viber {
+  color: var(--viber-color);
+}
+
+a.contact div.icon.email {
+  color: var(--email-color);
+}
+
+a.contact p.value {
+  color: var(--font-color);
+  font-size: 1rem;
+}
