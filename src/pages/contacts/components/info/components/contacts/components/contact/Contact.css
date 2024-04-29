@@ -3,7 +3,6 @@ a.contact {
   height: fit-content;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   border-bottom: 1px solid var(--line-color);
   padding-bottom: 0.5rem;
