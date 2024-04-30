@@ -1,9 +1,9 @@
-div.filter-btn-wrapper {
+li.filter-btn-wrapper {
   width: 100%;
   padding: 0.5rem 0.5rem 1rem;
 }
 
-div.filter-btn-wrapper button.filter-btn {
+li.filter-btn-wrapper button.filter-btn {
   width: 100%;
   font-size: 1rem;
   font-weight: 600 !important;
@@ -16,11 +16,11 @@ div.filter-btn-wrapper button.filter-btn {
   cursor: pointer;
 }
 
-div.filter-btn-wrapper button.filter-btn:hover {
+li.filter-btn-wrapper button.filter-btn:hover {
   opacity: 90%;
 }
 
-div.filter-btn-wrapper button.filter-btn:disabled {
+li.filter-btn-wrapper button.filter-btn:disabled {
   opacity: 50%;
   cursor: default;
 }

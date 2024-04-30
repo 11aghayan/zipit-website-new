@@ -13,7 +13,8 @@ export default function BurgerBtn() {
   return (
     <button 
       onClick={toggleOpen}
-      className={className}  
+      className={className} 
+      aria-label='nav menu button'
     >
       <div className="line top-line" />      
       <div className="line mid-line" />      

@@ -17,15 +17,16 @@ export default function FilterBtn({ handleClick, disabled, marginTop = '0' }: Pr
   };
   
   return (
-    <div className='filter-btn-wrapper'>
+    <li className='filter-btn-wrapper'>
       <button 
         className='filter-btn' 
+        aria-label='apply filters button'
         onClick={handleClick}
         disabled={disabled}
         style={{ marginTop }}
       >
         {langMap[lang]}
       </button>
-    </div>
+    </li>
   );
 }

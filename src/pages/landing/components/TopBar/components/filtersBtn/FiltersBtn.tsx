@@ -12,6 +12,7 @@ export default function FiltersBtn({ setIsOpen }: Props) {
   return (
     <button 
       className='filters-btn'
+      aria-label='open filters button'
       onClick={handleClick}
     >
       <Icon icon='ic:baseline-filter-alt' className='filters-icon' />

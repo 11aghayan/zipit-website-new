@@ -51,6 +51,7 @@ export default function PageNav({ data, isFetching }: Props) {
     <div className='page-nav'>
       <button 
         className='prev'
+        aria-label='previous page button'
         disabled={isFetching || !data || data.page <=1}
         onClick={handlePrev}
       >
@@ -62,6 +63,7 @@ export default function PageNav({ data, isFetching }: Props) {
       </p>
       <button 
         className='next'
+        aria-label='next page button'
         disabled={isFetching || !data || data.page >= data.pages}
         onClick={handleNext}
       >

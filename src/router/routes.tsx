@@ -6,9 +6,11 @@ import ContactsPage from '../pages/contacts/ContactsPage';
 import AboutUsPage from '../pages/aboutUs/AboutUsPage';
 import ItemPage from '../pages/item/ItemPage';
 import NotFoundPage from '../pages/notFound/NotFoundPage';
+import Redirect from '../components/redirect/Redirect';
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<Layout />} >
+    <Route index element={<Redirect />} />
     <Route path=':lang'>
       <Route index element={<LandingPage />} />
       <Route path="contacts" element={<ContactsPage />} />

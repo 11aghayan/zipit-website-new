@@ -10,11 +10,6 @@ export default function LangContextProvider({ children }: Props) {
   const lang = useLang();
   
   useEffect(() => {
-    if (lang !== 'am' && lang !== 'ru') {
-      window.history.replaceState(null, '', '/am');
-      window.location.reload();
-    }
-
     document.documentElement.lang = lang === 'ru' ? 'ru' : 'hy';
     if (lang === 'ru') {
       document.body.classList.add('font-ru');

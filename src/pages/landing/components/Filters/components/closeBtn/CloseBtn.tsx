@@ -11,6 +11,7 @@ export default function CloseBtn({ isOpen, setIsOpen }: Props) {
   return (
     <button 
       className='filters-close-btn' 
+      aria-label='close filters button'
       onClick={() => setIsOpen(!isOpen)}
     >
       <Icon icon='ic:round-arrow-back-ios-new' className='filters-close-btn--icon' />

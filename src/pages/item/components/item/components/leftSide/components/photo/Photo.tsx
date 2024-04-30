@@ -22,7 +22,7 @@ export default function Photo({ selectedPhoto, setSelectedPhoto, photos }: Props
   
   return (
     <div className='item-photo' style={{ width: size }}>
-      <img src={selectedPhoto.src} alt="item photo" width={size} height={size} />
+      <img className='selected-photo' src={selectedPhoto.src} alt="item photo" height={size} width={size} />
       <p className='photo-label'>{langMap[lang]}</p>
       <ItemPhotoList 
         photos={photos} 
