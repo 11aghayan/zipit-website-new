@@ -8,8 +8,8 @@ export default function Contacts() {
     <section className='contacts'>
       <Contact contact='phone' />
       <Contact contact='whatsapp' />
-      <Contact contact='telegram' />
       <Contact contact='viber' />
+      <Contact contact='telegram' />
       <Contact contact='email' />
     </section>
   );

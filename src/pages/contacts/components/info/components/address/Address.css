@@ -5,12 +5,12 @@ div.address {
 }
 
 div.address p.label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: capitalize;
 }
 
 div.address p.value {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 0.1em;
 }
 

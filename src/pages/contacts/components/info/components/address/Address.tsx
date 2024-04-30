@@ -11,7 +11,7 @@ export default function Address() {
       am: 'Հասցե',
       ru: 'Адрес'
     },
-    value: lang === 'ru' ? 'g. Erevan, Vardanants 1' : 'q. Yerevan, Vardanants 1'
+    value: lang === 'ru' ? 'г. Ереван, Ул. Вардананц 97/1' : 'ք. Երևան, Վարդանանց 97/1'
   };
 
   
