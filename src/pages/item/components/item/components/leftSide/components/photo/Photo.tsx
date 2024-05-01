@@ -3,6 +3,7 @@ import './Photo.css';
 import ItemPhotoList from '../../../../../../../../components/itemPhotoList/ItemPhotoList';
 import useLang from '../../../../../../../../hooks/useLang';
 import { LangType, PhotoType } from '../../../../../../../../types';
+import { useMediaQuery } from 'react-responsive';
 
 type Props = {
   photos: PhotoType[];
@@ -13,12 +14,15 @@ type Props = {
 export default function Photo({ selectedPhoto, setSelectedPhoto, photos }: Props) {
   const lang = useLang() as LangType;
 
+  const isTablet = useMediaQuery({ minWidth: 600 });
+  const isDesktop = useMediaQuery({ minWidth: 1100 });
+  
   const langMap = {
     am: 'Գույներ',
     ru: 'Цвета'
   };
 
-  const size = 300;
+  const size = isDesktop ? 500 : isTablet ? 400 : 300;
   
   return (
     <div className='item-photo' style={{ width: size }}>

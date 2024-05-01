@@ -14,7 +14,7 @@ section.items {
   }
 }
 
-@media(min-width: 1300px) {
+@media(min-width: 1550px) {
   section.items:not(.no-items) {
     grid-template-columns: repeat(4, 1fr);
   }

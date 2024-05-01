@@ -1,15 +1,14 @@
-div.address {
+div.working-hrs {
   width: 100%;
   border-bottom: 1px solid var(--line-color);
   padding-bottom: 0.5rem;
 }
 
-div.address p.label {
+div.working-hrs p.label {
   font-size: 0.8rem;
-  text-transform: capitalize;
 }
 
-div.address p.value {
+div.working-hrs p.value {
   font-size: 1rem;
   margin-top: 0.1em;
 }
