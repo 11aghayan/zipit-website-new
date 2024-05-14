@@ -8,13 +8,13 @@ const navRoutes: NavRouteType[] = [
     },
     href: 'contacts'
   },
-  {
-    label: {
-      am: 'մեր մասին',
-      ru: 'о нас'
-    },
-    href: 'about-us'
-  }
+  // {
+  //   label: {
+  //     am: 'մեր մասին',
+  //     ru: 'о нас'
+  //   },
+  //   href: 'about-us'
+  // }
 ];
 
 export default navRoutes;

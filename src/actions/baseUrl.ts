@@ -1,5 +1,7 @@
-// const baseUrl = 'http://localhost:3200'; //Test URL
+//Test URL
+const baseUrl = 'http://localhost:3200';
 
-const baseUrl = 'https://zipit-server.onrender.com'; // Production Url
+// Production URL
+// const baseUrl = 'https://zipit-server.onrender.com'; 
 
 export default baseUrl;

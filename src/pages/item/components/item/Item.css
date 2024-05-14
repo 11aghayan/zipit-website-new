@@ -7,7 +7,7 @@ article.item-page--item {
 
 /* Media Queries */
 
-@media(min-width: 1300px) {
+@media(min-width: 1100px) {
   article.item-page--item {
     flex-direction: row;
     gap: 0;

@@ -1,11 +1,12 @@
 div.item-photo {
-  width: fit-content;
   margin: 0 auto;
+
 }
 
 div.item-photo img.selected-photo {
   background-color: var(--bg-color);
   border: 1px solid var(--line-color);
+  cursor: pointer;
 }
 
 div.item-photo p.photo-label {

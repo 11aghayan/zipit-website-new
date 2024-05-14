@@ -1,0 +1,31 @@
+div.photo-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #00000099;
+  z-index: var(--z-5);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+div.photo-modal.open {
+  display: flex;
+}
+
+div.photo-modal p.color {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+div.photo-modal section.selected-photo {
+  width: fit-content;
+}
+
+div.photo-modal section.selected-photo img {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+}

@@ -19,7 +19,7 @@ section.item-page--right-side p.label {
 
 /* Media Queries */
 
-@media(min-width: 1300px) {
+@media(min-width: 1100px) {
   section.item-page--right-side {
     padding: 2rem;
     border-left: 1px solid var(--border-color);

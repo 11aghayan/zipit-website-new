@@ -1,7 +1,6 @@
 div.item-photo-list--each-photo {
   background-color: var(--bg-color);
   position: relative;
-  cursor: default;
 }
 
 div.item-photo-list--each-photo img {

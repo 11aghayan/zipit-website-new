@@ -13,7 +13,7 @@ export default function Contact({ contact }: Props) {
     email: 'zipitaccessories@gmail.com',
     phone: '+37495124838',
     whatsapp: '+37495124838',
-    telegram: 'DrVach',
+    telegram: 'ZIPIT_ACCESSORIES',
     viber: '+37495124838'
   }
 
