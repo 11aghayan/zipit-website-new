@@ -2,23 +2,23 @@ import './PhotoModal.css';
 
 import { PhotoType } from '../../../../../../../../types';
 import ItemPhotoList from '../../../../../../../../components/itemPhotoList/ItemPhotoList';
+import CloseBtn from './components/closeBtn/CloseBtn';
+import SelectedPhoto from './components/selectedPhoto/SelectedPhoto';
 
 type Props = {
   isOpen: boolean;
-  onClick: () => void;
+  closeModal: () => void;
   selectedPhoto: PhotoType;
   photos: PhotoType[];
   setSelectedPhoto: React.Dispatch<React.SetStateAction<PhotoType>>
 }
 
-export default function PhotoModal({ isOpen, onClick, selectedPhoto, setSelectedPhoto, photos }: Props) {
+export default function PhotoModal({ isOpen, closeModal, selectedPhoto, setSelectedPhoto, photos }: Props) {
   
   return (
-    <div className={`photo-modal ${isOpen ? 'open' : ''}`} onClick={onClick}>
-      <section className='selected-photo' onClick={(e) => e.stopPropagation()}>
-        <img src={selectedPhoto.src} alt="item photo" />
-      </section>
-      <p className='color'>Color</p>
+    <div className={`photo-modal ${isOpen ? 'open' : ''}`} onClick={closeModal}>
+      <SelectedPhoto photo={selectedPhoto} />
+      <p className='color'>{selectedPhoto.color}</p>
       <ItemPhotoList 
         photos={photos}
         selectedPhoto={selectedPhoto}
@@ -29,6 +29,7 @@ export default function PhotoModal({ isOpen, onClick, selectedPhoto, setSelected
         saveToSp
         justifyCenter
       />
+      <CloseBtn onClick={closeModal} />
     </div>
   );
 }

@@ -18,7 +18,7 @@
   --loader-color: #ddd;
   --loader-gradient-color: #eee;
   --no-content-color: #aaa;
-  --selected-photo-color: #ffffffaa;
+  --selected-photo-color: #ffffffbb;
   --loading-animation: loading 2000ms ease infinite;
   --loader-bg: linear-gradient(var(--loader-color),var(--loader-gradient-color), var(--loader-color));
 }
@@ -84,6 +84,11 @@ section.content {
 /* ------------------ */
 
 /* Item Page */
+
+div.photo-modal {
+  --photo-modal-bg-color: #000000cc;
+  --photo-modal-text-color: #fff;
+}
 
 p.item-name {
   --item-name-text-color: var(--font-color);

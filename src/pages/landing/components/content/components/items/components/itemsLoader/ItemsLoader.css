@@ -26,8 +26,14 @@ div.items-loader-container div.item-loader::before {
   }
 }
 
-@media(min-width: 1300px) {
+@media(min-width: 1550px) {
   div.items-loader-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media(min-width: 2300px) {
+  div.items-loader-container {
+    grid-template-columns: repeat(6, 1fr);
   }
 }

@@ -29,7 +29,7 @@ export default function LeftSide({ item }: Props) {
         setSelectedPhoto={setSelectedPhoto}   
         photos={item.photos}
         isOpen={isPhotoModalOpen} 
-        onClick={togglePhotoModal} 
+        closeModal={togglePhotoModal} 
       />
       <Photo 
         selectedPhoto={selectedPhoto} 
