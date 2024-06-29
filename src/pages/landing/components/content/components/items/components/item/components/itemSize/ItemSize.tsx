@@ -14,7 +14,7 @@ export default function ItemSize({ size }: Props) {
   return (
     <p className='item-size'>
       <span className='item-size--val'>
-        {size.val}
+        {size.values.join(`, `)}
       </span>
       <span className='item-size--unit'>
         {sizeLangMap[size.unit][lang]}
