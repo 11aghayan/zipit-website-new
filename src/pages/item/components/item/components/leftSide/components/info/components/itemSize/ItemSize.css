@@ -1,0 +1,14 @@
+p.item-size span.value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+p.item-size span.value select {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px;
+}

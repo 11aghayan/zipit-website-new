@@ -4,7 +4,7 @@ import CustomError from "./customError";
 
 export default function getItems(lang: LangType, sp: string) {
   return async () => {
-    const url = `${baseUrl}/api/v1/items/${lang}?${sp}`;
+    const url = `${baseUrl}/items/${lang}?${sp}`;
     try {
       const res = await fetch(url);
       const data = await res.json();

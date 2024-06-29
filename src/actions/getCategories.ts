@@ -5,7 +5,7 @@ import CustomError from "./customError";
 
 export default function getCategories(lang: LangType) {
   return async function () {
-    const url = `${baseUrl}/api/v1/categories/${lang}`
+    const url = `${baseUrl}/categories/${lang}`
     try {
       const res = await fetch(url);
       const data = await res.json();

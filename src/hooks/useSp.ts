@@ -16,13 +16,15 @@ export default function useSp() {
   const page = sp.get('page') || '1';
   const sorting = sp.get('sorting') || 'name,asc';
   const currentPhoto = sp.get('currentPhoto') || '';
+  const size = sp.get('size') || '';
 
   const params: SpType = {
     categories,
     promo,
     page,
     sorting,
-    currentPhoto
+    currentPhoto,
+    size
   };
 
   if (!categories) delete params.categories;
@@ -30,6 +32,7 @@ export default function useSp() {
   if (page === '1') delete params.page;
   if (sorting === 'name,asc') delete params.sorting;
   if (!currentPhoto) delete params.currentPhoto;
+  if (!size) delete params.size;
 
   return [
     params,

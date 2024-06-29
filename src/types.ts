@@ -45,13 +45,13 @@ export type MinOrderUnitType = 'pcs' | 'cm' | 'box' | 'roll';
 export type SizeUnitType = 'mm' | 'cm' | 'm';
 
 export type SizeType = {
-  val: number;
+  values: number[];
   unit: SizeUnitType;
 };
 
 export type PhotoType = {
   src: string;
-  qty: number;
+  available: boolean;
   color: string;
 };
 
@@ -66,6 +66,7 @@ export type SpType = {
   page?: string;
   sorting?: string;
   currentPhoto?: string;
+  size?: string;
 }
 
 export type SizeLangMapType = {
