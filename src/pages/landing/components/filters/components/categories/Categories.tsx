@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
-import { CategoryType, SpType } from '../../../../../../types';
+import { CategoryType } from '../../../../../../types';
 import Category from './components/category/Category';
 import Promo from './components/promo/Promo';
 import useSp from '../../../../../../hooks/useSp';
-import FilterBtn from './components/filterBtn/FilterBtn';
 import NoCategories from './components/noCategories/NoCategories';
 
 type Props = {
@@ -18,7 +17,7 @@ export type SelectedFiltersType = {
 }
 
 export default function Categories({ categories, setIsOpen }: Props) {
-  const [sp, setSp] = useSp();
+  const [sp] = useSp();
 
   const spCategories = sp.categories?.split(',') || [];
   const promo = sp?.promo === 'true' ? true : false;
@@ -27,28 +26,14 @@ export default function Categories({ categories, setIsOpen }: Props) {
     categories: spCategories,
     promo
   });
-
-  const buttonDisabled = selectedFilters.categories.toString() === spCategories.toString() && selectedFilters.promo === promo;
-
-  const handleClick = () => {
-    setIsOpen(false);
-    const categories = selectedFilters.categories;
-    const promo = selectedFilters.promo;
-    const newSp: SpType = {
-      ...sp,
-      categories: categories.join(','),
-      promo: promo.toString()
-    };
-
-    if (!categories.length) delete newSp.categories;
-    if (!promo) delete newSp.promo;
-    setSp(newSp);
-  }
   
   return (
     <ul className='categories'>
-      <FilterBtn disabled={buttonDisabled} handleClick={handleClick} />
-      <Promo selectedFilters={selectedFilters} setSelectedFilters={setSelectedFilters} />
+      <Promo 
+        selectedFilters={selectedFilters} 
+        setSelectedFilters={setSelectedFilters} 
+        setIsOpen={setIsOpen}
+      />
       {
         categories.length 
         ?
@@ -58,12 +43,12 @@ export default function Categories({ categories, setIsOpen }: Props) {
             category={category}
             selectedFilters={selectedFilters}
             setSelectedFilters={setSelectedFilters}
+            setIsOpen={setIsOpen}
           />
         ))
         :
         <NoCategories />
       }
-      <FilterBtn disabled={buttonDisabled} handleClick={handleClick} marginTop='0.5rem' />
     </ul>
   );
 }
