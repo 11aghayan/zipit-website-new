@@ -11,4 +11,23 @@ p.item-size span.value select {
   font-weight: 600;
   cursor: pointer;
   padding: 2px;
+  min-width: 5rem;
+  min-height: 30px;
+  border-radius: 5px;
+  color: var(--size-color);
+}
+
+p.item-size span.value select.disabled  {
+  color: var(--size-disabled-color);
+  text-decoration: line-through;
+}
+
+p.item-size span.value select option {
+  color: var(--size-color);
+  font-weight: 600;
+}
+
+p.item-size span.value select option:disabled {
+  color: var(--size-disabled-color);
+  font-weight: 400;
 }

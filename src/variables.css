@@ -111,6 +111,11 @@ p.item-description {
   --text-color: #111;
 }
 
+p.item-size {
+  --size-disabled-color: #ddd;
+  --size-color: var(--font-color);
+}
+
 /* ------------------ */
 
 /* Contacts Page */

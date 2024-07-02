@@ -8,13 +8,14 @@ type Props = {
 }
 
 export default function Availability({ available }: Props) {
+  
   const lang = useLang() as LangType;
-
+  
   const langMap = {
     am: 'Առկայություն',
     ru: 'Доступность'
   };
-
+  
   const availabilityMap = {
     'true': {
       am: 'Առկա է',
@@ -25,7 +26,7 @@ export default function Availability({ available }: Props) {
       ru: 'Нет в наличии'
     }
   };
-
+  
   return (
     <p className={`qty ${!available ? 'unavailable' : ''}`}>
       <span className='label'>{langMap[lang]}:</span>
