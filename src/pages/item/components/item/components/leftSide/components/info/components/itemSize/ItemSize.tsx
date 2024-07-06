@@ -3,24 +3,24 @@ import './ItemSize.css';
 import useLang from '../../../../../../../../../../hooks/useLang';
 import useSp from '../../../../../../../../../../hooks/useSp';
 import { LangType, SizeType, SizeValueType } from '../../../../../../../../../../types';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 
 type Props = {
   size: SizeType;
   isSizeAvailable: boolean;
   setIsSizeAvailable: React.Dispatch<React.SetStateAction<boolean>>;
+  activeSize: SizeValueType;
+  setActiveSize: React.Dispatch<React.SetStateAction<SizeValueType>>;
+  defaultValue: string;
 }
 
-export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable }: Props) {
+export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, activeSize, setActiveSize, defaultValue }: Props) {
   size.values.sort((a, b) => a.available < b.available ? 1 : -1);
   const lang = useLang() as LangType;
   const [sp, setSp] = useSp();
   
-  const firstAvailable = (size.values.find(v => v.available)?.value || size.values[0].value).toString();
-  const defaultValue = sp.size || firstAvailable;
-  const defaultActive = size.values.find(v => v.value === Number(defaultValue))!;
-  const [activeSize, setActiveSize] = useState<SizeValueType>(defaultActive);
+  
 
   useEffect(() => {
     setIsSizeAvailable(activeSize?.available);

@@ -1,4 +1,5 @@
 import './NavItems.css';
+
 import NavItem from './navItem/NavItem';
 import navRoutes from '../../../utils/navRoutes';
 import { LangType, NavRouteType } from '../../../types';
@@ -12,9 +13,9 @@ export default function NavItems() {
       {
         navRoutes.map((route: NavRouteType) => (
           <NavItem 
-            key={route.href}
-            href={route.href}
-            label={route.label[lang]}
+          key={route.href}
+          href={route.href}
+          label={route.label[lang]}
           />
         ))
       }

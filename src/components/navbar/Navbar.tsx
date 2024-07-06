@@ -1,5 +1,6 @@
 import useNavbarContext from '../../hooks/useNavbarContext';
 import './Navbar.css';
+import CartBtn from './cartBtn/CartBtn';
 import Language from './language/Language';
 import NavItems from './navItems/NavItems';
 
@@ -12,6 +13,7 @@ export default function Navbar() {
     <nav className={className}>
       <Language />
       <NavItems />
+      <CartBtn />
     </nav>
   );
 }

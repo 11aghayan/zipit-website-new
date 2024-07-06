@@ -35,6 +35,14 @@ export type ItemType = {
   minOrder: MinOrderType;
 };
 
+export type CartItemType = {
+  name: string;
+  qty: number;
+  size: { value: number; unit: SizeUnitType };
+  photo: PhotoType;
+  price: number;
+}
+
 export type MinOrderType = {
   qty: number;
   unit: MinOrderUnitType;

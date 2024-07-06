@@ -38,6 +38,11 @@ nav {
   --nav-bg-color: var(--bg-color);
 }
 
+button.cart-btn {
+  --cart-btn-font-color: var(--bg-color);;
+  --cart-btn-bg-color: var(--amazon);
+}
+
 /* ------------------ */
 
 /* Landing Page */
@@ -100,6 +105,7 @@ div.item-price {
 
 p.qty {
   --unavailable-color: #aa3333;
+  --available-color: #33aa33;
 }
 
 section.item-page--right-side {
@@ -114,6 +120,13 @@ p.item-description {
 p.item-size {
   --size-disabled-color: #ddd;
   --size-color: var(--font-color);
+}
+
+div.add_to_cart {
+  --add_to_cart-btn-bg-color: var(--saffron);
+  --add_to_cart-btn-text-color: var(--font-color);
+  --add_to_cart-btn-disabled-color: #ddd; 
+  --add_to_cart-btn-shadow-color: #00000030;
 }
 
 /* ------------------ */

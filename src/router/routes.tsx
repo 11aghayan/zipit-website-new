@@ -7,6 +7,7 @@ import ContactsPage from '../pages/contacts/ContactsPage';
 import ItemPage from '../pages/item/ItemPage';
 import NotFoundPage from '../pages/notFound/NotFoundPage';
 import Redirect from '../components/redirect/Redirect';
+import CartPage from '../pages/cart/CartPage';
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<Layout />} >
@@ -16,6 +17,7 @@ const routes = createRoutesFromElements(
       <Route path="contacts" element={<ContactsPage />} />
       {/* <Route path="about-us" element={<AboutUsPage />} /> */}
       <Route path=":id" element={<ItemPage />} />
+      <Route path='cart' element={<CartPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   </Route>
