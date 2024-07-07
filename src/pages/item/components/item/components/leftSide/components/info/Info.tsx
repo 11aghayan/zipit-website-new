@@ -43,6 +43,7 @@ export default function Info({ item, selectedPhoto }: Props) {
       <ItemAvailable available={isSizeAvailable} />
       <ItemPrice price={item.price} promo={item.promo} />
       <AddToCart 
+        id={item.id}
         isSizeAvailable={isSizeAvailable} 
         name={item.name}
         photo={selectedPhoto}

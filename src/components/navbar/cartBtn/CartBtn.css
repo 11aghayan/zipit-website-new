@@ -1,4 +1,4 @@
-button.cart-btn {
+a.cart-btn {
   display: flex;
   position: absolute;
   bottom: 1rem;
@@ -15,23 +15,17 @@ button.cart-btn {
 }
 
 
-button.cart-btn:hover {
+a.cart-btn:hover {
   scale: 1.05;
   background-color: var(--cart-btn-font-color);
   border: 1px solid var(--cart-btn-bg-color);
 }
 
-button.cart-btn a {
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-}
-
-button.cart-btn:hover a * {
+a.cart-btn:hover * {
   color: var(--cart-btn-bg-color);
 }
 
-button.cart-btn a * {
+a.cart-btn * {
   font-size: 1.5rem;
   color: var(--cart-btn-font-color);
 }
@@ -40,7 +34,7 @@ button.cart-btn a * {
 /* Media Queries */
 
 @media(min-width: 600px) {
-  button.cart-btn {
+  a.cart-btn {
     right: 2rem;
     position: relative;
     margin-top: 2rem;

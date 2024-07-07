@@ -38,7 +38,7 @@ nav {
   --nav-bg-color: var(--bg-color);
 }
 
-button.cart-btn {
+a.cart-btn {
   --cart-btn-font-color: var(--bg-color);;
   --cart-btn-bg-color: var(--amazon);
 }

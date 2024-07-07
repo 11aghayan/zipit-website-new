@@ -14,7 +14,7 @@ type Props = {
   minOrder: MinOrderType;
 } & Omit<CartItemType, 'qty'>;
 
-export default function AddToCartBtn({ isSizeAvailable, name, photo, price, size, minOrder }: Props) {
+export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, size, minOrder }: Props) {
   const lang = useLang() as LangType;
   const unit = minOrderUnit(lang, minOrder);
   const [, setCart] = useCart();
@@ -48,7 +48,13 @@ export default function AddToCartBtn({ isSizeAvailable, name, photo, price, size
     }
 
     setCart(prev => {
-      return [...prev, { name, photo, price, size, qty: parseInt(qty) }]
+      const itemInCart = prev.find(i => i.id === id);
+
+      if (itemInCart) {
+        return prev.map(i => i.id === id ? { ...i, qty: i.qty + parseInt(qty) } : i);
+      }
+      
+      return [...prev, { id, name, photo, price, size, qty: parseInt(qty) }]
     });
     setQty('1');
     toast.success(toastSuccessMsg[lang])

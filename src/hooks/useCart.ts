@@ -1,13 +1,7 @@
-import { CartItemType } from "../types";
+import { useContext } from "react";
 
-const cart = JSON.parse(window.localStorage.getItem('cart') || '[]') as CartItemType[];
-
-function setCart(fn: (prev: CartItemType[]) =>  CartItemType[]) {
-  window.localStorage.setItem('cart', JSON.stringify(fn(cart)));
-}
-
-type CartFullType = [CartItemType[], (fn: (prev: CartItemType[]) => CartItemType[]) => void];
+import { CartContext } from "../context/CartContextProvider";
 
 export default function useCart() {
-  return [cart, setCart] as CartFullType;
+  return useContext(CartContext);
 }

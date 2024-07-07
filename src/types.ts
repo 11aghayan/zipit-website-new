@@ -36,6 +36,7 @@ export type ItemType = {
 };
 
 export type CartItemType = {
+  id: string;
   name: string;
   qty: number;
   size: { value: number; unit: SizeUnitType };

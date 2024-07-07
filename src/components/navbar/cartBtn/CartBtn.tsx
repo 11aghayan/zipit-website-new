@@ -13,11 +13,9 @@ export default function CartBtn() {
   if (isCartPage) return null;
 
   return (
-    <button className='cart-btn'>
-      <a href={`/${lang}/cart`}>
-        <Icon icon='ph:shopping-cart-simple-fill' />
-      </a>
+    <a href={`/${lang}/cart`} className='cart-btn'>
+      <Icon icon='ph:shopping-cart-simple-fill' />
       <CartCount />
-    </button>
+    </a>
   );
 }

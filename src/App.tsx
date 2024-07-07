@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import router from "./router/router";
 import LangContextProvider from "./context/LangContextProvider";
 import NavbarContextProvider from "./context/NavbarContextProvider";
+import CartContextProvider from "./context/CartContextProvider";
 
 export default function App() {
 
@@ -19,9 +20,11 @@ export default function App() {
     <div className="font-arm">
       <QueryClientProvider client={queryClient}>
         <LangContextProvider>
-          <NavbarContextProvider>
-            <RouterProvider router={router} />
-          </NavbarContextProvider>
+          <CartContextProvider>
+            <NavbarContextProvider>
+              <RouterProvider router={router} />
+            </NavbarContextProvider>
+          </CartContextProvider>
         </LangContextProvider>
       </QueryClientProvider>
     </div>
