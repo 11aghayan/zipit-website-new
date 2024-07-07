@@ -1,0 +1,8 @@
+div.cart-item-photo {
+  width: 100px;
+  height: 100px;
+}
+
+div.cart-item-photo img {
+  border-radius: 3px;
+}

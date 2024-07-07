@@ -1,0 +1,9 @@
+div.cart-content {
+  width: 100%;
+  position: relative;
+  transition: translate 300ms ease-in-out;
+}
+
+div.cart-content.show-contact {
+  translate: -100%;
+}

@@ -1,0 +1,15 @@
+div.total-price {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: #000;
+}
+
+div.total-price p.value {
+  display: flex;
+  gap: 5px;
+}

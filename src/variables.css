@@ -143,6 +143,15 @@ section.contacts {
 
 /* ------------------ */
 
+/* Cart Page */
+
+main.cart-page {
+  --main-border-color: #00000040;
+  --next-btn-bg-color: var(--saffron);
+}
+
+/* ------------------ */
+
 /* Animations */
 
 @keyframes loading {

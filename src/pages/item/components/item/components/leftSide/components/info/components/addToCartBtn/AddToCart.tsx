@@ -4,14 +4,13 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import toast from 'react-hot-toast';
 
 import useLang from '../../../../../../../../../../hooks/useLang';
-import { CartItemType, LangType, MinOrderType } from '../../../../../../../../../../types';
+import { CartItemType, LangType } from '../../../../../../../../../../types';
 import { useState } from 'react';
 import minOrderUnit from '../../../../../../../../../../utils/minOrderUnit';
 import useCart from '../../../../../../../../../../hooks/useCart';
 
 type Props = {
   isSizeAvailable: boolean;
-  minOrder: MinOrderType;
 } & Omit<CartItemType, 'qty'>;
 
 export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, size, minOrder }: Props) {
@@ -54,7 +53,7 @@ export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, 
         return prev.map(i => i.id === id ? { ...i, qty: i.qty + parseInt(qty) } : i);
       }
       
-      return [...prev, { id, name, photo, price, size, qty: parseInt(qty) }]
+      return [...prev, { id, name, photo, price, size, minOrder, qty: parseInt(qty) }]
     });
     setQty('1');
     toast.success(toastSuccessMsg[lang])

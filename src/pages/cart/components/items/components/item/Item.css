@@ -1,0 +1,50 @@
+div.cart-item {
+  width: 100%;
+  border-bottom: 1px solid var(--main-border-color);
+  padding-top: 0.6rem;
+}
+
+div.cart-item section.top {
+  display: flex;
+  gap: 1rem;
+}
+
+div.cart-item section.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 0.5rem;
+  margin-right: 10px;
+}
+
+div.cart-item div.cart-item-elm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+div.cart-item div.cart-item-elm p.label {
+  font-size: 0.9rem;
+
+}
+div.cart-item div.cart-item-elm p.val_unit {
+  font-size: 1rem;
+}
+
+div.cart-item div.cart-item-elm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+div.cart-item div.left-col p {
+  margin-top: 5px;
+  text-align: center;
+}
+
+div.cart-item div.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

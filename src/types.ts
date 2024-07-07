@@ -42,6 +42,7 @@ export type CartItemType = {
   size: { value: number; unit: SizeUnitType };
   photo: PhotoType;
   price: number;
+  minOrder: MinOrderType
 }
 
 export type MinOrderType = {

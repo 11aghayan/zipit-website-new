@@ -1,0 +1,18 @@
+button.cart-submit-btn {
+  width: fit-content;
+  margin-top: 1rem;
+  background-color: var(--saffron);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+button.cart-submit-btn:hover {
+  filter: brightness(1.03);
+}
+
+button.cart-submit-btn:active {
+  scale: 0.98;
+}

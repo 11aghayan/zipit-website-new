@@ -1,0 +1,16 @@
+button.cart-item-delete {
+  border: none;
+  background: none;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+button.cart-item-delete * {
+  font-size: 2rem;
+  color: #ee0000;
+}
+
+button.cart-item-delete:hover * {
+  filter: brightness(105);
+}

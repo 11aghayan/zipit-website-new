@@ -1,0 +1,21 @@
+button.cart-next-btn {
+  width: fit-content;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+button.cart-next-btn.colored {
+  background: var(--next-btn-bg-color);
+}
+
+button.cart-next-btn:hover {
+  filter: brightness(1.03);
+}
+
+button.cart-next-btn:active {
+  scale: 0.98;
+}
