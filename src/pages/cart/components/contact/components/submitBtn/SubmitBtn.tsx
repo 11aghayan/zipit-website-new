@@ -5,9 +5,10 @@ import { LangType } from '../../../../../../types';
 
 type Props = {
   onClick: () => void;
+  disabled: boolean;
 }
 
-export default function SubmitBtn({ onClick }: Props) {
+export default function SubmitBtn({ onClick, disabled }: Props) {
   const lang = useLang() as LangType;
   
   const text = {
@@ -16,7 +17,11 @@ export default function SubmitBtn({ onClick }: Props) {
   };
   
   return (
-    <button className='cart-submit-btn' onClick={onClick}>
+    <button 
+      className='cart-submit-btn' 
+      onClick={onClick}
+      disabled={disabled}
+    >
       {text[lang]}
     </button>
   );

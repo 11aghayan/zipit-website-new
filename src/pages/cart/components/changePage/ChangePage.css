@@ -19,3 +19,7 @@ button.cart-next-btn:hover {
 button.cart-next-btn:active {
   scale: 0.98;
 }
+
+button.cart-next-btn:disabled {
+  cursor: default;
+}

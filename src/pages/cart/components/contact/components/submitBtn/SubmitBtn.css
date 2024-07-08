@@ -16,3 +16,7 @@ button.cart-submit-btn:hover {
 button.cart-submit-btn:active {
   scale: 0.98;
 }
+
+button.cart-submit-btn:disabled {
+  cursor: default;
+}

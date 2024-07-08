@@ -8,7 +8,7 @@ import Content from './components/content/Content';
 
 export default function LandingPage() {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-
+  
   return (
     <main className='landing-page'>
       <TopBar setIsFiltersOpen={setIsFiltersOpen}/>

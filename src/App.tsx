@@ -15,7 +15,7 @@ export default function App() {
       }
     }
   });
-  
+
   return (
     <div className="font-arm">
       <QueryClientProvider client={queryClient}>
