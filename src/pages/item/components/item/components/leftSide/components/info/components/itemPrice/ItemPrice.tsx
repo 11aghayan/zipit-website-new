@@ -7,9 +7,11 @@ import formatPrice from '../../../../../../../../../../utils/formatPrice';
 type Props = {
   price: number;
   promo: number | null;
+  minOrder: number;
+  qty: number;
 }
 
-export default function ItemPrice({ price, promo }: Props) {
+export default function ItemPrice({ price, promo, minOrder, qty }: Props) {
   const lang = useLang() as LangType;
 
   const langType = {
@@ -17,8 +19,8 @@ export default function ItemPrice({ price, promo }: Props) {
     ru: 'Цена:'
   };
 
-  const formattedPrice = formatPrice(price);
-  const formattedPromo = formatPrice(promo);
+  const formattedPrice = formatPrice(price * minOrder * qty);
+  const formattedPromo = formatPrice(promo ? promo * minOrder * qty : promo);
 
   return (
     <div className={`item-price ${promo ? 'promo' : ''}`}>

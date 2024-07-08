@@ -11,8 +11,8 @@ export default function CartItemPhoto({ src }: Props) {
     <div className="cart-item-photo">
       <img 
         src={src} alt="Item Photo" 
-        height={100}
-        width={100}
+        height={80}
+        width={80}
       />
     </div>
   );

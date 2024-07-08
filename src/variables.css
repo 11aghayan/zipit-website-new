@@ -125,7 +125,7 @@ p.item-size {
 div.add_to_cart {
   --add_to_cart-btn-bg-color: var(--saffron);
   --add_to_cart-btn-text-color: var(--font-color);
-  --add_to_cart-btn-disabled-color: #ddd; 
+  --add_to_cart-disabled-color: #ddd; 
   --add_to_cart-btn-shadow-color: #00000030;
 }
 
@@ -148,6 +148,7 @@ section.contacts {
 main.cart-page {
   --main-border-color: #00000040;
   --next-btn-bg-color: var(--saffron);
+  --empty-text-color: #888;
 }
 
 /* ------------------ */

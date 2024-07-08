@@ -3,6 +3,11 @@ div.add_to_cart {
   max-width: 300px;
 }
 
+div.add_to_cart > div.qty-wrapper > input[type="number"]:disabled {
+  opacity: 0.6;
+  color: var(--add_to_cart-disabled-color);;
+}
+
 div.add_to_cart > div.qty-wrapper > input[type="number"] {
   width: 100%;
   text-align: center;
@@ -41,7 +46,9 @@ div.add_to_cart > button:active {
 }
 
 div.add_to_cart > button:disabled {
-  background-color: var(--add_to_cart-btn-disabled-color);
+  background-color: var(--add_to_cart-disabled-color);
   opacity: 0.6;
+  scale: 1;
+  filter: brightness(1);
   cursor: default;
 }

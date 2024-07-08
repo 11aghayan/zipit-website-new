@@ -75,8 +75,8 @@ export default function Contact({ onBack }: Props) {
 
     if (!details.phone) {
       const msg = {
-        am: 'Լրացրեք հեռախոսը',
-        ru: 'Заполните телефон'
+        am: 'Լրացրեք հեռախոսահամարը',
+        ru: 'Заполните номер телефона'
       };
       
       toast.error(msg[lang]);
@@ -85,8 +85,8 @@ export default function Contact({ onBack }: Props) {
 
     if (!details.order) {
       const msg = {
-        am: '',
-        ru: ''
+        am: 'Պատվեր չի գտնվել',
+        ru: 'Заказ не найден'
       };
       
       toast.error(msg[lang]);

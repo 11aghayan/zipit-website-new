@@ -11,14 +11,15 @@ import useCart from '../../../../../../../../../../hooks/useCart';
 
 type Props = {
   isSizeAvailable: boolean;
+  qty: string;
+  setQty: React.Dispatch<React.SetStateAction<string>>;
 } & Omit<CartItemType, 'qty'>;
 
-export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, size, minOrder }: Props) {
+export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, size, minOrder, qty, setQty }: Props) {
   const lang = useLang() as LangType;
   const unit = minOrderUnit(lang, minOrder);
   const [, setCart] = useCart();
 
-  const [qty, setQty] = useState('1');
   const [inputError, setInputError] = useState(false);
 
   const handleQtyInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,6 +84,7 @@ export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, 
           min={1}
           name='qty'
           id='qty'
+          disabled={!isSizeAvailable}
         />
       </div>
       <button disabled={!isSizeAvailable} onClick={handleAddToCart}>

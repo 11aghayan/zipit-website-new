@@ -4,7 +4,7 @@ import useLang from '../../../../../../hooks/useLang';
 import { LangType } from '../../../../../../types';
 
 type Props = {
-  totalPrice: number;
+  totalPrice: string;
 }
 
 export default function TotalPrice({ totalPrice }: Props) {

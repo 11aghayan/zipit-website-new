@@ -21,9 +21,9 @@ export default function CartItemQty({ qty, setQty, id, minOrder }: Props) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value;
     const numValue = parseInt(value);
-    if (numValue <= 0) value = '1';
+    if (numValue < 2) value = '1';
     setQty(value);
-    setCart(prev => prev.map(i => i.id === id ? { ...i, qty: numValue } : i));
+    setCart(prev => prev.map(i => i.id === id ? { ...i, qty: parseInt(value) } : i));
   }
 
   const label = {

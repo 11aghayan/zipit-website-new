@@ -41,8 +41,8 @@ export default function Item({ id, name, photo, price, qty: quantity, size, minO
         </div>
       </section>
       <section className='bottom'>
-        <CartItemPrice price={price} qty={parseInt(qty)} />
-        <CartItemDelete deleteItem={deleteItem} id={id}  />
+        <CartItemPrice price={price} qty={parseInt(qty)} minOrder={minOrder.qty} />
+        <CartItemDelete deleteItem={deleteItem} id={id} />
       </section>
     </div>
   );

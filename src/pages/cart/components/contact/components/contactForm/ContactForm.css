@@ -8,7 +8,7 @@ section.cart-address-form {
 section.cart-address-form * {
   display: block;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 section.cart-address-form label {

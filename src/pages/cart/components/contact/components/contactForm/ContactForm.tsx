@@ -28,13 +28,13 @@ export default function ContactForm({ details, setDetails }: Props) {
     am: {
       name: 'Անուն*',
       address: 'Հասցե*',
-      phone: 'Հեռախոս*',
+      phone: 'Հեռախոսահամար*',
       email: 'Էլ հասցե'
     },
     ru: {
       name: 'Имя*',
       address: 'Адрес*',
-      phone: 'Телефон*',
+      phone: 'Номер телефона*',
       email: 'Эл адрес'
     }
   };

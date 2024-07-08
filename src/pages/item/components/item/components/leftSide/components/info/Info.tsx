@@ -26,7 +26,8 @@ export default function Info({ item, selectedPhoto }: Props) {
   const defaultValue = sp.size || firstAvailable;
   const defaultActive = item.size.values.find(v => v.value === Number(defaultValue))!;
   const [activeSize, setActiveSize] = useState<SizeValueType>(defaultActive);
-  
+  const [qty, setQty] = useState('1');
+
   return (
     <section className="info">
       <ItemName name={item.name} />
@@ -41,15 +42,22 @@ export default function Info({ item, selectedPhoto }: Props) {
       />
       <MinOrder minOrder={item.minOrder} />
       <ItemAvailable available={isSizeAvailable} />
-      <ItemPrice price={item.price} promo={item.promo} />
+      <ItemPrice 
+        price={item.price} 
+        promo={item.promo}  
+        minOrder={item.minOrder.qty}
+        qty={parseInt(qty || '1')}
+      />
       <AddToCart 
-        id={item.id}
+        id={item.id + '-' + activeSize.value}
         isSizeAvailable={isSizeAvailable} 
         name={item.name}
         photo={selectedPhoto}
         price={item.promo || item.price}
         size={{ value: activeSize.value, unit: item.size.unit }}
         minOrder={item.minOrder}
+        qty={qty}
+        setQty={setQty}
       />
     </section>
   );
