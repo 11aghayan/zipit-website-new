@@ -104,11 +104,19 @@ export default function Contact({ onBack }: Props) {
       
       const success = await sendOrder(details);
       if (!success) {
-        toast.error('Ինչ որ բան այնպես չգնաց։ Կրկին փորձեք');
+        const msg = {
+          am: 'Ինչ որ բան այնպես չգնաց։ Կրկին փորձեք',
+          ru: 'Что-то пошло не так. Попробуйте еще раз'
+        };
+        toast.error(msg[lang]);
         return;
       }
       
-      toast.success('Պատվերն ուղարկված է');
+      const msg = {
+        am: 'Պատվերն ընդունված է',
+        ru: 'Заказ принят'
+      }
+      toast.success(msg[lang]);
       setCart([]);
       navigate(`/${lang}`);
     } finally {
