@@ -43,7 +43,8 @@ export default function Contact({ onBack }: Props) {
     return { order, totalPrice };
   }, { order: '', totalPrice: 0 });
 
-  const totalPrice = items.totalPrice >= 30000 ? items.totalPrice : items.totalPrice + 1000;
+  const deliveryFee = items.totalPrice >= 30000 ? 1000 : 0;
+  const totalPrice = items.totalPrice + deliveryFee;
 
   const [details, setDetails] = useState({
     name: '',
@@ -51,7 +52,8 @@ export default function Contact({ onBack }: Props) {
     phone: '',
     email: '',
     order: items.order,
-    price: totalPrice
+    price: totalPrice,
+    delivery: deliveryFee
   });
 
   const backBtnText = {
