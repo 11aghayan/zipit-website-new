@@ -61,7 +61,6 @@ export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, ac
       <span className='value'>
         <select 
           name="sizes" 
-          defaultValue={defaultValue} 
           onChange={handleChange}
           className={`${!isSizeAvailable ? 'disabled' : ''}`}
         >
@@ -71,6 +70,7 @@ export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, ac
                 key={`${value}-${i}`}
                 value={value}
                 disabled={!available}
+                selected={defaultValue === value.toString()}
               >
                 {value}
               </option>
