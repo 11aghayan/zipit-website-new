@@ -6,6 +6,7 @@ button.cart-next-btn {
   padding: 0.5rem;
   font-size: 1.1rem;
   cursor: pointer;
+  font-weight: 500 !important;
 }
 
 button.cart-next-btn.colored {
