@@ -1,0 +1,44 @@
+div.announcement {
+  position: fixed;
+  bottom: 3px;
+  inset-inline: 3px;
+  background-color: var(--announcement-bg-color);
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 0.1px solid var(--announcement-border-color);
+  transition: scale 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+div.announcement.closed {
+  scale: 0;
+}
+
+div.announcement div.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.announcement button.close-btn {
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  color: var(--announcement-body-color);
+  cursor: pointer;
+}
+
+div.announcement p.header {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--announcement-header-color);
+}
+
+div.announcement p.body {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--announcement-body-color);
+}

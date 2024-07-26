@@ -3,6 +3,7 @@ import './CartPage.css';
 import useCart from '../../hooks/useCart';
 import Content from './components/content/Content';
 import Header from './components/header/Header';
+import Announcement from './components/announcement/Announcement';
 
 export default function CartPage() {
   const cartEmpty = useCart()[0].length < 1;
@@ -17,6 +18,7 @@ export default function CartPage() {
         :
         <Content />
       }
+      <Announcement />
     </main>
   );
 }
