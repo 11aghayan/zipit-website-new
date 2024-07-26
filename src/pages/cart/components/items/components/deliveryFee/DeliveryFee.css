@@ -2,8 +2,9 @@ div.delivery-fee {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 0.3rem;
 }
 
 div.delivery-fee p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }

@@ -8,6 +8,7 @@ import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 import formatPrice from '../../../../utils/formatPrice';
 import DeliveryFee from './components/deliveryFee/DeliveryFee';
+import ItemsPrice from './components/itemsPrice/ItemsPrice';
 
 type Props = {
   onNextBtnClick: () => void;
@@ -17,13 +18,13 @@ export default function Items({ onNextBtnClick }: Props) {
   const lang = useLang() as LangType;
   const [items, setCart] = useCart();
 
-  const totalItemsPrice = items.reduce((acc, item) => {
+  const itemsPrice = items.reduce((acc, item) => {
     return acc + item.price * item.qty * item.minOrder.qty;
   }, 0);
   
-  const delivery = totalItemsPrice >= 30000 ? 0 : 1000;
+  const delivery = itemsPrice >= 30000 ? 0 : 1000;
 
-  const totalPrice = formatPrice(totalItemsPrice + delivery) as string;
+  const totalPrice = formatPrice(itemsPrice + delivery) as string;
 
   const nextBtnText = {
     am: 'Հաստատել',
@@ -51,6 +52,7 @@ export default function Items({ onNextBtnClick }: Props) {
           />
         ))
       }
+      <ItemsPrice price={itemsPrice} />
       <DeliveryFee fee={formatPrice(delivery) as string} />
       <TotalPrice totalPrice={totalPrice} />
       <ChangePage text={nextBtnText[lang]} onClick={onNextBtnClick} colored />
