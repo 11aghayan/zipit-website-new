@@ -10,7 +10,6 @@ type Props = {
     email: string;
     order: string;
     price: number;
-    delivery: number;
   };
   setDetails: React.Dispatch<React.SetStateAction<{
     name: string;
@@ -19,7 +18,6 @@ type Props = {
     email: string;
     order: string;
     price: number;
-    delivery: number;
   }>>
 }
 

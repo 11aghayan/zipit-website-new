@@ -43,17 +43,13 @@ export default function Contact({ onBack }: Props) {
     return { order, totalPrice };
   }, { order: '', totalPrice: 0 });
 
-  const deliveryFee = items.totalPrice >= 30000 ? 1000 : 0;
-  const totalPrice = items.totalPrice + deliveryFee;
-
   const [details, setDetails] = useState({
     name: '',
     address: '',
     phone: '',
     email: '',
     order: items.order,
-    price: totalPrice,
-    delivery: deliveryFee
+    price: items.totalPrice
   });
 
   const backBtnText = {
