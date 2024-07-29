@@ -7,17 +7,11 @@ div.announcement {
   z-index: var(--z-5);
 }
 
-div.announcement div.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-inline: 0.5rem;
-}
-
 div.announcement p.header {
   flex-grow: 1;
   text-align: center;
   font-size: 1.5rem;
+  padding-inline: 0.5rem;
   font-weight: 600 !important;
   color: var(--announcement-header-color);
 }

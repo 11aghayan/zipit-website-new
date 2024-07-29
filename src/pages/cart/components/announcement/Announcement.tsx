@@ -23,12 +23,7 @@ export default function Announcement() {
   
   return (
     <div className={'announcement'}>
-      <div className='top'>
-        <p className='header'>{headerText[lang]}</p>
-        {/* <button className='close-btn' onClick={close}>
-          <Icon icon='lucide:x' />
-        </button> */}
-      </div>
+      <p className='header'>{headerText[lang]}</p>
       <p className='body'>{bodyText[lang]}</p>
       <p className='bottom'>{durationText[lang]}</p>
     </div>
