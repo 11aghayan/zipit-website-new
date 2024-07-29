@@ -1,12 +1,13 @@
 div.announcement {
   position: fixed;
-  bottom: 3px;
-  inset-inline: 3px;
+  top: 0.5rem;
+  inset-inline: 0.5rem;
   background-color: var(--announcement-bg-color);
-  padding: 0.5rem;
+  padding: 1rem 0 3rem;
   border-radius: 8px;
   border: 0.1px solid var(--announcement-border-color);
   transition: scale 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: var(--z-5);
 }
 
 div.announcement.closed {
@@ -17,12 +18,13 @@ div.announcement div.top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: 0.5rem;
 }
 
 div.announcement button.close-btn {
   border: none;
   background: none;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--announcement-body-color);
   cursor: pointer;
 }
@@ -30,15 +32,35 @@ div.announcement button.close-btn {
 div.announcement p.header {
   flex-grow: 1;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--announcement-header-color);
 }
 
 div.announcement p.body {
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   font-weight: 500;
   color: var(--announcement-body-color);
+}
+
+/* Media Queries */
+
+@media(min-width: 600px) {
+  div.announcement {
+    padding-bottom: 5rem;
+  }
+
+  div.announcement button.close-btn {
+    font-size: 2rem;
+  }
+  
+  div.announcement p.header {
+    font-size: 2.5rem;
+  }
+  
+  div.announcement p.body {
+    font-size: 2rem;
+  }
 }

@@ -10,6 +10,7 @@ export default function CartPage() {
   
   return (
     <main className='cart-page'>
+      <Announcement />
       <Header empty={cartEmpty} />
       { 
         cartEmpty
@@ -18,7 +19,6 @@ export default function CartPage() {
         :
         <Content />
       }
-      <Announcement />
     </main>
   );
 }
