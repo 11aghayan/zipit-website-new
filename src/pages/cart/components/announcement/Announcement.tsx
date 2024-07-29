@@ -13,9 +13,15 @@ export default function Announcement() {
     am: 'Ուշադրություն',
     ru: 'Внимание'
   };
+
   const bodyText = {
     am: 'Երևանի տարածքում, 30,000 դրամ և ավել պատվերների դեպքում առաքումն անվճար է',
     ru: 'В Ереване, при заказах на сумму 30,000 драм и более доставка бесплатная'
+  };
+
+  const durationText = {
+    am: 'Առաքումը կատարվում է 1-2 օրվա ընթացքում',
+    ru: 'Доставка осуществляется в течение 1-2 дней'
   };
   
   const [isOpen, setIsOpen] = useState(true);
@@ -33,6 +39,7 @@ export default function Announcement() {
         </button>
       </div>
       <p className='body'>{bodyText[lang]}</p>
+      <p className='bottom'>{durationText[lang]}</p>
     </div>
   );
 }
