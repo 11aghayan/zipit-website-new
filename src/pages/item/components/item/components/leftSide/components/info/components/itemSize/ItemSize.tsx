@@ -63,6 +63,7 @@ export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, ac
           name="sizes" 
           onChange={handleChange}
           className={`${!isSizeAvailable ? 'disabled' : ''}`}
+          defaultValue={defaultValue.toString()}
         >
           {
             size.values.map(({ value, available }, i) => (
@@ -70,7 +71,6 @@ export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, ac
                 key={`${value}-${i}`}
                 value={value}
                 disabled={!available}
-                selected={defaultValue === value.toString()}
               >
                 {value}
               </option>
