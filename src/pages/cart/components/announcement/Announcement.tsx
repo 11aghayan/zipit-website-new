@@ -1,8 +1,5 @@
 import './Announcement.css';
 
-import { useState } from 'react';
-import { Icon } from '@iconify/react/dist/iconify.js';
-
 import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 
@@ -24,19 +21,13 @@ export default function Announcement() {
     ru: 'Доставка осуществляется в течение 1-2 дней'
   };
   
-  const [isOpen, setIsOpen] = useState(true);
-
-  const close = () => {
-    setIsOpen(false);
-  };
-  
   return (
-    <div className={`announcement ${isOpen ? '' : 'closed'}`}>
+    <div className={'announcement'}>
       <div className='top'>
         <p className='header'>{headerText[lang]}</p>
-        <button className='close-btn' onClick={close}>
+        {/* <button className='close-btn' onClick={close}>
           <Icon icon='lucide:x' />
-        </button>
+        </button> */}
       </div>
       <p className='body'>{bodyText[lang]}</p>
       <p className='bottom'>{durationText[lang]}</p>

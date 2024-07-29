@@ -1,7 +1,7 @@
 h2.cart-page-header {
   width: 100%;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-block: 2rem;
 }
 
 h2.cart-page-header.empty {

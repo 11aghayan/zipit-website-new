@@ -1,17 +1,10 @@
 div.announcement {
-  position: fixed;
-  top: 0.5rem;
-  inset-inline: 0.5rem;
-  background-color: var(--announcement-bg-color);
+  width: 100%;
   padding: 1rem 0;
   border-radius: 8px;
   border: 0.1px solid var(--announcement-border-color);
   transition: scale 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   z-index: var(--z-5);
-}
-
-div.announcement.closed {
-  scale: 0;
 }
 
 div.announcement div.top {
@@ -21,34 +14,27 @@ div.announcement div.top {
   padding-inline: 0.5rem;
 }
 
-div.announcement button.close-btn {
-  border: none;
-  background: none;
-  font-size: 1.5rem;
-  color: var(--announcement-body-color);
-  cursor: pointer;
-}
-
 div.announcement p.header {
   flex-grow: 1;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600 !important;
   color: var(--announcement-header-color);
 }
 
 div.announcement p.body {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding-inline: 1px;
   font-weight: 500 !important;
   color: var(--announcement-body-color);
 }
 
 div.announcement p.bottom {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-weight: 500 !important;
   color: var(--announcement-body-color);
 }
@@ -57,22 +43,18 @@ div.announcement p.bottom {
 
 @media(min-width: 600px) {
   div.announcement {
-    padding-bottom: 3rem;
-  }
-
-  div.announcement button.close-btn {
-    font-size: 2rem;
+    padding-bottom: 2rem;
   }
   
   div.announcement p.header {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   div.announcement p.body {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   div.announcement p.bottom {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
