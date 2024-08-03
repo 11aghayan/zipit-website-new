@@ -61,7 +61,7 @@ export type SizeType = {
 
 export type SizeValueType = {
   value: number;
-  available: boolean;
+  colors: string[];
 }
 
 export type PhotoType = {

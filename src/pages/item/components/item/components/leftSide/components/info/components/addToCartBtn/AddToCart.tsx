@@ -48,7 +48,7 @@ export default function AddToCartBtn({ id, isSizeAvailable, name, photo, price, 
     }
 
     setCart(prev => {
-      const itemInCart = prev.find(i => i.id === id);
+      const itemInCart = prev.find(i => i.id === id && i.photo.color === photo.color);
 
       if (itemInCart) {
         return prev.map(i => i.id === id ? { ...i, qty: i.qty + parseInt(qty) } : i);

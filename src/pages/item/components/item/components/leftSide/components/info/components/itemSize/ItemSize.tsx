@@ -2,29 +2,35 @@ import './ItemSize.css';
 
 import useLang from '../../../../../../../../../../hooks/useLang';
 import useSp from '../../../../../../../../../../hooks/useSp';
-import { LangType, SizeType, SizeValueType } from '../../../../../../../../../../types';
+import { LangType, SizeUnitType, SizeValueType } from '../../../../../../../../../../types';
 import { useEffect } from 'react';
 
 
 type Props = {
-  size: SizeType;
+  size: { values: (SizeValueType & { available: boolean })[], unit: SizeUnitType };
   isSizeAvailable: boolean;
   setIsSizeAvailable: React.Dispatch<React.SetStateAction<boolean>>;
-  activeSize: SizeValueType;
-  setActiveSize: React.Dispatch<React.SetStateAction<SizeValueType>>;
+  activeSize: SizeValueType & { available: boolean };
+  setActiveSize: React.Dispatch<React.SetStateAction<SizeValueType & { available: boolean }>>;
   defaultValue: string;
+  color: string;
 }
 
-export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, activeSize, setActiveSize, defaultValue }: Props) {
-  size.values.sort((a, b) => a.available < b.available ? 1 : -1);
+export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, activeSize, setActiveSize, defaultValue, color }: Props) {
   const lang = useLang() as LangType;
   const [sp, setSp] = useSp();
+  const sizePhotoIndex = lang === 'am' ? 0 : 1;
   
-  
-
   useEffect(() => {
-    setIsSizeAvailable(activeSize?.available);
+    setIsSizeAvailable(activeSize?.available || false);
   }, [activeSize, setIsSizeAvailable]);
+  
+  useEffect(() => {
+    setActiveSize({
+      ...activeSize,
+      available: activeSize.colors.map(color => color.split('&dash&')[sizePhotoIndex]).includes(color)
+    });
+  }, [color])
   
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newSize = size.values.find(v => v.value === Number(e.target.value))!;
@@ -66,15 +72,16 @@ export default function ItemSize({ size, isSizeAvailable, setIsSizeAvailable, ac
           defaultValue={defaultValue.toString()}
         >
           {
-            size.values.map(({ value, available }, i) => (
-              <option 
-                key={`${value}-${i}`}
-                value={value}
-                disabled={!available}
-              >
-                {value}
-              </option>
-            ))
+            size.values.map(({ value, available }, i) =>  (
+                <option 
+                  key={`${value}-${i}`}
+                  value={value}
+                  disabled={!available}
+                >
+                  {value}
+                </option>
+              )
+            )
           }
         </select>
         {unitLangMap[size.unit][lang]}

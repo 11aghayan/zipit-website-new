@@ -1,0 +1,5 @@
+p.item-size span.item-size--val.no_sizes {
+  font-size: 0.8rem;
+  font-weight: 500 !important;
+  opacity: 90%;
+}

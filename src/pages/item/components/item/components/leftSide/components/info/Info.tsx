@@ -2,7 +2,7 @@ import './Info.css';
 
 import { useState } from 'react';
 
-import { ItemType, PhotoType, SizeValueType } from '../../../../../../../../types';
+import { ItemType, LangType, PhotoType, SizeUnitType, SizeValueType } from '../../../../../../../../types';
 import useSp from '../../../../../../../../hooks/useSp';
 
 import ItemColor from "./components/itemColor/ItemColor";
@@ -12,6 +12,7 @@ import ItemSize from './components/itemSize/ItemSize';
 import MinOrder from './components/minOrder/MinOrder';
 import ItemPrice from './components/itemPrice/ItemPrice';
 import AddToCart from './components/addToCartBtn/AddToCart';
+import useLang from '../../../../../../../../hooks/useLang';
 
 type Props = {
   item: ItemType;
@@ -19,13 +20,30 @@ type Props = {
 }
 
 export default function Info({ item, selectedPhoto }: Props) {
+  const lang = useLang() as LangType;
   const [sp] = useSp();
+  const sizeColorIndex = lang === 'am' ? 0 : 1;
+  
+  const formattedSize = item.size.values.reduce((prev: { values: (SizeValueType & { available: boolean })[], unit: SizeUnitType } , { value, colors }) => {
+    const formattedColors = colors.map(c => c.split('&dash&')[sizeColorIndex]);
+    return {
+      ...prev,
+      values: [
+        ...prev.values,
+        {
+          value,
+          colors,
+          available: formattedColors.includes(selectedPhoto.color)
+        }
+      ]
+    }
+  }, { values: [], unit: item.size.unit });
   
   const [isSizeAvailable, setIsSizeAvailable] = useState(true);
-  const firstAvailable = (item.size.values.find(v => v.available)?.value || item.size.values[0].value).toString();
+  const firstAvailable = (formattedSize.values.find(v => v.available)?.value || item.size.values[0].value).toString();
   const defaultValue = sp.size || firstAvailable;
-  const defaultActive = item.size.values.find(v => v.value === Number(defaultValue))!;
-  const [activeSize, setActiveSize] = useState<SizeValueType>(defaultActive);
+  const defaultActive = formattedSize.values.find(v => v.value === Number(defaultValue))!;
+  const [activeSize, setActiveSize] = useState<SizeValueType & { available: boolean }>(defaultActive);
   const [qty, setQty] = useState('1');
 
   return (
@@ -33,12 +51,13 @@ export default function Info({ item, selectedPhoto }: Props) {
       <ItemName name={item.name} />
       <ItemColor color={selectedPhoto.color} />
       <ItemSize 
-        size={item.size} 
+        size={formattedSize} 
         isSizeAvailable={isSizeAvailable} 
         setIsSizeAvailable={setIsSizeAvailable} 
         activeSize={activeSize}
         setActiveSize={setActiveSize}
         defaultValue={defaultValue}
+        color={selectedPhoto.color}
       />
       <MinOrder minOrder={item.minOrder} />
       <ItemAvailable available={isSizeAvailable} />
@@ -49,7 +68,7 @@ export default function Info({ item, selectedPhoto }: Props) {
         qty={parseInt(qty || '1')}
       />
       <AddToCart 
-        id={item.id + '-' + activeSize.value}
+        id={item.id + '-' + activeSize.value + '-' + selectedPhoto.color}
         isSizeAvailable={isSizeAvailable} 
         name={item.name}
         photo={selectedPhoto}

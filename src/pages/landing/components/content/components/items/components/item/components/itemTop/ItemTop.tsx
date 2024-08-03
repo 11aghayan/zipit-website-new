@@ -14,7 +14,7 @@ export default function ItemTop({ item, selectedPhoto }: Props) {
   return (
     <section className='item-top'>
       <ItemLeftSide selectedPhoto={selectedPhoto} />
-      <ItemRightSide item={item} />
+      <ItemRightSide item={item} selectedPhoto={selectedPhoto} />
     </section>
   );
 }
