@@ -8,8 +8,8 @@ type Props = {
   type: 'random' | 'similar';
 };
 
-export default function Suggestions({ type }: Props) {
-  const [items, setItems] = useState<ItemType[]>([]);
+export default function Suggestions({ }: Props) {
+  const [_items, _setItems] = useState<ItemType[]>([]);
   
   useEffect(() => {
     // TODO: Get random or similar items
