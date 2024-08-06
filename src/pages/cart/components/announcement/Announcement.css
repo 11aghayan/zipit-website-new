@@ -4,7 +4,6 @@ div.announcement {
   border-radius: 8px;
   border: 0.1px solid var(--announcement-border-color);
   transition: scale 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  z-index: var(--z-5);
 }
 
 div.announcement p.header {

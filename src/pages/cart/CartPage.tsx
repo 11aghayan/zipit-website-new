@@ -16,11 +16,10 @@ export default function CartPage() {
       { 
         cartEmpty
         ?
-        null
+        <ContinueShoppingButton />
         :
         <Content />
       }
-      <ContinueShoppingButton />
     </main>
   );
 }

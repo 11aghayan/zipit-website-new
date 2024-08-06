@@ -7,6 +7,7 @@ import ChangePage from '../changePage/ChangePage';
 import useLang from '../../../../hooks/useLang';
 import { LangType } from '../../../../types';
 import formatPrice from '../../../../utils/formatPrice';
+import ContinueShoppingButton from '../continueShopping/ContinueShoppingButton';
 
 type Props = {
   onNextBtnClick: () => void;
@@ -50,6 +51,7 @@ export default function Items({ onNextBtnClick }: Props) {
       }
       <TotalPrice totalPrice={totalPrice} />
       <ChangePage text={nextBtnText[lang]} onClick={onNextBtnClick} colored />
+      <ContinueShoppingButton />
     </div>
   );
 }

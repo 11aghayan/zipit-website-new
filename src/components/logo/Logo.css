@@ -11,9 +11,9 @@ a.logo div.logo-img-wrapper {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--logo-color);
-  font-weight: 900;
+  font-weight: 900 !important;
 }
 
 /* Media Queries */

@@ -5,12 +5,14 @@ import './LandingPage.css';
 import Filters from './components/filters/Filters';
 import TopBar from './components/topBar/TopBar';
 import Content from './components/content/Content';
+import Suggestions from '../../components/suggestions/Suggestions';
 
 export default function LandingPage() {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   
   return (
     <main className='landing-page'>
+      {/* <Suggestions type='random' /> */}
       <TopBar setIsFiltersOpen={setIsFiltersOpen}/>
       <div className='wrapper'>
         <div className='filters-wrapper'>
