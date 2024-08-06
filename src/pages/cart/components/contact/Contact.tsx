@@ -116,7 +116,7 @@ export default function Contact({ onBack }: Props) {
       }
       toast.success(msg[lang]);
       setCart([]);
-      navigate(`/${lang}`);
+      navigate(`/${lang}`, { replace: true });
     } finally {
       setButtonsDisabled(false);
     }

@@ -17,9 +17,11 @@ import useLang from '../../../../../../../../hooks/useLang';
 type Props = {
   item: ItemType;
   selectedPhoto: PhotoType;
+  setSelectedPhoto: React.Dispatch<React.SetStateAction<PhotoType>>;
+  photos: PhotoType[];
 }
 
-export default function Info({ item, selectedPhoto }: Props) {
+export default function Info({ item, selectedPhoto, photos, setSelectedPhoto }: Props) {
   const lang = useLang() as LangType;
   const [sp] = useSp();
   const sizeColorIndex = lang === 'am' ? 0 : 1;
@@ -49,7 +51,7 @@ export default function Info({ item, selectedPhoto }: Props) {
   return (
     <section className="info">
       <ItemName name={item.name} />
-      <ItemColor color={selectedPhoto.color} />
+      <ItemColor photos={photos} setSelectedPhoto={setSelectedPhoto} />
       <ItemSize 
         size={formattedSize} 
         isSizeAvailable={isSizeAvailable} 

@@ -153,6 +153,9 @@ main.cart-page {
   --announcement-header-color: var(--dark-orange);
   --announcement-body-color: var(--oxford-blue);
   --announcement-border-color: #00234766;
+  --continue-shopping-bg-color: #24A1DE;
+  --continue-shopping-shadow-color: #00000010;
+  --continue-shopping-text-color: var(--bg-color);
 }
 
 /* ------------------ */

@@ -2,6 +2,6 @@ main.cart-page {
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   padding: 0.5rem;
 }

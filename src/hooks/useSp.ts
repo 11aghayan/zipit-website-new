@@ -9,8 +9,12 @@ type SpTypeFull = [
   
 
 export default function useSp() {
-  const [sp, setSp] = useSearchParams();
+  const [sp, setSearchParams] = useSearchParams();
 
+  const setSp = (params: URLSearchParams) => {
+    return setSearchParams(params, { replace: true });
+  }
+  
   const categories = sp.get('categories') || '';
   const promo = sp.get('promo') || 'false';
   const page = sp.get('page') || '1';

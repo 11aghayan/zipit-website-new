@@ -1,0 +1,9 @@
+a.continue-shopping-btn {
+  margin-block: 1rem;
+  padding: 0.5rem;
+  color: var(--continue-shopping-text-color);
+  background-color: var(--continue-shopping-bg-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 1px 1px 5px 1px var(--continue-shopping-shadow-color);
+}

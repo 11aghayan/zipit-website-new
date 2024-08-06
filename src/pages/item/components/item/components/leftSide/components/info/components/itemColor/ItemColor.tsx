@@ -1,11 +1,14 @@
+import './ItemColor.css';
+
 import useLang from '../../../../../../../../../../hooks/useLang';
-import { LangType } from '../../../../../../../../../../types';
+import { LangType, PhotoType } from '../../../../../../../../../../types';
 
 type Props = {
-  color: string;
+  setSelectedPhoto: React.Dispatch<React.SetStateAction<PhotoType>>;
+  photos: PhotoType[];
 }
 
-export default function ItemColor({ color }: Props) {
+export default function ItemColor({ photos, setSelectedPhoto }: Props) {
   const lang = useLang() as LangType;
   
   const langMap = {
@@ -13,10 +16,28 @@ export default function ItemColor({ color }: Props) {
     ru: 'Цвет'
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedPhoto(JSON.parse(e.target.value));
+  };
+  
   return (
-    <p className='item-color'>
-      <span className='label'>{langMap[lang]}:</span>
-      <span className='value'>{color}</span>
-    </p>
+    <div className='item-color'>
+      <p className='label'>{langMap[lang]}:</p>
+      <select 
+        className='item-allColors'
+        onChange={handleChange}
+      >
+        {
+          photos.map((photo) => (
+            <option 
+              key={photo.color}
+              value={JSON.stringify(photo)}
+            >
+              {photo.color}
+            </option>
+          ))
+        }
+      </select>
+    </div>
   );
 }

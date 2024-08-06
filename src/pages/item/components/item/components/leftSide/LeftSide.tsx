@@ -37,7 +37,7 @@ export default function LeftSide({ item }: Props) {
         setSelectedPhoto={setSelectedPhoto} 
         onClick={togglePhotoModal}
       />
-      <Info item={item} selectedPhoto={selectedPhoto} />
+      <Info item={item} selectedPhoto={selectedPhoto} setSelectedPhoto={setSelectedPhoto} photos={item.photos} />
     </section>
   );
 }
