@@ -12,7 +12,7 @@
   --z-4: 1111;
   --z-5: 11111;
   --bg-color: #fff;
-  --bg-color-deep: #f0f0f0;
+  --bg-color-deep: #f7f7f7;
   --font-color: #000;
   --error-msg-color: #dd1111;
   --loader-color: #ddd;
@@ -36,6 +36,12 @@ header {
 nav {
   --active-link-color: var(--saffron);
   --nav-bg-color: var(--bg-color);
+}
+
+section.suggestions {
+  --suggestion-main-bg-color: var(--bg-color);
+  --suggestion-item-bg-color: var(--bg-color-deep);
+  --suggestion-item-promo-color: var(--dark-orange);
 }
 
 a.cart-btn {

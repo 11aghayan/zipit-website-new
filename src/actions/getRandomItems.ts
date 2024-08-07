@@ -1,7 +1,8 @@
+import axios from "axios";
+
 import baseUrl from "./baseUrl";
 import { LangType } from "../types";
 import CustomError from "./customError";
-import axios from "axios";
 
 export default async function getRandomItems(lang: LangType) {
   const url = `${baseUrl}/items/${lang}/random`;
@@ -15,7 +16,7 @@ export default async function getRandomItems(lang: LangType) {
     
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return null;
   }
 }

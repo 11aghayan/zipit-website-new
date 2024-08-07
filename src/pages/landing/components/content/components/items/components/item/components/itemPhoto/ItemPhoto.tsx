@@ -1,3 +1,5 @@
+import './ItemPhoto.css';
+
 import { PhotoType } from "../../../../../../../../../../types";
 
 type Props = {
@@ -9,7 +11,7 @@ export default function ItemPhoto({ photo }: Props) {
   const size = 110;
 
   return (
-    <div style={{ width: size, height: size }}>
+    <div className="landing--item-photo" style={{ width: size, height: size }}>
       <img 
         src={photo.src} 
         alt="item photo" 

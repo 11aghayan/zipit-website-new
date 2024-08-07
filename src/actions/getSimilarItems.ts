@@ -1,9 +1,10 @@
+import axios from "axios";
+
 import baseUrl from "./baseUrl";
 import { LangType } from "../types";
 import CustomError from "./customError";
-import axios from "axios";
 
-export default async function getRandomItems(category: string, name: string, lang: LangType) {
+export default async function getSimilarItems(category: string, name: string, lang: LangType) {
   const url = `${baseUrl}/items/${lang}/similar`;
   try {
     const res = await axios.get(url, {
@@ -20,7 +21,7 @@ export default async function getRandomItems(category: string, name: string, lan
     
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return null;
   }
 }

@@ -11,6 +11,7 @@ import Items from './components/items/Items';
 import PageNav from './components/pageNav/PageNav';
 import ServerErrorMsg from '../../../../components/serverErrorMsg/ServerErrorMsg';
 import ItemsLoader from './components/items/components/itemsLoader/ItemsLoader';
+import Suggestions from '../../../../components/suggestions/Suggestions';
 
 export default function Content() {
   const lang = useLang() as LangType;
@@ -56,7 +57,10 @@ function Section({ children, data, isFetching }: SectionProps) {
   
   return(
     <section className='content'>
-      { children }
+      <section className='top-section'>
+        <Suggestions type='random' />
+        { children }
+      </section>
       <PageNav 
         data={data}
         isFetching={isFetching}

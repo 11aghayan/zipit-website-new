@@ -1,0 +1,10 @@
+section.suggestion-content {
+  padding: 0.5rem;
+  overflow: auto;
+  background-color: var(--suggestion-main-bg-color);
+}
+
+section.suggestion-content div.items-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}

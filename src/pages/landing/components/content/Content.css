@@ -7,3 +7,7 @@ section.content {
   overflow: auto;
   padding: 0.5rem;
 }
+
+section.content section.top-section > :first-child {
+  margin-bottom: 2rem;
+}

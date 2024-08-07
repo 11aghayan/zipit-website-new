@@ -86,3 +86,16 @@ export type SpType = {
 export type SizeLangMapType = {
   [unit in SizeUnitType]: LangMapType;
 };
+
+export type RandomSimilarItemType = Omit<ItemType, 'photos' | 'size' | 'category' | 'minOrder' | 'description'> & {
+  photo: PhotoType;
+  size: {
+    unit: SizeUnitType;
+    value: number;
+  }
+}
+
+export type RandomSimilarResponseType = {
+  length: number;
+  items: RandomSimilarItemType[];
+}
