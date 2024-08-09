@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default function Content({ items }: Props) {
-  const {screen} = useScreen();
+  const { screen } = useScreen();
   const [photoSize, setPhotoSize] = useState<90 | 110 | 130>(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130);
   
   useEffect(() => {
