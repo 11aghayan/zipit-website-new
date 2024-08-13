@@ -21,8 +21,8 @@ export default function BulkAnnouncement() {
   }, [])
   
   const text = {
-    am: <div>Մեծաքանակ պատվերների դեպքում <br/> <a className='contacts' href={`/${lang}/contacts`}>կապ հաստատեք մեզ հետ</a></div>,
-    ru: <div>В случае оптовых заказов <br/> <a className='contacts' href={`/${lang}/contacts`}>свяжитесь с нами</a></div>
+    am: <div>Մեծաքանակ պատվերների դեպքում<br/> <a className='contacts' href={`/${lang}/contacts`}>կապ հաստատեք մեզ հետ</a></div>,
+    ru: <div>В случае крупных заказов<br/> <a className='contacts' href={`/${lang}/contacts`}>свяжитесь с нами</a></div>
   }
 
   const handleClose = () => {
