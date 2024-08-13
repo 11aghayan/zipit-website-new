@@ -24,7 +24,20 @@ div.bulk-announcement div.content {
   font-size: 1.2rem;
 }
 
-div.bulk-announcement div.content button.close-btn {
+div.bulk-announcement div.content div.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.bulk-announcement div.content div.top p.header {
+  font-size: 2rem;
+  font-weight: 700 !important;
+  flex-grow: 1;
+  color: var(--saffron);
+}
+
+div.bulk-announcement div.content div.top button.close-btn {
   background: none;
   border: none;
   width: fit-content;

@@ -25,6 +25,11 @@ export default function BulkAnnouncement() {
     ru: <div>В случае крупных заказов<br/> <a className='contacts' href={`/${lang}/contacts`}>свяжитесь с нами</a></div>
   }
 
+  const header = {
+    am: 'Ուշադրություն',
+    ru: 'Внимание'
+  };
+
   const handleClose = () => {
     setIsOpen(false);
   }
@@ -32,9 +37,12 @@ export default function BulkAnnouncement() {
   return (
     <div className={`bulk-announcement ${isOpen ? 'open' : ''}`}>
       <div className='content'>
-        <button onClick={handleClose} className='close-btn'>
-          <Icon icon='material-symbols:close-rounded' />
-        </button>
+        <div className='top'>
+          <p className='header'>{header[lang]}</p>
+          <button onClick={handleClose} className='close-btn'>
+            <Icon icon='material-symbols:close-rounded' />
+          </button>
+        </div>
         {text[lang]}
         <div className='lang-switch'>
           <Language />
