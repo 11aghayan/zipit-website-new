@@ -34,23 +34,23 @@ export default function Content({ items }: Props) {
   };
 
   const touchActions: TouchActionsType = {
-    lastPos: null,
+    lastPos: 0,
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
-        const { pageX } = e.changedTouches[0];
+        const { clientX } = e.changedTouches[0];
         if (!this.lastPos) {
-          this.lastPos = pageX;
+          this.lastPos = clientX;
           return;
         }
-        const delta = pageX - this.lastPos;
+        const delta = clientX - this.lastPos;
         
         setWrapperLeft(prev => prev + delta);
-        this.lastPos = pageX;
+        this.lastPos = clientX;
       }
     },
     handleTouchEnd: function () {
       return () => {
-        this.lastPos = null;
+        this.lastPos = 0;
         setSpeed(1);
       }
     }
