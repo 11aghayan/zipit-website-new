@@ -8,7 +8,7 @@ export default function Map() {
   return (
     <section className='map'>
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-        <GoogleMap defaultCenter={position} defaultZoom={19} mapId='google-map' >
+        <GoogleMap defaultCenter={position} defaultZoom={19} mapId='google-map' fullscreenControl={true} >
           <AdvancedMarker position={position} />
         </GoogleMap>
       </APIProvider>
