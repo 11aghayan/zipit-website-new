@@ -43,7 +43,7 @@ export default function Content({ items }: Props) {
           this.lastPos = clientX;
           return;
         }
-        const delta = (clientX - this.lastPos) * 1.5;
+        const delta = clientX - this.lastPos;
         
         setWrapperLeft(prev => prev + delta);
         this.lastPos = clientX;
