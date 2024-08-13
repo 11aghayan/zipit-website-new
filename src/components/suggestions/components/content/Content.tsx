@@ -37,7 +37,7 @@ export default function Content({ items }: Props) {
     lastPos: null,
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
-      const { clientX } = e.changedTouches[0];
+        const { clientX } = e.changedTouches[0];
         if (!this.lastPos) {
           this.lastPos = clientX;
           return;
@@ -81,9 +81,9 @@ export default function Content({ items }: Props) {
     <section
       className='suggestion-content' 
       onWheel={handleWheel}
-      onTouchMove={touchActions.handleTouchMove()}
-      onTouchEnd={touchActions.handleTouchEnd()}
+      onTouchMoveCapture={touchActions.handleTouchMove()}
       onTouchStart={() => setSpeed(0)}
+      onTouchEnd={touchActions.handleTouchEnd()}
       onMouseEnter={() => setSpeed(0)}
       onMouseLeave={() => setSpeed(1)}
     >
