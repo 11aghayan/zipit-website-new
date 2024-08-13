@@ -37,17 +37,21 @@ export default function Suggestions({ type, name = '', category = '' }: Props) {
   
   return (
     <section className={`suggestions ${isLoading ? 'loading' : ''}`}>
-      <p className='header'>{header[type][lang]}</p>
       {
-        isLoading
-        ?
-        <Loader />
-        :
         isError
         ?
-        <p>Error</p>
-        :        
-        <Content items={data.items} />
+        null
+        :
+        <>
+          <p className='header'>{header[type][lang]}</p>
+          {
+            isLoading
+            ?
+            <Loader />
+            :      
+            <Content items={data.items} />
+          }
+        </>
       }
     </section>
   );
