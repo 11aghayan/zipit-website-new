@@ -22,7 +22,7 @@ export default function Suggestions({ type, name = '', category = '' }: Props) {
 
   const { isLoading, isError, data } = useQuery(`${type}-items`, getItems);
 
-  if (data && data.length < 1) return null;
+  if (!isLoading && (!data || data.length < 1)) return null;
 
   const header = {
     random: {
