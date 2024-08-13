@@ -81,7 +81,7 @@ export default function Content({ items }: Props) {
     <section
       className='suggestion-content' 
       onWheel={handleWheel}
-      onTouchMoveCapture={touchActions.handleTouchMove()}
+      onTouchMove={touchActions.handleTouchMove()}
       onTouchStart={() => setSpeed(0)}
       onTouchEnd={touchActions.handleTouchEnd()}
       onMouseEnter={() => setSpeed(0)}
