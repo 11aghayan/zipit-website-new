@@ -34,7 +34,7 @@ export default function Content({ items }: Props) {
 
   const [wrapperLeft, setWrapperLeft] = useState(-itemsWidth);
   const [frame, setFrame] = useState(0);
-  const movingSpeed = 0.8;
+  const movingSpeed = 1;
   const [speed, setSpeed] = useState(movingSpeed);
   
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
