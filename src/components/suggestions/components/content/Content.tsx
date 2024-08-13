@@ -12,8 +12,8 @@ type Props = {
 
 type TouchActionsType = {
   lastPos: number | null;
-  handleTouchMove: () => (e: React.TouchEvent<HTMLElement>) => void;
-  handleTouchEnd: () => (e: React.TouchEvent<HTMLElement>) => void;
+  handleTouchMove: () => (e: TouchEvent) => void;
+  handleTouchEnd: () => (e: TouchEvent) => void;
 }
 
 export default function Content({ items }: Props) {
@@ -36,21 +36,21 @@ export default function Content({ items }: Props) {
   const touchActions: TouchActionsType = {
     lastPos: null,
     handleTouchMove: function () {
-      return (e: React.TouchEvent<HTMLElement>) => {
+      return (e: TouchEvent) => {
         e.preventDefault();
         const { clientX } = e.changedTouches[0];
         if (!this.lastPos) {
           this.lastPos = clientX;
           return;
         }
-        const delta = (clientX - this.lastPos) * 2;
+        const delta = (clientX - this.lastPos) * 1.5;
         
         setWrapperLeft(prev => prev + delta);
         this.lastPos = clientX;
       }
     },
     handleTouchEnd: function () {
-      return (e: React.TouchEvent<HTMLElement>) => {
+      return (e: TouchEvent) => {
         e.preventDefault();
         this.lastPos = null;
         setSpeed(1);
@@ -72,17 +72,13 @@ export default function Content({ items }: Props) {
     const element = document.querySelector('.suggestion-content') as HTMLElement;
     
     if (element) {
-      // @ts-ignore
       element.addEventListener('touchmove', touchMoveHandler, { passive: false });
-      // @ts-ignore
       element.addEventListener('touchend', touchEndHandler);
     }
     
     return () => {
       if (element) {
-        // @ts-ignore
         element.removeEventListener('touchmove', touchMoveHandler);
-        // @ts-ignore
         element.removeEventListener('touchend', touchEndHandler);
       }
     };
@@ -106,8 +102,6 @@ export default function Content({ items }: Props) {
     <section
       className='suggestion-content' 
       onWheel={handleWheel}
-      onTouchMove={touchActions.handleTouchMove()}
-      onTouchEnd={touchActions.handleTouchEnd()}
       onTouchStart={() => setSpeed(0)}
       onMouseEnter={() => setSpeed(0)}
       onMouseLeave={() => setSpeed(1)}
