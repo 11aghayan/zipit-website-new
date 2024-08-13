@@ -68,7 +68,9 @@ export default function Content({ items }: Props) {
 
   const animate = () => {
     setFrame(prev => prev + 1);
-    setWrapperLeft(prev => prev - speed);
+    if (frame % 2 === 0) {
+      setWrapperLeft(prev => prev - speed);
+    }
   }
 
   useEffect(() => {
