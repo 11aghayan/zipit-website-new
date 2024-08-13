@@ -42,7 +42,7 @@ export default function Content({ items }: Props) {
           this.lastPos = clientX;
           return;
         }
-        const delta  = (clientX - this.lastPos) * 1.5;
+        const delta  = (clientX - this.lastPos) > 0 ? 10 : -10;
         
         setWrapperLeft(prev => prev + delta);
         this.lastPos = clientX;
@@ -82,8 +82,8 @@ export default function Content({ items }: Props) {
       className='suggestion-content' 
       onWheel={handleWheel}
       onTouchMove={touchActions.handleTouchMove()}
-      onTouchStart={() => setSpeed(0)}
       onTouchEnd={touchActions.handleTouchEnd()}
+      onTouchStart={() => setSpeed(0)}
       onMouseEnter={() => setSpeed(0)}
       onMouseLeave={() => setSpeed(1)}
     >
