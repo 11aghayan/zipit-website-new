@@ -59,7 +59,7 @@ export default function Content({ items }: Props) {
 
   const animate = () => {
     setFrame(prev => prev + 1);
-    if (frame % 600) {
+    if (frame % 3 === 0) {
       setWrapperLeft(prev => prev - speed);
     }
   }
