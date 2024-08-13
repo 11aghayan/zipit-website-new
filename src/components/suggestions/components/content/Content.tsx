@@ -34,7 +34,8 @@ export default function Content({ items }: Props) {
 
   const [wrapperLeft, setWrapperLeft] = useState(-itemsWidth);
   const [frame, setFrame] = useState(0);
-  const [speed, setSpeed] = useState(1);
+  const movingSpeed = 0.8;
+  const [speed, setSpeed] = useState(movingSpeed);
   
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
     const delta = e.deltaX || e.deltaY;
@@ -61,16 +62,14 @@ export default function Content({ items }: Props) {
       return (e: TouchEvent) => {
         e.preventDefault();
         this.lastPos = null;
-        setSpeed(1);
+        setSpeed(movingSpeed);
       }
     }
   }
 
   const animate = () => {
     setFrame(prev => prev + 1);
-    if (frame % 2 === 0) {
-      setWrapperLeft(prev => prev - speed);
-    }
+    setWrapperLeft(prev => prev - speed);
   }
 
   useEffect(() => {
@@ -112,7 +111,7 @@ export default function Content({ items }: Props) {
       onWheel={handleWheel}
       onTouchStart={() => setSpeed(0)}
       onMouseEnter={() => setSpeed(0)}
-      onMouseLeave={() => setSpeed(1)}
+      onMouseLeave={() => setSpeed(movingSpeed)}
     >
       <div className='items-wrapper' style={{ left: wrapperLeft }}>
         {
