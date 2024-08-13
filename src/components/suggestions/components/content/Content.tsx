@@ -37,7 +37,7 @@ export default function Content({ items }: Props) {
     lastPos: null,
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
-        const { clientX } = e.changedTouches[0];
+        const { clientX } = e.touches[0];
         if (!this.lastPos) {
           this.lastPos = clientX;
           return;
