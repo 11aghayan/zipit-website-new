@@ -1,0 +1,52 @@
+div.bulk-announcement {
+  position: fixed;
+  inset: 0;
+  background: #00000060;
+  z-index: var(--z-5);
+  display: none;
+  place-content: center;
+}
+
+div.bulk-announcement.open {
+  display: grid;
+}
+
+div.bulk-announcement div.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--bg-color-deep);
+  color: var(--oxford-blue);
+  margin: 20px;
+  padding: 1rem 0.5rem;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+div.bulk-announcement div.content button.close-btn {
+  background: none;
+  border: none;
+  width: fit-content;
+  align-self: end;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+div.bulk-announcement div.content a.contacts {
+  color: var(--dark-orange);
+  text-decoration: underline;
+}
+
+div.bulk-announcement div.content div.lang-switch {
+  align-self: end;
+}
+/* Media queries */
+
+@media(min-width: 600px) {
+  div.bulk-announcement div.content {
+    font-size: 1.5rem;
+    padding-inline: 1rem;
+  }
+}
