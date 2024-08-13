@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import type { RandomSimilarItemType } from '../../../../types';
 import Item from './components/item/Item';
 import useScreen from '../../../../hooks/useScreenSize';
-import usePointerPosition from '../../../../hooks/usePointerPosition';
+// import usePointerPosition from '../../../../hooks/usePointerPosition';
 
 type Props = {
   items: RandomSimilarItemType[];
