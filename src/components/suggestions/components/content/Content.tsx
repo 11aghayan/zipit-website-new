@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import type { RandomSimilarItemType } from '../../../../types';
 import Item from './components/item/Item';
 import useScreen from '../../../../hooks/useScreenSize';
-// import usePointerPosition from '../../../../hooks/usePointerPosition';
 
 type Props = {
   items: RandomSimilarItemType[];
@@ -19,7 +18,7 @@ type TouchActionsType = {
 
 export default function Content({ items }: Props) {
   const { screen } = useScreen();
-  // usePointerPosition();
+
   const fullItems = [...items, ...items, ...items, items[0]];
 
   const [photoSize, setPhotoSize] = useState<90 | 110 | 130>(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130); 
@@ -39,7 +38,6 @@ export default function Content({ items }: Props) {
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
         const { clientX } = e.changedTouches[0];
-        console.log(clientX);
         if (!this.lastPos) {
           this.lastPos = clientX;
           return;
