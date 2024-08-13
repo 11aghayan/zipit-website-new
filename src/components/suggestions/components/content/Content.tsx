@@ -17,12 +17,20 @@ type TouchActionsType = {
 }
 
 export default function Content({ items }: Props) {
-  const { screen } = useScreen();
+  const { screen, width: screenWidth } = useScreen();
 
-  const fullItems = [...items, ...items, ...items, items[0]];
-
+  
   const [photoSize, setPhotoSize] = useState<90 | 110 | 130>(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130); 
   const itemsWidth = (photoSize + 48) * items.length;
+
+  const ratio = screenWidth / itemsWidth;
+  const itemsLength = ratio < 1 ? 3 : Math.ceil(ratio) + 2;
+
+  const fullItems: RandomSimilarItemType[] = [];
+
+  for (let i = 0; i < itemsLength; i++) {
+    fullItems.push(...items);
+  }
 
   const [wrapperLeft, setWrapperLeft] = useState(-itemsWidth);
   const [frame, setFrame] = useState(0);
