@@ -34,7 +34,7 @@ export default function Content({ items }: Props) {
   };
 
   const touchActions: TouchActionsType = {
-    lastPos: 0,
+    lastPos: null,
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
         const { clientX } = e.changedTouches[0];
@@ -50,7 +50,7 @@ export default function Content({ items }: Props) {
     },
     handleTouchEnd: function () {
       return () => {
-        this.lastPos = 0;
+        this.lastPos = null;
         setSpeed(1);
       }
     }
