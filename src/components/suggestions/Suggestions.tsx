@@ -23,9 +23,21 @@ export default function Suggestions({ type, name = '', category = '' }: Props) {
   const { isLoading, isError, data } = useQuery(`${type}-items`, getItems);
 
   if (data && data.length < 1) return null;
+
+  const header = {
+    random: {
+      am: 'Թեժ առաջարկներ',
+      ru: 'Горячие предложения'
+    },
+    similar: {
+      am: 'Նման ապրանքներ',
+      ru: 'Похожие товары'
+    }
+  }
   
   return (
-    <section className='suggestions'>
+    <section className={`suggestions ${isLoading ? 'loading' : ''}`}>
+      <p className='header'>{header[type][lang]}</p>
       {
         isLoading
         ?

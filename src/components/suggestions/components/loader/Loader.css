@@ -1,0 +1,21 @@
+section.suggestions-loader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+section.suggestions-loader article {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--loader-color);
+  flex-shrink: 0;
+}
+
+section.suggestions-loader article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--loader-bg);
+  animation: var(--loading-animation);
+}

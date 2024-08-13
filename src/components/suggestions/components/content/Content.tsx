@@ -2,7 +2,7 @@ import './Content.css';
 
 import { useEffect, useState } from 'react';
 
-import { RandomSimilarItemType } from '../../../../types';
+import type { RandomSimilarItemType } from '../../../../types';
 import Item from './components/item/Item';
 import useScreen from '../../../../hooks/useScreenSize';
 
@@ -10,21 +10,88 @@ type Props = {
   items: RandomSimilarItemType[];
 }
 
+type TouchActionsType = {
+  lastPos: number | null;
+  handleTouchMove: () => (e: React.TouchEvent<HTMLElement>) => void;
+  handleTouchEnd: () => () => void;
+}
+
 export default function Content({ items }: Props) {
   const { screen } = useScreen();
-  const [photoSize, setPhotoSize] = useState<90 | 110 | 130>(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130);
   
+  const fullItems = [...items, ...items, ...items, items[0]];
+
+  const [photoSize, setPhotoSize] = useState<90 | 110 | 130>(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130); 
+  const itemsWidth = (photoSize + 48) * items.length;
+
+  const [wrapperLeft, setWrapperLeft] = useState(-itemsWidth);
+  const [frame, setFrame] = useState(0);
+  const [speed, setSpeed] = useState(1);
+  
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const delta = e.deltaX || e.deltaY;
+    setWrapperLeft(prev => prev - delta);
+  };
+
+  const touchActions: TouchActionsType = {
+    lastPos: null,
+    handleTouchMove: function () {
+      return (e: React.TouchEvent<HTMLElement>) => {
+      const { clientX } = e.changedTouches[0];
+        if (!this.lastPos) {
+          this.lastPos = clientX;
+          return;
+        }
+        const delta  = (clientX - this.lastPos) * 1.5;
+        
+        setWrapperLeft(prev => prev + delta);
+        this.lastPos = clientX;
+      }
+    },
+    handleTouchEnd: function () {
+      return () => {
+        this.lastPos = null;
+        setSpeed(1);
+      }
+    }
+  }
+
+  const animate = () => {
+    setFrame(prev => prev + 1);
+    if (frame % 600) {
+      setWrapperLeft(prev => prev - speed);
+    }
+  }
+
+  useEffect(() => {
+    requestAnimationFrame(animate);
+  }, [frame]);
+
   useEffect(() => {
     setPhotoSize(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130);
-  }, [screen])
+  }, [screen]);
 
+  useEffect(() => {
+    if (wrapperLeft <= (-itemsWidth * 2) || wrapperLeft >= 0) {
+      setWrapperLeft(-itemsWidth);
+    }
+  }, [wrapperLeft]);
+  
   return (
-    <section className='suggestion-content'>
-      <div className='items-wrapper'>
+    <section
+      className='suggestion-content' 
+      onWheel={handleWheel}
+      onTouchMove={touchActions.handleTouchMove()}
+      onTouchEnd={touchActions.handleTouchEnd()}
+      onTouchStart={() => setSpeed(0)}
+      onMouseEnter={() => setSpeed(0)}
+      onMouseLeave={() => setSpeed(1)}
+    >
+      <div className='items-wrapper' style={{ left: wrapperLeft }}>
         {
-          items.map((item) => (
+          fullItems.map((item, i) => (
             <Item 
-              key={item.id} 
+              key={item.id + item.name + i} 
               item={item} 
               photoSize={photoSize}
             />

@@ -15,7 +15,11 @@ export default function Item({ item: { id, photo, name, price, promo, size }, ph
   const href = `${lang}/${id}`;
   
   return (
-    <a href={href} className='suggestion-item' style={{ minWidth: photoSize + 40 }}>
+    <a 
+      href={href}
+      className='suggestion-item' 
+      style={{ minWidth: photoSize + 40 }}
+    >
       <div className='photo' style={{ height: photoSize, width: photoSize }}>
         <img src={photo.src} alt="Item photo" height={photoSize} width={photoSize} />
       </div>
