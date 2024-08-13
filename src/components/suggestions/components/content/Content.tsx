@@ -12,13 +12,13 @@ type Props = {
 
 type TouchActionsType = {
   lastPos: number | null;
+  pressTime: number;
   handleTouchMove: () => (e: TouchEvent) => void;
   handleTouchEnd: () => (e: TouchEvent) => void;
 }
 
 export default function Content({ items }: Props) {
   const { screen, width: screenWidth } = useScreen();
-
   
   const [photoSize, setPhotoSize] = useState<90 | 110 | 130>(screen === 'sm' ? 90 : screen === 'md' ? 110 : 130); 
   const itemsWidth = (photoSize + 48) * items.length;
@@ -44,9 +44,11 @@ export default function Content({ items }: Props) {
 
   const touchActions: TouchActionsType = {
     lastPos: null,
+    pressTime: 0,
     handleTouchMove: function () {
       return (e: TouchEvent) => {
         e.preventDefault();
+        this.pressTime++;
         const { clientX } = e.changedTouches[0];
         if (!this.lastPos) {
           this.lastPos = clientX;
@@ -61,6 +63,19 @@ export default function Content({ items }: Props) {
     handleTouchEnd: function () {
       return (e: TouchEvent) => {
         e.preventDefault();
+        if (this.pressTime < 5) {
+          let target: HTMLElement | null = e.target as HTMLElement;
+          let iteration = 0;
+          while (target?.tagName !== 'A' && iteration < 5) {
+            target = (target?.parentNode || null) as HTMLElement | null;
+            iteration++;
+          }
+          if (target?.tagName === 'A') {
+            const a = target as HTMLAnchorElement;
+            a.click();
+          }
+        }
+        this.pressTime = 0;
         this.lastPos = null;
         setSpeed(movingSpeed);
       }

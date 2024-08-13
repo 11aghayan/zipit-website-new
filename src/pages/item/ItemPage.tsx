@@ -24,7 +24,7 @@ export default function ItemPage() {
     )
   }
 
-  if (isError) {
+  if (isError || !data) {
     return (
       <Main>
         <ServerErrorMsg />
@@ -34,7 +34,7 @@ export default function ItemPage() {
   
   return (
     <Main>
-      <Item item={data!} />
+      <Item item={data} />
     </Main>
   );
 }
