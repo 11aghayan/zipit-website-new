@@ -37,15 +37,15 @@ export default function Content({ items }: Props) {
     lastPos: null,
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
-        const { clientX } = e.changedTouches[0];
+        const { screenX } = e.changedTouches[0];
         if (!this.lastPos) {
-          this.lastPos = clientX;
+          this.lastPos = screenX;
           return;
         }
-        const delta  = (clientX - this.lastPos) > 0 ? 10 : -10;
+        const delta = screenX - this.lastPos;
         
         setWrapperLeft(prev => prev + delta);
-        this.lastPos = clientX;
+        this.lastPos = screenX;
       }
     },
     handleTouchEnd: function () {
