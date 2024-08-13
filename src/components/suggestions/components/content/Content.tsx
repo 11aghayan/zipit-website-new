@@ -13,7 +13,7 @@ type Props = {
 type TouchActionsType = {
   lastPos: number | null;
   handleTouchMove: () => (e: React.TouchEvent<HTMLElement>) => void;
-  handleTouchEnd: () => () => void;
+  handleTouchEnd: () => (e: React.TouchEvent<HTMLElement>) => void;
 }
 
 export default function Content({ items }: Props) {
@@ -37,6 +37,7 @@ export default function Content({ items }: Props) {
     lastPos: null,
     handleTouchMove: function () {
       return (e: React.TouchEvent<HTMLElement>) => {
+        e.preventDefault();
         const { clientX } = e.changedTouches[0];
         if (!this.lastPos) {
           this.lastPos = clientX;
@@ -49,7 +50,8 @@ export default function Content({ items }: Props) {
       }
     },
     handleTouchEnd: function () {
-      return () => {
+      return (e: React.TouchEvent<HTMLElement>) => {
+        e.preventDefault();
         this.lastPos = null;
         setSpeed(1);
       }
@@ -63,6 +65,29 @@ export default function Content({ items }: Props) {
     }
   }
 
+  useEffect(() => {
+    const touchMoveHandler = touchActions.handleTouchMove();
+    const touchEndHandler = touchActions.handleTouchEnd();
+    
+    const element = document.querySelector('.suggestion-content') as HTMLElement;
+    
+    if (element) {
+      // @ts-ignore
+      element.addEventListener('touchmove', touchMoveHandler, { passive: false });
+      // @ts-ignore
+      element.addEventListener('touchend', touchEndHandler);
+    }
+    
+    return () => {
+      if (element) {
+        // @ts-ignore
+        element.removeEventListener('touchmove', touchMoveHandler);
+        // @ts-ignore
+        element.removeEventListener('touchend', touchEndHandler);
+      }
+    };
+  }, []);
+  
   useEffect(() => {
     requestAnimationFrame(animate);
   }, [frame]);
