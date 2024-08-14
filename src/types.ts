@@ -91,8 +91,8 @@ export type RandomSimilarItemType = Omit<ItemType, 'photos' | 'size' | 'category
   photo: PhotoType;
   size: {
     unit: SizeUnitType;
-    value: number;
-  }
+    value: number | null;
+  };
 }
 
 export type RandomSimilarResponseType = {

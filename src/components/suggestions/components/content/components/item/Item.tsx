@@ -11,6 +11,13 @@ type Props = {
 
 export default function Item({ item: { id, photo, name, price, promo, size }, photoSize }: Props) {
   const lang = useLang() as LangType;
+
+  const sizeUnavailableText = {
+    am: 'Առկա չափսեր չկան',
+    ru: 'Нет доступных размеров'
+  }
+  
+  const sizeText = size.value === null ? sizeUnavailableText[lang] : <>{size.value}{sizeLangMap[size.unit][lang]}</>;
   
   const href = `${lang}/${id}`;
   
@@ -25,7 +32,7 @@ export default function Item({ item: { id, photo, name, price, promo, size }, ph
       </div>
       <p className='name'>{name}</p>
       <p className='color'>{photo?.color}</p>
-      <p className='size'>{size.value}{sizeLangMap[size.unit][lang]}</p>
+      <p className='size'>{sizeText}</p>
       <p className='price'>
         <span className={`price ${promo ? 'line-through' : ''}`}>{price}&#x58F;</span>
         <span className={`promo ${promo ? 'visible' : ''}`}>{promo}&#x58F;</span>
