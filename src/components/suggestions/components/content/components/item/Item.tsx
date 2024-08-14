@@ -21,10 +21,10 @@ export default function Item({ item: { id, photo, name, price, promo, size }, ph
       style={{ minWidth: photoSize + 40 }}
     >
       <div className='photo' style={{ height: photoSize, width: photoSize }}>
-        <img src={photo.src} alt="Item photo" height={photoSize} width={photoSize} />
+        <img src={photo?.src} alt="Item photo" height={photoSize} width={photoSize} />
       </div>
       <p className='name'>{name}</p>
-      <p className='color'>{photo.color}</p>
+      <p className='color'>{photo?.color}</p>
       <p className='size'>{size.value}{sizeLangMap[size.unit][lang]}</p>
       <p className='price'>
         <span className={`price ${promo ? 'line-through' : ''}`}>{price}&#x58F;</span>
